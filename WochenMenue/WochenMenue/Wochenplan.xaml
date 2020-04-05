@@ -33,8 +33,16 @@
         <Label Content="Sonntag" HorizontalAlignment="left" Foreground="CornflowerBlue" FontSize="18" Width="140" Height="40" Margin="839,54,0,327"></Label>
 
         <TextBox x:Name="txt_0" TextWrapping="Wrap" AcceptsReturn="True" HorizontalContentAlignment="Left" Width="140" FontSize="18" Height="139" Margin="1,94,838,188" TextChanged="txt_0_TextChanged"/>
-        <ListView x:Name="lsV_Mo" Height="139" Width="140"  Margin="1,233,838,49" />
+        <DataGrid AutoGenerateColumns="False" Height="139" HorizontalAlignment="Left" Margin="0,233,0,0" Name="lsV_Mo" VerticalAlignment="Top" Width="140">
+            <DataGrid.Columns>
 
+                <DataGridTextColumn Header="Zutat" Width="66" Binding="{Binding Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Menge" Width="36" Binding="{Binding Menge}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Einheit" Width="36" Binding="{Binding Einheit}"></DataGridTextColumn>
+
+            </DataGrid.Columns>
+
+        </DataGrid>
 
         <TextBox x:Name="txt_1" TextWrapping="Wrap" AcceptsReturn="True" HorizontalContentAlignment="Left" Width="140" Height="139" FontSize="18" Margin="141,94,698,188" TextChanged="txt_1_TextChanged"/>
         <TextBox x:Name="txt_1R" TextWrapping="Wrap" AcceptsReturn="True" HorizontalContentAlignment="Left" Width="140" Height="139" FontSize="18" Margin="141,233,698,49" TextChanged="txt_1R_TextChanged"/>
