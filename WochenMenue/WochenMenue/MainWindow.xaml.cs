@@ -36,7 +36,7 @@ namespace WochenMenue
 
             if (openFileDialog.ShowDialog() == true)
             {
-                /*
+                
                 string fileName = openFileDialog.FileName;
 
                 XmlSerializer serializer = new XmlSerializer(typeof(Woche));
@@ -45,7 +45,7 @@ namespace WochenMenue
 
                 Wochenplan.gWoche = (Woche) serializer.Deserialize(fileStream);
                 fileStream.Close();
-                */
+                
             }
 
             this.Hide();

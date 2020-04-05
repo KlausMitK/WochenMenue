@@ -6,17 +6,25 @@ using System.Threading.Tasks;
 
 namespace WochenMenue
 {
+    [Serializable]
     public class Zutat
     {
         public string Name { get; set; }
-        public string Menge { get; set; }
+        public int Menge { get; set; }
         public string Einheit { get; set; }
 
-        public Zutat(string name, string menge, string einheit)
+        public Zutat(string name, int menge, string einheit)
         {
             Name = name;
-            Menge = menge;
+            Menge = 0;
             Einheit = einheit;
+        }
+
+        public Zutat()
+        {
+            Name = "";
+            Menge = 0;
+            Einheit = "";
         }
 
         public override string ToString()

@@ -22,15 +22,9 @@ namespace WochenMenue
         public RezFr()
         {
             InitializeComponent();
-
-            Binding bind4R = new Binding("Rezept");
-            bind4R.Source = Wochenplan.gWoche.Freitag;
-            txt_0.SetBinding(TextBox.TextProperty, bind4R);
+            lsV_FrR.ItemsSource = Wochenplan.gWoche.Freitag.Rezept;
         }
-
-        private void txt_0_TextChanged(object sender, TextChangedEventArgs e)
-        { 
-        }
+              
 
         private void btn_0_Click(object sender, RoutedEventArgs e)
         {

@@ -22,17 +22,9 @@ namespace WochenMenue
         public RezSa()
         {
             InitializeComponent();
-
-            Binding bind5R = new Binding("Rezept");
-            bind5R.Source = Wochenplan.gWoche.Samstag;
-            txt_0.SetBinding(TextBox.TextProperty, bind5R);
+            lsV_SaR.ItemsSource = Wochenplan.gWoche.Samstag.Rezept;
         }
-
-        private void txt_0_TextChanged(object sender, TextChangedEventArgs e)
-        {
-           
-        }
-
+                
         private void btn_0_Click(object sender, RoutedEventArgs e)
         {
             this.Hide();

@@ -41,48 +41,35 @@ namespace WochenMenue
             bind0.Source = gWoche.Montag;
             txt_0.SetBinding(TextBox.TextProperty, bind0);
 
-
+            lsV_Mo.ItemsSource = Wochenplan.gWoche.Montag.Rezept;
 
             //Dienstag
             Binding bind1 = new Binding("Gericht");
             bind1.Source = gWoche.Dienstag;
             txt_1.SetBinding(TextBox.TextProperty, bind1);
 
-            Binding bind1R = new Binding("Rezept");
-            bind1R.Source = gWoche.Dienstag;
-            txt_1R.SetBinding(TextBox.TextProperty, bind1R);
-            
-
+            lsV_Di.ItemsSource = Wochenplan.gWoche.Dienstag.Rezept;
 
             //Mittwoch
             Binding bind2 = new Binding("Gericht");
             bind2.Source = gWoche.Mittwoch;
             txt_2.SetBinding(TextBox.TextProperty, bind2);
 
-
-            Binding bind2R = new Binding("Rezept");
-            bind2R.Source = gWoche.Mittwoch;
-            txt_2R.SetBinding(TextBox.TextProperty, bind2R);
-
+            lsV_Mi.ItemsSource = Wochenplan.gWoche.Mittwoch.Rezept;
 
             //Donnerstag
             Binding bind3 = new Binding("Gericht");
             bind3.Source = gWoche.Donnerstag;
             txt_3.SetBinding(TextBox.TextProperty, bind3);
 
-            Binding bind3R = new Binding("Rezept");
-            bind3R.Source = gWoche.Donnerstag;
-            txt_3R.SetBinding(TextBox.TextProperty, bind3R);
-
+            lsV_Do.ItemsSource = Wochenplan.gWoche.Donnerstag.Rezept;
 
             //Freitag
             Binding bind4 = new Binding("Gericht");
             bind4.Source = gWoche.Freitag;
             txt_4.SetBinding(TextBox.TextProperty, bind4);
 
-            Binding bind4R = new Binding("Rezept");
-            bind4R.Source = gWoche.Freitag;
-            txt_4R.SetBinding(TextBox.TextProperty, bind4R);
+            lsV_Fr.ItemsSource = Wochenplan.gWoche.Freitag.Rezept;
 
 
             //Samstag
@@ -90,9 +77,7 @@ namespace WochenMenue
             bind5.Source = gWoche.Samstag;
             txt_5.SetBinding(TextBox.TextProperty, bind5);
 
-            Binding bind5R = new Binding("Rezept");
-            bind5R.Source = gWoche.Samstag;
-            txt_5R.SetBinding(TextBox.TextProperty, bind5R);
+            lsV_Sa.ItemsSource = Wochenplan.gWoche.Samstag.Rezept;
 
 
             //Sonntag
@@ -100,12 +85,7 @@ namespace WochenMenue
             bind6.Source = gWoche.Sonntag;
             txt_6.SetBinding(TextBox.TextProperty, bind6);
 
-            Binding bind6R = new Binding("Rezept");
-            bind6R.Source = gWoche.Sonntag;
-            txt_6R.SetBinding(TextBox.TextProperty, bind6R);
-
-            
-
+            lsV_So.ItemsSource = Wochenplan.gWoche.Sonntag.Rezept;
         }
 
         //Buttons rezepte Hinzufügen\\
