@@ -25,9 +25,11 @@ namespace WochenMenue
         {
             InitializeComponent();
 
-            Binding bind0R = new Binding("Rezept");
+            /*Binding bind0R = new Binding("Rezept");
             bind0R.Source = Wochenplan.gWoche.Montag;
-            txt_1.SetBinding(TextBox.TextProperty, bind0R);
+            txt_1.SetBinding(TextBox.TextProperty, bind0R);*/
+
+            lsV_Mo.ItemsSource = Wochenplan.gWoche.Montag.Rezept;
         }
 
       

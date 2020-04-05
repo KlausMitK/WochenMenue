@@ -19,5 +19,10 @@ namespace WochenMenue
             Einheit = einheit;
         }
 
+        public override string ToString()
+        {
+          return this.Name + ":" + this.Menge + " " + this.Einheit;
+        }
+
     }
 }
