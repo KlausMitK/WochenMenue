@@ -29,7 +29,7 @@ namespace WochenMenue
             bind0R.Source = Wochenplan.gWoche.Montag;
             txt_1.SetBinding(TextBox.TextProperty, bind0R);*/
 
-            lsV_Mo.ItemsSource = Wochenplan.gWoche.Montag.Rezept;
+            lsV_MoR.ItemsSource = Wochenplan.gWoche.Montag.Rezept;
         }
 
       

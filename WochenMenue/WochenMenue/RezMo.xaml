@@ -10,6 +10,6 @@
 
         <Button x:Name="btn_0" Content="Rezept Speichern" FontSize="18" Width="150" Background="LightGreen" Height="50" Margin="632,359,10,10" Click="btn_0_Click"></Button>
 
-        <ListView x:Name="lsV_Mo" Margin="10,10,178,10" Background="LightGray" SelectionChanged="lsV_Mo_SelectionChanged"/>
+        <ListView x:Name="lsV_MoR" Margin="10,10,178,10" Background="LightGray" SelectionChanged="lsV_Mo_SelectionChanged"/>
     </Grid>
 </Window>
