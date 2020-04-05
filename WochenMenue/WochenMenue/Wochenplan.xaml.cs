@@ -31,6 +31,8 @@ namespace WochenMenue
     {
         public static Woche gWoche = new Woche();
 
+        
+
         public Wochenplan()
         {
             InitializeComponent();
@@ -38,6 +40,7 @@ namespace WochenMenue
             Binding bind0 = new Binding("Gericht");
             bind0.Source = gWoche.Montag;
             txt_0.SetBinding(TextBox.TextProperty, bind0);
+
 
             Binding bind0R = new Binding("Rezept");
             bind0R.Source = gWoche.Montag;

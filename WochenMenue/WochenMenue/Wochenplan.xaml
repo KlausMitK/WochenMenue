@@ -33,11 +33,11 @@
         <Label Content="Sonntag" HorizontalAlignment="left" Foreground="CornflowerBlue" FontSize="18" Width="140" Height="40" Margin="839,54,0,327"></Label>
 
         <TextBox x:Name="txt_0" TextWrapping="Wrap" AcceptsReturn="True" HorizontalContentAlignment="Left" Width="140" FontSize="18" Height="139" Margin="1,94,838,188" TextChanged="txt_0_TextChanged"/>
-        <TextBox x:Name="txt_0R" TextWrapping="Wrap" AcceptsReturn="True" HorizontalContentAlignment="Left" Width="140" FontSize="18" Height="139" Margin="1,232,838,50" TextChanged="txt_0R_TextChanged"/>
+        <ListView x:Name="lsV_Mo" Height="139" Width="140"  Margin="1,233,838,49" />
 
 
         <TextBox x:Name="txt_1" TextWrapping="Wrap" AcceptsReturn="True" HorizontalContentAlignment="Left" Width="140" Height="139" FontSize="18" Margin="141,94,698,188" TextChanged="txt_1_TextChanged"/>
-        <TextBox x:Name="txt_1R" TextWrapping="Wrap" AcceptsReturn="True" HorizontalContentAlignment="Left" Width="140" Height="139" FontSize="18" Margin="141,232,698,50" TextChanged="txt_1R_TextChanged"/>
+        <TextBox x:Name="txt_1R" TextWrapping="Wrap" AcceptsReturn="True" HorizontalContentAlignment="Left" Width="140" Height="139" FontSize="18" Margin="141,233,698,49" TextChanged="txt_1R_TextChanged"/>
 
 
         <TextBox x:Name="txt_2" TextWrapping="Wrap" AcceptsReturn="True" HorizontalContentAlignment="Left" Width="140" Height="139" FontSize="18" Margin="281,94,558,188" TextChanged="txt_2_TextChanged"/>

@@ -46,5 +46,10 @@ namespace WochenMenue
             new Wochenplan().Show();
             
         }
+
+        private void lsV_Mo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
