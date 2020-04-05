@@ -8,11 +8,11 @@ namespace WochenMenue
 {
     public class Zutat
     {
-        private string Name { get; set; }
-        private int Menge { get; set; }
-        private string Einheit { get; set; }
+        public string Name { get; set; }
+        public string Menge { get; set; }
+        public string Einheit { get; set; }
 
-        public Zutat(string name, int menge, string einheit)
+        public Zutat(string name, string menge, string einheit)
         {
             Name = name;
             Menge = menge;

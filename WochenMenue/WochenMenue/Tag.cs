@@ -19,7 +19,7 @@ namespace WochenMenue
         public Tag()
         {
           Gericht = "";
-          Zutat Zutat1 = new Zutat("Zutat", 100, "gr");
+          Zutat Zutat1 = new Zutat("Zutat", "100", "gr");
           Rezept = new ObservableCollection<Zutat>();
           Rezept.Add(Zutat1);
         }

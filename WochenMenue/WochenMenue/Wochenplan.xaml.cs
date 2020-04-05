@@ -51,6 +51,7 @@ namespace WochenMenue
             Binding bind1R = new Binding("Rezept");
             bind1R.Source = gWoche.Dienstag;
             txt_1R.SetBinding(TextBox.TextProperty, bind1R);
+            
 
 
             //Mittwoch
