@@ -7,7 +7,16 @@
         mc:Ignorable="d"
         Title="Window3" Height="450" Width="800">
     <Grid>
-        <TextBox x:Name="txt_0" TextWrapping="Wrap" AcceptsReturn="True" Height="350" Width="790" FontSize="20" Margin="0,0,2,69" TextChanged="txt_0_TextChanged"></TextBox>
+        <DataGrid AutoGenerateColumns="False" Height="399" HorizontalAlignment="Left" Margin="10,10,178,10" Name="lsV_DiR" VerticalAlignment="Top" Width="604">
+            <DataGrid.Columns>
+
+                <DataGridTextColumn Header="Zutat" Width="120" Binding="{Binding Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Menge" Width="60" Binding="{Binding Menge}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Einheit" Width="60" Binding="{Binding Einheit}"></DataGridTextColumn>
+
+            </DataGrid.Columns>
+
+        </DataGrid>
         <Button x:Name="btn_0" Content="Rezept Speichern" FontSize="18" Width="150" Background="LightGreen" Height="50" Margin="632,359,10,10" Click="btn_0_Click"></Button>
     </Grid>
 </Window>

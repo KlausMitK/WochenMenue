@@ -44,28 +44,81 @@
 
         </DataGrid>
 
-        <TextBox x:Name="txt_1" TextWrapping="Wrap" AcceptsReturn="True" HorizontalContentAlignment="Left" Width="140" Height="139" FontSize="18" Margin="141,94,698,188" TextChanged="txt_1_TextChanged"/>
-        <TextBox x:Name="txt_1R" TextWrapping="Wrap" AcceptsReturn="True" HorizontalContentAlignment="Left" Width="140" Height="139" FontSize="18" Margin="141,233,698,49" TextChanged="txt_1R_TextChanged"/>
+        <TextBox x:Name="txt_1" TextWrapping="Wrap" AcceptsReturn="True" HorizontalContentAlignment="Left" Width="140" Height="139" FontSize="18" Margin= "141,95,698,187" TextChanged="txt_1_TextChanged"/>
+        <DataGrid AutoGenerateColumns="False" Height="139" HorizontalAlignment="Left" Margin= "141,233,698,49" Name="lsV_Di" VerticalAlignment="Top" Width="140">
+            <DataGrid.Columns>
 
+                <DataGridTextColumn Header="Zutat" Width="66" Binding="{Binding Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Menge" Width="36" Binding="{Binding Menge}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Einheit" Width="36" Binding="{Binding Einheit}"></DataGridTextColumn>
+
+            </DataGrid.Columns>
+
+        </DataGrid> 
 
         <TextBox x:Name="txt_2" TextWrapping="Wrap" AcceptsReturn="True" HorizontalContentAlignment="Left" Width="140" Height="139" FontSize="18" Margin="281,94,558,188" TextChanged="txt_2_TextChanged"/>
-        <TextBox x:Name="txt_2R" TextWrapping="Wrap" AcceptsReturn="True" HorizontalContentAlignment="Left" Width="140" Height="139" FontSize="18" Margin="281,233,558,49" TextChanged="txt_2R_TextChanged"/>
+        <DataGrid AutoGenerateColumns="False" Height="139" HorizontalAlignment="Left" Margin= "281,233,558,49" Name="lsV_Mi" VerticalAlignment="Top" Width="140">
+            <DataGrid.Columns>
+
+                <DataGridTextColumn Header="Zutat" Width="66" Binding="{Binding Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Menge" Width="36" Binding="{Binding Menge}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Einheit" Width="36" Binding="{Binding Einheit}"></DataGridTextColumn>
+
+            </DataGrid.Columns>
+
+        </DataGrid> 
 
 
         <TextBox x:Name="txt_3" TextWrapping="Wrap" AcceptsReturn="True" HorizontalContentAlignment="Left" Width="140" Height="139" FontSize="18" Margin="421,94,418,188" TextChanged="txt_3_TextChanged"/>
-        <TextBox x:Name="txt_3R" TextWrapping="Wrap" AcceptsReturn="True" HorizontalContentAlignment="Left" Width="140" Height="139" FontSize="18" Margin="421,232,418,50" TextChanged="txt_3R_TextChanged"/>
+        <DataGrid AutoGenerateColumns="False" Height="139" HorizontalAlignment="Left" Margin="421,232,418,50" Name="lsV_Do" VerticalAlignment="Top" Width="140">
+            <DataGrid.Columns>
+
+                <DataGridTextColumn Header="Zutat" Width="66" Binding="{Binding Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Menge" Width="36" Binding="{Binding Menge}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Einheit" Width="36" Binding="{Binding Einheit}"></DataGridTextColumn>
+
+            </DataGrid.Columns>
+
+        </DataGrid> 
 
 
         <TextBox x:Name="txt_4" TextWrapping="Wrap" AcceptsReturn="True" HorizontalContentAlignment="Left" Width="140" Height="139" FontSize="18" Margin="560,94,279,188" TextChanged="txt_4_TextChanged"/>
-        <TextBox x:Name="txt_4R" TextWrapping="Wrap" AcceptsReturn="True" HorizontalContentAlignment="Left" Width="140" Height="139" FontSize="18" Margin="560,232,279,50" TextChanged="txt_4R_TextChanged"/>
+        <DataGrid AutoGenerateColumns="False" Height="139" HorizontalAlignment="Left" Margin="560,232,279,50" Name="lsV_Fr" VerticalAlignment="Top" Width="140">
+            <DataGrid.Columns>
+
+                <DataGridTextColumn Header="Zutat" Width="66" Binding="{Binding Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Menge" Width="36" Binding="{Binding Menge}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Einheit" Width="36" Binding="{Binding Einheit}"></DataGridTextColumn>
+
+            </DataGrid.Columns>
+
+        </DataGrid> 
 
 
         <TextBox x:Name="txt_5" TextWrapping="Wrap" AcceptsReturn="True" HorizontalContentAlignment="Left" Width="140" Height="139" FontSize="18" Margin="700,94,139,188" TextChanged="txt_5_TextChanged"/>
-        <TextBox x:Name="txt_5R" TextWrapping="Wrap" AcceptsReturn="True" HorizontalContentAlignment="Left" Width="140" Height="139" FontSize="18" Margin="700,232,139,50" TextChanged="txt_5R_TextChanged"/>
+        <DataGrid AutoGenerateColumns="False" Height="139" HorizontalAlignment="Left" Margin="700,232,139,50" Name="lsV_Sa" VerticalAlignment="Top" Width="140">
+            <DataGrid.Columns>
+
+                <DataGridTextColumn Header="Zutat" Width="66" Binding="{Binding Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Menge" Width="36" Binding="{Binding Menge}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Einheit" Width="36" Binding="{Binding Einheit}"></DataGridTextColumn>
+
+            </DataGrid.Columns>
+
+        </DataGrid> 
 
 
         <TextBox x:Name="txt_6" TextWrapping="Wrap" AcceptsReturn="True" HorizontalContentAlignment="Left" Width="140" Height="139" FontSize="18" Margin="839,94,0,188" TextChanged="txt_6_TextChanged"/>
-        <TextBox x:Name="txt_6R" TextWrapping="Wrap" AcceptsReturn="True" HorizontalContentAlignment="Left" Width="140" Height="139" FontSize="18" Margin="839,232,0,50" TextChanged="txt_6R_TextChanged"/>
+        <DataGrid AutoGenerateColumns="False" Height="139" HorizontalAlignment="Left" Margin="839,232,0,50" Name="lsV_So" VerticalAlignment="Top" Width="140">
+            <DataGrid.Columns>
+
+                <DataGridTextColumn Header="Zutat" Width="66" Binding="{Binding Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Menge" Width="36" Binding="{Binding Menge}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Einheit" Width="36" Binding="{Binding Einheit}"></DataGridTextColumn>
+
+            </DataGrid.Columns>
+
+        </DataGrid>
 
         <TextBox x:Name="txt_S" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" AcceptsReturn="True" Width="650" Height="30" Background="#FFDCDBDB" Margin="141,13,139,372" TextChanged="txt_S_TextChanged"/>
         <Label Content="Suchen" FontSize="20" Margin="454,-14,443,395" RenderTransformOrigin="0.433,0.838"/>
