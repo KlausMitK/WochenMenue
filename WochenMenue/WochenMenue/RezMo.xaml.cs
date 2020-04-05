@@ -51,5 +51,10 @@ namespace WochenMenue
         {
 
         }
+
+        private void DataGrid_ColumnDisplayIndexChanged(object sender, DataGridColumnEventArgs e)
+        {
+
+        }
     }
 }
