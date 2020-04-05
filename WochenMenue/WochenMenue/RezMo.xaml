@@ -9,6 +9,6 @@
     <Grid>
         <TextBox x:Name="txt_1" FontSize="20" AcceptsReturn="True" TextWrapping="Wrap" Height="350" Width="790" Margin="0,0,2,69" TextChanged="txt_1_TextChanged"></TextBox>
         <Button x:Name="btn_0" Content="Rezept Speichern" FontSize="18" Width="150" Background="LightGreen" Height="50" Margin="632,359,10,10" Click="btn_0_Click"></Button>
-        <ListBox x:Name="lst_0" Margin="10,359,282,5" Height="55" Width="500" Background="LightGray" />
+        <ListView x:Name="lsV_Mo" Height="50" Width="550" Margin="10,359,232,10" Background="LightGray"/>
     </Grid>
 </Window>
