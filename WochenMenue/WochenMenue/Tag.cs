@@ -17,9 +17,10 @@ namespace WochenMenue
 
         public Tag()
         {
-            Gericht = "";
-            Zutat Zutat1 = new Zutat("Zutat", 100, "gr");
-            Rezept.Add(Zutat1);
+          Gericht = "";
+          Zutat Zutat1 = new Zutat("Zutat", 100, "gr");
+          Rezept = new List<Zutat>();
+          Rezept.Add(Zutat1);
         }
     }
 }
