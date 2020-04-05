@@ -1,0 +1,17 @@
+﻿<Window x:Class="WochenMenue.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WochenMenue"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Button x:Name="btn_0" Content="Wochenplan" Background="LightGreen" Height="50" Width="100" Margin="346,184,346,185" Click="btn_0_Click"/>
+        <Button x:Name="btn_b" Content="Beenden" Height="50" Width="100" Margin="682,359,10,10" Background="LightSteelBlue" Click="btn_b_Click"></Button>
+
+        <Label Content="Drücken sie die grüne Taste um ihren Wochenplan zu bearbeiten" Foreground="DarkGray"  FontSize="24" Margin="0,0,10,364"/>
+
+    </Grid>
+    
+</Window>
