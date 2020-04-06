@@ -5,35 +5,180 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WochenMenue"
         mc:Ignorable="d"
-        Title="Window1" Height="550" Width="987">
-    <Grid Margin="0,-1,0,1">
+        Title="Wochen Speiseplan" WindowStyle="SingleBorderWindow" BorderThickness="20" BorderBrush="LightCyan"     Height="550" Width="1000">
+    
+<!-- Aüsseres Grid-->    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
         <Grid.RowDefinitions>
-            <RowDefinition Height="421*"/>
-            <RowDefinition Height="98*"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="70"/>
         </Grid.RowDefinitions>
 
-        <Button x:Name="btn_m" Content="Zurück zur Auswahl" Background="#FFFF7777" Width="130" Height="40" Margin="840,28,9,30" Click="btn_m_Click" Grid.Row="1"/>
+        <TextBox x:Name="txt_S" Grid.Row="0" Grid.Column="3"  Grid.ColumnSpan="3" TextWrapping="Wrap"  AcceptsReturn="True"  Background="#FFDCDBDB" TextChanged="txt_S_TextChanged"/>
 
-        <Button x:Name="btn_s" Background="LightGreen" Width="140" HorizontalAlignment="left"  Height="40" Margin="0,28,0,30" Click="btn_s_Click" Grid.Row="1">Speichern</Button>
+        <!-- Zurück Button-->
+        <Grid Grid.Row="5" Grid.Column="7">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="10"/>
+            </Grid.ColumnDefinitions>
+            
+            <Button x:Name="btn_m" Grid.Row="1" Grid.Column="1" Content="Zurück zur Auswahl" Background="#FFFF7777" Click="btn_m_Click"/>
+        </Grid>
 
-        <Button x:Name="BtnMoRez" Width="140" FontSize="15"  HorizontalAlignment="left" Background="#FFFBFB6E" Height="40" Margin="0,374,0,7" Click="BtnMoRez_Click">Rezept Hinzufügen</Button>
-        <Button x:Name="BtnDiRez" Width="140" FontSize="15" HorizontalAlignment="Left" Background="#FFFBFB6E" Height="40" Margin="140,374,0,7" Click="BtnDiRez_Click">Rezept Hinzufügen</Button>
-        <Button x:Name="BtnMiRez" Width="140" FontSize="15" HorizontalAlignment="Left" Background="#FFFBFB6E" Height="40" Margin="280,374,0,7" Click="BtnMiRez_Click">Rezept Hinzufügen</Button>
-        <Button x:Name="BtnDoRez" Width="140" FontSize="15" HorizontalAlignment="left" Background="#FFFBFB6E" Height="40" Margin="420,374,0,7" Click="BtnDoRez_Click">Rezept Hinzufügen</Button>
-        <Button x:Name="BtnFrRez" Width="140" FontSize="15" HorizontalAlignment="left" Background="#FFFBFB6E" Height="40" Margin="560,374,0,7" Click="BtnFrRez_Click">Rezept Hinzufügen</Button>
-        <Button x:Name="BtnSaRez" Width="140" FontSize="15" HorizontalAlignment="Left" Background="CornflowerBlue" Height="40" Margin="700,374,0,7" Click="BtnSaRez_Click">Rezept Hinzufügen</Button>
-        <Button x:Name="BtnSoRez" Width="140" FontSize="15" HorizontalAlignment="Left" Background="CornflowerBlue" Height="40" Margin="840,374,-1,7" Click="BtnSoRez_Click">Rezept Hinzufügen</Button>
 
-        <Label Content="Montag" HorizontalAlignment="Left" Foreground="Black" FontSize="18" Width="141" Margin="0,54,0,327"/>
-        <Label Content="Dienstag" HorizontalAlignment="Left" Foreground="Black" FontSize="18" Margin="140,54,0,327" Width="141"></Label>
-        <Label Content="Mittwoch" HorizontalAlignment="Left" Foreground="Black" FontSize="18" Width="139" Height="40" Margin="281,54,0,327"></Label>
-        <Label Content="Donnerstag" HorizontalAlignment="Left" Foreground="Black" FontSize="18" Width="140" Height="40" Margin="420,54,0,327"/>
-        <Label Content="Freitag" HorizontalAlignment="Left" Foreground="Black" FontSize="18" Width="140" Height="40" Margin="560,54,0,327"></Label>
-        <Label Content="Samstag" HorizontalAlignment="Left" Foreground="CornflowerBlue" FontSize="18" Width="140" Height="40" Margin="700,54,0,327"></Label>
-        <Label Content="Sonntag" HorizontalAlignment="left" Foreground="CornflowerBlue" FontSize="18" Width="140" Height="40" Margin="839,54,0,327"></Label>
+        <!-- Speichern Button-->
+        <Grid Grid.Row="5" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="10"/>
+            </Grid.ColumnDefinitions>
 
-        <TextBox x:Name="txt_0" TextWrapping="Wrap" AcceptsReturn="True" HorizontalContentAlignment="Left" Width="140" FontSize="18" Height="139" Margin="1,94,838,188" TextChanged="txt_0_TextChanged"/>
-        <DataGrid AutoGenerateColumns="False" Height="139" HorizontalAlignment="Left" Margin="0,233,0,0" Name="lsV_Mo" VerticalAlignment="Top" Width="140">
+            <Button x:Name="btn_s" Grid.Row="1" Grid.Column="1" Content="Speichern" Background="LightGreen" Click="btn_s_Click"/>
+        </Grid>
+
+        <!-- Rezept Button Mo-->
+        <Grid  Grid.Row="4" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="10"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button x:Name="BtnMoRez" Grid.Row="1" Grid.Column="1" FontSize="15"  Background="#FFFBFB6E" Click="BtnMoRez_Click">Rezept Hinzufügen</Button>
+        </Grid>
+
+        <!-- Rezept Button Di-->
+        <Grid  Grid.Row="4" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="10"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button x:Name="BtnDiRez" Grid.Row="1" Grid.Column="1" FontSize="15"  Background="#FFFBFB6E" Click="BtnMoRez_Click">Rezept Hinzufügen</Button>
+        </Grid>
+
+        <!-- Rezept Button Mi-->
+        <Grid  Grid.Row="4" Grid.Column="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="10"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button x:Name="BtnMiRez" Grid.Row="1" Grid.Column="1" FontSize="15"  Background="#FFFBFB6E" Click="BtnMoRez_Click">Rezept Hinzufügen</Button>
+        </Grid>
+
+        <!-- Rezept Button Do-->
+        <Grid  Grid.Row="4" Grid.Column="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="10"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button x:Name="BtnDoRez" Grid.Row="1" Grid.Column="1" FontSize="15"  Background="#FFFBFB6E" Click="BtnMoRez_Click">Rezept Hinzufügen</Button>
+        </Grid>
+
+        <!-- Rezept Button Fr-->
+        <Grid  Grid.Row="4" Grid.Column="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="10"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button x:Name="BtnFrRez" Grid.Row="1" Grid.Column="1" FontSize="15"  Background="#FFFBFB6E" Click="BtnMoRez_Click">Rezept Hinzufügen</Button>
+        </Grid>
+
+        <!-- Rezept Button Sa-->
+        <Grid  Grid.Row="4" Grid.Column="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="10"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button x:Name="BtnSaRez" Grid.Row="1" Grid.Column="1" FontSize="15"  Background="CornflowerBlue" Click="BtnMoRez_Click">Rezept Hinzufügen</Button>
+        </Grid>
+
+        <!-- Rezept Button So-->
+        <Grid  Grid.Row="4" Grid.Column="6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="10"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button x:Name="BtnSoRez" Grid.Row="1" Grid.Column="1" FontSize="15"  Background="CornflowerBlue" Click="BtnMoRez_Click">Rezept Hinzufügen</Button>
+        </Grid>
+
+        <Label Content="Montag"  Grid.Row="1" Grid.Column="0" Foreground="Black" FontSize="18" />
+        <Label Content="Dienstag" Grid.Row="1" Grid.Column="1"  Foreground="Black" FontSize="18" ></Label>
+        <Label Content="Mittwoch" Grid.Row="1" Grid.Column="2" Foreground="Black" FontSize="18"></Label>
+        <Label Content="Donnerstag" Grid.Row="1" Grid.Column="3" Foreground="Black" FontSize="18"/>
+        <Label Content="Freitag" Grid.Row="1" Grid.Column="4" Foreground="Black" FontSize="18" ></Label>
+        <Label Content="Samstag" Grid.Row="1" Grid.Column="5" Foreground="CornflowerBlue" FontSize="18"></Label>
+        <Label Content="Sonntag" Grid.Row="1" Grid.Column="6" Foreground="CornflowerBlue" FontSize="18" ></Label>
+
+        <TextBox x:Name="txt_0" Grid.Row="2" Grid.Column="0"  TextWrapping="Wrap" AcceptsReturn="True" FontSize="18" TextChanged="txt_0_TextChanged"/>
+        
+        <DataGrid Grid.Row="3" Grid.Column="0" AutoGenerateColumns="False"  Name="lsV_Mo" >
             <DataGrid.Columns>
 
                 <DataGridTextColumn Header="Zutat" Width="66" Binding="{Binding Name}"></DataGridTextColumn>
@@ -44,72 +189,22 @@
 
         </DataGrid>
 
-        <TextBox x:Name="txt_1" TextWrapping="Wrap" AcceptsReturn="True" HorizontalContentAlignment="Left" Width="140" Height="139" FontSize="18" Margin= "141,95,698,187" TextChanged="txt_1_TextChanged"/>
-        <DataGrid AutoGenerateColumns="False" Height="139" HorizontalAlignment="Left" Margin= "141,233,698,49" Name="lsV_Di" VerticalAlignment="Top" Width="140">
+        <TextBox x:Name="txt_1" Grid.Row="2" Grid.Column="1" TextWrapping="Wrap" AcceptsReturn="True" FontSize="18" TextChanged="txt_1_TextChanged"/>
+        
+        <DataGrid Grid.Row="3" Grid.Column="1" AutoGenerateColumns="False"  Name="lsV_Di">
             <DataGrid.Columns>
 
-                <DataGridTextColumn Header="Zutat" Width="66" Binding="{Binding Name}"></DataGridTextColumn>
+                <DataGridTextColumn  Header="Zutat" Width="66" Binding="{Binding Name}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Menge" Width="36" Binding="{Binding Menge}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Einheit" Width="36" Binding="{Binding Einheit}"></DataGridTextColumn>
 
             </DataGrid.Columns>
 
-        </DataGrid> 
+        </DataGrid>
 
-        <TextBox x:Name="txt_2" TextWrapping="Wrap" AcceptsReturn="True" HorizontalContentAlignment="Left" Width="140" Height="139" FontSize="18" Margin="281,94,558,188" TextChanged="txt_2_TextChanged"/>
-        <DataGrid AutoGenerateColumns="False" Height="139" HorizontalAlignment="Left" Margin= "281,233,558,49" Name="lsV_Mi" VerticalAlignment="Top" Width="140">
-            <DataGrid.Columns>
-
-                <DataGridTextColumn Header="Zutat" Width="66" Binding="{Binding Name}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Menge" Width="36" Binding="{Binding Menge}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Einheit" Width="36" Binding="{Binding Einheit}"></DataGridTextColumn>
-
-            </DataGrid.Columns>
-
-        </DataGrid> 
-
-
-        <TextBox x:Name="txt_3" TextWrapping="Wrap" AcceptsReturn="True" HorizontalContentAlignment="Left" Width="140" Height="139" FontSize="18" Margin="421,94,418,188" TextChanged="txt_3_TextChanged"/>
-        <DataGrid AutoGenerateColumns="False" Height="139" HorizontalAlignment="Left" Margin="421,232,418,50" Name="lsV_Do" VerticalAlignment="Top" Width="140">
-            <DataGrid.Columns>
-
-                <DataGridTextColumn Header="Zutat" Width="66" Binding="{Binding Name}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Menge" Width="36" Binding="{Binding Menge}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Einheit" Width="36" Binding="{Binding Einheit}"></DataGridTextColumn>
-
-            </DataGrid.Columns>
-
-        </DataGrid> 
-
-
-        <TextBox x:Name="txt_4" TextWrapping="Wrap" AcceptsReturn="True" HorizontalContentAlignment="Left" Width="140" Height="139" FontSize="18" Margin="560,94,279,188" TextChanged="txt_4_TextChanged"/>
-        <DataGrid AutoGenerateColumns="False" Height="139" HorizontalAlignment="Left" Margin="560,232,279,50" Name="lsV_Fr" VerticalAlignment="Top" Width="140">
-            <DataGrid.Columns>
-
-                <DataGridTextColumn Header="Zutat" Width="66" Binding="{Binding Name}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Menge" Width="36" Binding="{Binding Menge}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Einheit" Width="36" Binding="{Binding Einheit}"></DataGridTextColumn>
-
-            </DataGrid.Columns>
-
-        </DataGrid> 
-
-
-        <TextBox x:Name="txt_5" TextWrapping="Wrap" AcceptsReturn="True" HorizontalContentAlignment="Left" Width="140" Height="139" FontSize="18" Margin="700,94,139,188" TextChanged="txt_5_TextChanged"/>
-        <DataGrid AutoGenerateColumns="False" Height="139" HorizontalAlignment="Left" Margin="700,232,139,50" Name="lsV_Sa" VerticalAlignment="Top" Width="140">
-            <DataGrid.Columns>
-
-                <DataGridTextColumn Header="Zutat" Width="66" Binding="{Binding Name}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Menge" Width="36" Binding="{Binding Menge}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Einheit" Width="36" Binding="{Binding Einheit}"></DataGridTextColumn>
-
-            </DataGrid.Columns>
-
-        </DataGrid> 
-
-
-        <TextBox x:Name="txt_6" TextWrapping="Wrap" AcceptsReturn="True" HorizontalContentAlignment="Left" Width="140" Height="139" FontSize="18" Margin="839,94,0,188" TextChanged="txt_6_TextChanged"/>
-        <DataGrid AutoGenerateColumns="False" Height="139" HorizontalAlignment="Left" Margin="839,232,0,50" Name="lsV_So" VerticalAlignment="Top" Width="140">
+        <TextBox x:Name="txt_2" Grid.Row="2" Grid.Column="2" TextWrapping="Wrap" AcceptsReturn="True" FontSize="18" TextChanged="txt_2_TextChanged"/>
+        
+        <DataGrid Grid.Row="3" Grid.Column="2" AutoGenerateColumns="False" Name="lsV_Mi">
             <DataGrid.Columns>
 
                 <DataGridTextColumn Header="Zutat" Width="66" Binding="{Binding Name}"></DataGridTextColumn>
@@ -120,8 +215,65 @@
 
         </DataGrid>
 
-        <TextBox x:Name="txt_S" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" AcceptsReturn="True" Width="650" Height="30" Background="#FFDCDBDB" Margin="141,13,139,372" TextChanged="txt_S_TextChanged"/>
-        <Label Content="Suchen" FontSize="20" Margin="454,-14,443,395" RenderTransformOrigin="0.433,0.838"/>
+
+        <TextBox x:Name="txt_3" Grid.Row="2" Grid.Column="3" TextWrapping="Wrap" AcceptsReturn="True" FontSize="18" TextChanged="txt_3_TextChanged"/>
+        
+        <DataGrid Grid.Row="3" Grid.Column="3" AutoGenerateColumns="False" Name="lsV_Do" >
+            <DataGrid.Columns>
+
+                <DataGridTextColumn Header="Zutat" Width="66" Binding="{Binding Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Menge" Width="36" Binding="{Binding Menge}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Einheit" Width="36" Binding="{Binding Einheit}"></DataGridTextColumn>
+
+            </DataGrid.Columns>
+
+        </DataGrid>
+
+
+        <TextBox x:Name="txt_4" Grid.Row="2" Grid.Column="4" TextWrapping="Wrap" AcceptsReturn="True" FontSize="18" TextChanged="txt_4_TextChanged"/>
+        
+        <DataGrid Grid.Row="3" Grid.Column="4" AutoGenerateColumns="False" Name="lsV_Fr">
+            <DataGrid.Columns>
+
+                <DataGridTextColumn Header="Zutat" Width="66" Binding="{Binding Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Menge" Width="36" Binding="{Binding Menge}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Einheit" Width="36" Binding="{Binding Einheit}"></DataGridTextColumn>
+
+            </DataGrid.Columns>
+
+        </DataGrid>
+
+
+        <TextBox x:Name="txt_5" Grid.Row="2" Grid.Column="5" TextWrapping="Wrap" AcceptsReturn="True" FontSize="18" TextChanged="txt_5_TextChanged"/>
+        
+        <DataGrid Grid.Row="3" Grid.Column="5" AutoGenerateColumns="False" Name="lsV_Sa">
+            <DataGrid.Columns>
+
+                <DataGridTextColumn Header="Zutat" Width="66" Binding="{Binding Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Menge" Width="36" Binding="{Binding Menge}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Einheit" Width="36" Binding="{Binding Einheit}"></DataGridTextColumn>
+
+            </DataGrid.Columns>
+
+        </DataGrid>
+
+
+        <TextBox x:Name="txt_6" Grid.Row="2" Grid.Column="6" TextWrapping="Wrap" AcceptsReturn="True" FontSize="18" TextChanged="txt_6_TextChanged"/>
+        
+        <DataGrid Grid.Row="3" Grid.Column="6" AutoGenerateColumns="False" Name="lsV_So">
+            <DataGrid.Columns>
+
+                <DataGridTextColumn Header="Zutat" Width="66" Binding="{Binding Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Menge" Width="36" Binding="{Binding Menge}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Einheit" Width="36" Binding="{Binding Einheit}"></DataGridTextColumn>
+
+            </DataGrid.Columns>
+
+        </DataGrid>
+
+        
+        
+        <Label Grid.Row="0" Grid.Column="6" Grid.ColumnSpan="1"  Content="Suchen" FontSize="12"  />
 
     </Grid>
 </Window>
