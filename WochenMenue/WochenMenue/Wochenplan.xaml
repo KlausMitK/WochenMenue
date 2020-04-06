@@ -4,11 +4,23 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WochenMenue"
+        xmlns:Sys="clr-namespace:System;assembly=mscorlib" 
         mc:Ignorable="d"
         Title="Wochen Speiseplan" WindowStyle="SingleBorderWindow" BorderThickness="20" BorderBrush="LightCyan"     Height="550" Width="1000">
-    
-<!-- Aüsseres Grid-->    
+
+    <Window.Resources>
+        <Sys:Int32 x:Key="MenRow">0</Sys:Int32>
+        <Sys:Int32 x:Key="SerRow">1</Sys:Int32>
+        <Sys:Int32 x:Key="TagRow">2</Sys:Int32>
+        <Sys:Int32 x:Key="GerRow">3</Sys:Int32>
+        <Sys:Int32 x:Key="RezRow">4</Sys:Int32>
+        <Sys:Int32 x:Key="BRHRow">5</Sys:Int32>
+        <Sys:Int32 x:Key="BSpRow">6</Sys:Int32>
+    </Window.Resources>
+
+    <!-- Aüsseres Grid-->    
     <Grid>
+        
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -21,17 +33,18 @@
 
         <Grid.RowDefinitions>
             <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
             <RowDefinition Height="40"/>
-            <RowDefinition/>
+            <RowDefinition Height="75"/>
             <RowDefinition/>
             <RowDefinition Height="70"/>
             <RowDefinition Height="70"/>
         </Grid.RowDefinitions>
 
-        <TextBox x:Name="txt_S" Grid.Row="0" Grid.Column="3"  Grid.ColumnSpan="3" TextWrapping="Wrap"  AcceptsReturn="True"  Background="#FFDCDBDB" TextChanged="txt_S_TextChanged"/>
+        <TextBox x:Name="txt_S" Grid.Row="{StaticResource SerRow}" Grid.Column="3"  Grid.ColumnSpan="3" TextWrapping="Wrap"  AcceptsReturn="True"  Background="#FFDCDBDB" TextChanged="txt_S_TextChanged"/>
 
         <!-- Zurück Button-->
-        <Grid Grid.Row="5" Grid.Column="7">
+        <Grid Grid.Row="{StaticResource BSpRow}" Grid.Column="7">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -48,7 +61,7 @@
 
 
         <!-- Speichern Button-->
-        <Grid Grid.Row="5" Grid.Column="0">
+        <Grid Grid.Row="{StaticResource BSpRow}" Grid.Column="0">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -64,7 +77,7 @@
         </Grid>
 
         <!-- Rezept Button Mo-->
-        <Grid  Grid.Row="4" Grid.Column="0">
+        <Grid  Grid.Row="{StaticResource BRHRow}" Grid.Column="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="10"/>
                 <ColumnDefinition/>
@@ -79,7 +92,7 @@
         </Grid>
 
         <!-- Rezept Button Di-->
-        <Grid  Grid.Row="4" Grid.Column="1">
+        <Grid  Grid.Row="{StaticResource BRHRow}" Grid.Column="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="10"/>
                 <ColumnDefinition/>
@@ -94,7 +107,7 @@
         </Grid>
 
         <!-- Rezept Button Mi-->
-        <Grid  Grid.Row="4" Grid.Column="2">
+        <Grid  Grid.Row="{StaticResource BRHRow}" Grid.Column="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="10"/>
                 <ColumnDefinition/>
@@ -109,7 +122,7 @@
         </Grid>
 
         <!-- Rezept Button Do-->
-        <Grid  Grid.Row="4" Grid.Column="3">
+        <Grid  Grid.Row="{StaticResource BRHRow}" Grid.Column="3">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="10"/>
                 <ColumnDefinition/>
@@ -124,7 +137,7 @@
         </Grid>
 
         <!-- Rezept Button Fr-->
-        <Grid  Grid.Row="4" Grid.Column="4">
+        <Grid  Grid.Row="{StaticResource BRHRow}" Grid.Column="4">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="10"/>
                 <ColumnDefinition/>
@@ -139,7 +152,7 @@
         </Grid>
 
         <!-- Rezept Button Sa-->
-        <Grid  Grid.Row="4" Grid.Column="5">
+        <Grid  Grid.Row="{StaticResource BRHRow}" Grid.Column="5">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="10"/>
                 <ColumnDefinition/>
@@ -154,7 +167,7 @@
         </Grid>
 
         <!-- Rezept Button So-->
-        <Grid  Grid.Row="4" Grid.Column="6">
+        <Grid  Grid.Row="{StaticResource BRHRow}" Grid.Column="6">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="10"/>
                 <ColumnDefinition/>
@@ -168,17 +181,17 @@
             <Button x:Name="BtnSoRez" Grid.Row="1" Grid.Column="1" FontSize="15"  Background="CornflowerBlue" Click="BtnMoRez_Click">Rezept Hinzufügen</Button>
         </Grid>
 
-        <Label Content="Montag"  Grid.Row="1" Grid.Column="0" Foreground="Black" FontSize="18" />
-        <Label Content="Dienstag" Grid.Row="1" Grid.Column="1"  Foreground="Black" FontSize="18" ></Label>
-        <Label Content="Mittwoch" Grid.Row="1" Grid.Column="2" Foreground="Black" FontSize="18"></Label>
-        <Label Content="Donnerstag" Grid.Row="1" Grid.Column="3" Foreground="Black" FontSize="18"/>
-        <Label Content="Freitag" Grid.Row="1" Grid.Column="4" Foreground="Black" FontSize="18" ></Label>
-        <Label Content="Samstag" Grid.Row="1" Grid.Column="5" Foreground="CornflowerBlue" FontSize="18"></Label>
-        <Label Content="Sonntag" Grid.Row="1" Grid.Column="6" Foreground="CornflowerBlue" FontSize="18" ></Label>
+        <Label Content="Montag"  Grid.Row="{StaticResource TagRow}" Grid.Column="0" Foreground="Black" FontSize="18" />
+        <Label Content="Dienstag" Grid.Row="{StaticResource TagRow}"  Grid.Column="1" Foreground="Black" FontSize="18" ></Label>
+        <Label Content="Mittwoch" Grid.Row="{StaticResource TagRow}" Grid.Column="2" Foreground="Black" FontSize="18"></Label>
+        <Label Content="Donnerstag" Grid.Row="{StaticResource TagRow}" Grid.Column="3" Foreground="Black" FontSize="18"/>
+        <Label Content="Freitag" Grid.Row="{StaticResource TagRow}" Grid.Column="4" Foreground="Black" FontSize="18" ></Label>
+        <Label Content="Samstag" Grid.Row="{StaticResource TagRow}" Grid.Column="5" Foreground="CornflowerBlue" FontSize="18"></Label>
+        <Label Content="Sonntag" Grid.Row="{StaticResource TagRow}" Grid.Column="6" Foreground="CornflowerBlue" FontSize="18" ></Label>
 
-        <TextBox x:Name="txt_0" Grid.Row="2" Grid.Column="0"  TextWrapping="Wrap" AcceptsReturn="True" FontSize="18" TextChanged="txt_0_TextChanged"/>
+        <TextBox x:Name="txt_0" Grid.Row="{StaticResource GerRow}" Grid.Column="0"  TextWrapping="Wrap" AcceptsReturn="True" FontSize="18" TextChanged="txt_0_TextChanged"/>
         
-        <DataGrid Grid.Row="3" Grid.Column="0" AutoGenerateColumns="False"  Name="lsV_Mo" >
+        <DataGrid Grid.Row="{StaticResource RezRow}" Grid.Column="0" AutoGenerateColumns="False"  Name="lsV_Mo" >
             <DataGrid.Columns>
 
                 <DataGridTextColumn Header="Zutat" Width="66" Binding="{Binding Name}"></DataGridTextColumn>
@@ -189,9 +202,9 @@
 
         </DataGrid>
 
-        <TextBox x:Name="txt_1" Grid.Row="2" Grid.Column="1" TextWrapping="Wrap" AcceptsReturn="True" FontSize="18" TextChanged="txt_1_TextChanged"/>
-        
-        <DataGrid Grid.Row="3" Grid.Column="1" AutoGenerateColumns="False"  Name="lsV_Di">
+        <TextBox x:Name="txt_1" Grid.Row="{StaticResource GerRow}" Grid.Column="1" TextWrapping="Wrap" AcceptsReturn="True" FontSize="18" TextChanged="txt_1_TextChanged"/>
+
+        <DataGrid Grid.Row="{StaticResource RezRow}" Grid.Column="1" AutoGenerateColumns="False"  Name="lsV_Di">
             <DataGrid.Columns>
 
                 <DataGridTextColumn  Header="Zutat" Width="66" Binding="{Binding Name}"></DataGridTextColumn>
@@ -202,9 +215,9 @@
 
         </DataGrid>
 
-        <TextBox x:Name="txt_2" Grid.Row="2" Grid.Column="2" TextWrapping="Wrap" AcceptsReturn="True" FontSize="18" TextChanged="txt_2_TextChanged"/>
-        
-        <DataGrid Grid.Row="3" Grid.Column="2" AutoGenerateColumns="False" Name="lsV_Mi">
+        <TextBox x:Name="txt_2" Grid.Row="{StaticResource GerRow}" Grid.Column="2" TextWrapping="Wrap" AcceptsReturn="True" FontSize="18" TextChanged="txt_2_TextChanged"/>
+
+        <DataGrid Grid.Row="{StaticResource RezRow}" Grid.Column="2" AutoGenerateColumns="False" Name="lsV_Mi">
             <DataGrid.Columns>
 
                 <DataGridTextColumn Header="Zutat" Width="66" Binding="{Binding Name}"></DataGridTextColumn>
@@ -216,9 +229,9 @@
         </DataGrid>
 
 
-        <TextBox x:Name="txt_3" Grid.Row="2" Grid.Column="3" TextWrapping="Wrap" AcceptsReturn="True" FontSize="18" TextChanged="txt_3_TextChanged"/>
-        
-        <DataGrid Grid.Row="3" Grid.Column="3" AutoGenerateColumns="False" Name="lsV_Do" >
+        <TextBox x:Name="txt_3" Grid.Row="{StaticResource GerRow}" Grid.Column="3" TextWrapping="Wrap" AcceptsReturn="True" FontSize="18" TextChanged="txt_3_TextChanged"/>
+
+        <DataGrid Grid.Row="{StaticResource RezRow}" Grid.Column="3" AutoGenerateColumns="False" Name="lsV_Do" >
             <DataGrid.Columns>
 
                 <DataGridTextColumn Header="Zutat" Width="66" Binding="{Binding Name}"></DataGridTextColumn>
@@ -230,9 +243,9 @@
         </DataGrid>
 
 
-        <TextBox x:Name="txt_4" Grid.Row="2" Grid.Column="4" TextWrapping="Wrap" AcceptsReturn="True" FontSize="18" TextChanged="txt_4_TextChanged"/>
-        
-        <DataGrid Grid.Row="3" Grid.Column="4" AutoGenerateColumns="False" Name="lsV_Fr">
+        <TextBox x:Name="txt_4" Grid.Row="{StaticResource GerRow}" Grid.Column="4" TextWrapping="Wrap" AcceptsReturn="True" FontSize="18" TextChanged="txt_4_TextChanged"/>
+
+        <DataGrid Grid.Row="{StaticResource RezRow}" Grid.Column="4" AutoGenerateColumns="False" Name="lsV_Fr">
             <DataGrid.Columns>
 
                 <DataGridTextColumn Header="Zutat" Width="66" Binding="{Binding Name}"></DataGridTextColumn>
@@ -244,9 +257,9 @@
         </DataGrid>
 
 
-        <TextBox x:Name="txt_5" Grid.Row="2" Grid.Column="5" TextWrapping="Wrap" AcceptsReturn="True" FontSize="18" TextChanged="txt_5_TextChanged"/>
-        
-        <DataGrid Grid.Row="3" Grid.Column="5" AutoGenerateColumns="False" Name="lsV_Sa">
+        <TextBox x:Name="txt_5" Grid.Row="{StaticResource GerRow}" Grid.Column="5" TextWrapping="Wrap" AcceptsReturn="True" FontSize="18" TextChanged="txt_5_TextChanged"/>
+
+        <DataGrid Grid.Row="{StaticResource RezRow}" Grid.Column="5" AutoGenerateColumns="False" Name="lsV_Sa">
             <DataGrid.Columns>
 
                 <DataGridTextColumn Header="Zutat" Width="66" Binding="{Binding Name}"></DataGridTextColumn>
@@ -258,9 +271,9 @@
         </DataGrid>
 
 
-        <TextBox x:Name="txt_6" Grid.Row="2" Grid.Column="6" TextWrapping="Wrap" AcceptsReturn="True" FontSize="18" TextChanged="txt_6_TextChanged"/>
-        
-        <DataGrid Grid.Row="3" Grid.Column="6" AutoGenerateColumns="False" Name="lsV_So">
+        <TextBox x:Name="txt_6" Grid.Row="{StaticResource GerRow}" Grid.Column="6" TextWrapping="Wrap" AcceptsReturn="True" FontSize="18" TextChanged="txt_6_TextChanged"/>
+
+        <DataGrid Grid.Row="{StaticResource RezRow}" Grid.Column="6" AutoGenerateColumns="False" Name="lsV_So">
             <DataGrid.Columns>
 
                 <DataGridTextColumn Header="Zutat" Width="66" Binding="{Binding Name}"></DataGridTextColumn>
@@ -273,7 +286,7 @@
 
         
         
-        <Label Grid.Row="0" Grid.Column="6" Grid.ColumnSpan="1"  Content="Suchen" FontSize="12"  />
+        <Label Grid.Row="{StaticResource SerRow}" Grid.Column="6" Grid.ColumnSpan="1"  Content="Suchen" FontSize="12"  />
 
     </Grid>
 </Window>
