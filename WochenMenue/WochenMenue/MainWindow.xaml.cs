@@ -22,38 +22,34 @@ namespace WochenMenue
 
     public partial class MainWindow : Window
     {
+
+        public static Woche gWoche = new Woche();
+
         public MainWindow()
         {
-           
             InitializeComponent();
-            
         }
 
         //Laden
         private void btn_0_Click(object sender, RoutedEventArgs e)
         {
+            //this.Hide();
+            new Wochenplan().Show();
+        }
+
+        public static void Open()
+        {
             OpenFileDialog openFileDialog = new OpenFileDialog();
 
             if (openFileDialog.ShowDialog() == true)
             {
-                
                 string fileName = openFileDialog.FileName;
-
                 XmlSerializer serializer = new XmlSerializer(typeof(Woche));
-
                 FileStream fileStream = new FileStream(fileName, FileMode.Open);
-
-                Wochenplan.gWoche = (Woche) serializer.Deserialize(fileStream);
+                MainWindow.gWoche = (Woche)serializer.Deserialize(fileStream);
                 fileStream.Close();
-                
             }
-
-            this.Hide();
-            new Wochenplan().Show();
-
-            
         }
-
 
         private void btn_b_Click(object sender, RoutedEventArgs e)
         {

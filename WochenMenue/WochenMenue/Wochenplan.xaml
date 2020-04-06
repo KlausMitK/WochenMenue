@@ -41,6 +41,17 @@
             <RowDefinition Height="70"/>
         </Grid.RowDefinitions>
 
+        <DockPanel>
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="_File">
+                    <MenuItem Header="_Open" Click="Menue_File_Open_Click" />
+                    <MenuItem Header="_Save" Click="Menue_File_Save_Click" />
+                    <Separator />
+                    <MenuItem Header="_Exit" Click="Menue_File_Exit_Click"/>
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+
         <TextBox x:Name="txt_S" Grid.Row="{StaticResource SerRow}" Grid.Column="3"  Grid.ColumnSpan="3" TextWrapping="Wrap"  AcceptsReturn="True"  Background="#FFDCDBDB" TextChanged="txt_S_TextChanged"/>
 
         <!-- Zurück Button-->

@@ -24,7 +24,7 @@ namespace WochenMenue
         public RezMo()
         {
             InitializeComponent();
-            lsV_MoR.ItemsSource = Wochenplan.gWoche.Montag.Rezept;
+            lsV_MoR.ItemsSource = MainWindow.gWoche.Montag.Rezept;
         }
 
       

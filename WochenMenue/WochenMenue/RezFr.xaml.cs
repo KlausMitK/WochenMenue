@@ -22,7 +22,7 @@ namespace WochenMenue
         public RezFr()
         {
             InitializeComponent();
-            lsV_FrR.ItemsSource = Wochenplan.gWoche.Freitag.Rezept;
+            lsV_FrR.ItemsSource = MainWindow.gWoche.Freitag.Rezept;
         }
               
 

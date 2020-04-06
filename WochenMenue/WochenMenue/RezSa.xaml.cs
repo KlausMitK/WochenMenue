@@ -22,7 +22,7 @@ namespace WochenMenue
         public RezSa()
         {
             InitializeComponent();
-            lsV_SaR.ItemsSource = Wochenplan.gWoche.Samstag.Rezept;
+            lsV_SaR.ItemsSource = MainWindow.gWoche.Samstag.Rezept;
         }
                 
         private void btn_0_Click(object sender, RoutedEventArgs e)

@@ -18,7 +18,7 @@ using Microsoft.Win32;
 
 using System.Xml.Serialization;
 
-using System.Linq;
+
 
 
 
@@ -29,63 +29,65 @@ namespace WochenMenue
     
     public partial class Wochenplan : Window
     {
-        public static Woche gWoche = new Woche();
-
-        
 
         public Wochenplan()
         {
             InitializeComponent();
+            Bind();
+        }
+
+        public void Bind()
+        {
             //Montag
             Binding bind0 = new Binding("Gericht");
-            bind0.Source = gWoche.Montag;
+            bind0.Source = MainWindow.gWoche.Montag;
             txt_0.SetBinding(TextBox.TextProperty, bind0);
 
-            lsV_Mo.ItemsSource = Wochenplan.gWoche.Montag.Rezept;
+            lsV_Mo.ItemsSource = MainWindow.gWoche.Montag.Rezept;
 
             //Dienstag
             Binding bind1 = new Binding("Gericht");
-            bind1.Source = gWoche.Dienstag;
+            bind1.Source = MainWindow.gWoche.Dienstag;
             txt_1.SetBinding(TextBox.TextProperty, bind1);
 
-            lsV_Di.ItemsSource = Wochenplan.gWoche.Dienstag.Rezept;
+            lsV_Di.ItemsSource = MainWindow.gWoche.Dienstag.Rezept;
 
             //Mittwoch
             Binding bind2 = new Binding("Gericht");
-            bind2.Source = gWoche.Mittwoch;
+            bind2.Source = MainWindow.gWoche.Mittwoch;
             txt_2.SetBinding(TextBox.TextProperty, bind2);
 
-            lsV_Mi.ItemsSource = Wochenplan.gWoche.Mittwoch.Rezept;
+            lsV_Mi.ItemsSource = MainWindow.gWoche.Mittwoch.Rezept;
 
             //Donnerstag
             Binding bind3 = new Binding("Gericht");
-            bind3.Source = gWoche.Donnerstag;
+            bind3.Source = MainWindow.gWoche.Donnerstag;
             txt_3.SetBinding(TextBox.TextProperty, bind3);
 
-            lsV_Do.ItemsSource = Wochenplan.gWoche.Donnerstag.Rezept;
+            lsV_Do.ItemsSource = MainWindow.gWoche.Donnerstag.Rezept;
 
             //Freitag
             Binding bind4 = new Binding("Gericht");
-            bind4.Source = gWoche.Freitag;
+            bind4.Source = MainWindow.gWoche.Freitag;
             txt_4.SetBinding(TextBox.TextProperty, bind4);
 
-            lsV_Fr.ItemsSource = Wochenplan.gWoche.Freitag.Rezept;
+            lsV_Fr.ItemsSource = MainWindow.gWoche.Freitag.Rezept;
 
 
             //Samstag
             Binding bind5 = new Binding("Gericht");
-            bind5.Source = gWoche.Samstag;
+            bind5.Source = MainWindow.gWoche.Samstag;
             txt_5.SetBinding(TextBox.TextProperty, bind5);
 
-            lsV_Sa.ItemsSource = Wochenplan.gWoche.Samstag.Rezept;
+            lsV_Sa.ItemsSource = MainWindow.gWoche.Samstag.Rezept;
 
 
             //Sonntag
             Binding bind6 = new Binding("Gericht");
-            bind6.Source = gWoche.Sonntag;
+            bind6.Source = MainWindow.gWoche.Sonntag;
             txt_6.SetBinding(TextBox.TextProperty, bind6);
 
-            lsV_So.ItemsSource = Wochenplan.gWoche.Sonntag.Rezept;
+            lsV_So.ItemsSource = MainWindow.gWoche.Sonntag.Rezept;
         }
 
         //Buttons rezepte Hinzufügen\\
@@ -179,11 +181,16 @@ namespace WochenMenue
         private void btn_m_Click(object sender, RoutedEventArgs e)
         {
             this.Hide();
-            new MainWindow().Show();
+            //new MainWindow().Show();
         }
 
         //Speichern
         private void btn_s_Click(object sender, RoutedEventArgs e)
+        {
+            Save();
+        }
+
+        private void Save()
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             if (saveFileDialog.ShowDialog() == true)
@@ -193,7 +200,7 @@ namespace WochenMenue
                 XmlSerializer serializer = new XmlSerializer(typeof(Woche));
 
                 FileStream filestream = new FileStream(fileName, FileMode.Create);
-                serializer.Serialize(filestream, Wochenplan.gWoche);
+                serializer.Serialize(filestream, MainWindow.gWoche);
                 filestream.Close();
             }
         }
@@ -245,6 +252,24 @@ namespace WochenMenue
             //new Einkaufsliste().Show();
 
             
+        }
+
+        private void Menue_File_Open_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow.Open();
+            Bind();
+        }
+
+        private void Menue_File_Save_Click(object sender, RoutedEventArgs e)
+        {
+            // Wichtig ist hier, dass der Fokus aus den Data Grids auf eine anderes Element gesetzt wird, sonst wirg gWoche nicht aktualisiert.
+            btn_s.Focus();
+            Save();
+        }
+
+        private void Menue_File_Exit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

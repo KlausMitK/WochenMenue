@@ -22,7 +22,7 @@ namespace WochenMenue
         public RezDi()
         {
             InitializeComponent();
-            lsV_DiR.ItemsSource = Wochenplan.gWoche.Dienstag.Rezept;
+            lsV_DiR.ItemsSource = MainWindow.gWoche.Dienstag.Rezept;
         }
 
         private void btn_0_Click(object sender, RoutedEventArgs e)
