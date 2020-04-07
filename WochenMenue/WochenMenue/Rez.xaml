@@ -8,7 +8,7 @@
         Title="Rezept" Height="450" Width="800">
     <Grid>
 
-        <Button x:Name="btn_0" Content="Rezept Speichern" FontSize="18" Width="150" Background="LightGreen" Height="50" Margin="632,359,10,10" Click="btn_0_Click"></Button>
+        <Button x:Name="btn_0" Content="Zurück" FontSize="18" Width="150" Background="LightGreen" Height="50" Margin="632,359,10,10" Click="btn_0_Click"></Button>
 
         
         <DataGrid AutoGenerateColumns="False" Height="399" HorizontalAlignment="Left" Margin="10,10,178,10" Name="lsV" VerticalAlignment="Top" Width="604">
