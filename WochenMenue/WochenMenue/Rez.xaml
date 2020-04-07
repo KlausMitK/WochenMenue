@@ -11,8 +11,8 @@
         <Button x:Name="btn_0" Content="Zurück" FontSize="18" Width="150" Background="LightGreen" Height="50" Margin="632,359,10,10" Click="btn_0_Click"></Button>
 
         
-        <DataGrid AutoGenerateColumns="False" Height="399" HorizontalAlignment="Left" Margin="10,10,178,10" Name="lsV" VerticalAlignment="Top" Width="604">
-            <DataGrid.Columns>
+        <DataGrid AutoGenerateColumns="False"  Height="399" HorizontalAlignment="Left" Margin="10,20,0,0" Name="lsV" VerticalAlignment="Top" Width="604">
+            <DataGrid.Columns > 
 
                 <DataGridTextColumn Header="Zutat" Width="120" Binding="{Binding Name}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Menge" Width="60" Binding="{Binding Menge}"></DataGridTextColumn>
