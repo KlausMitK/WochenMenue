@@ -15,7 +15,6 @@
         <Sys:Int32 x:Key="GerRow">3</Sys:Int32>
         <Sys:Int32 x:Key="RezRow">4</Sys:Int32>
         <Sys:Int32 x:Key="BRHRow">5</Sys:Int32>
-        <Sys:Int32 x:Key="BSpRow">6</Sys:Int32>
     </Window.Resources>
 
     <!-- Aüsseres Grid-->    
@@ -37,7 +36,6 @@
             <RowDefinition Height="40"/>
             <RowDefinition Height="75"/>
             <RowDefinition/>
-            <RowDefinition Height="70"/>
             <RowDefinition Height="70"/>
         </Grid.RowDefinitions>
 
@@ -79,39 +77,7 @@
 
         <TextBox x:Name="txt_S" Grid.Row="{StaticResource SerRow}" Grid.Column="3"  Grid.ColumnSpan="3" TextWrapping="Wrap"  AcceptsReturn="True"  Background="#FFDCDBDB" TextChanged="txt_S_TextChanged"/>
 
-        <!-- Zurück Button-->
-        <Grid Grid.Row="{StaticResource BSpRow}" Grid.Column="7">
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="10"/>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="10"/>
-            </Grid.ColumnDefinitions>
-            
-            <Button x:Name="btn_m" Grid.Row="1" Grid.Column="1" Content="Zurück zur Auswahl" Background="#FFFF7777" Click="btn_m_Click"/>
-        </Grid>
-
-
-        <!-- Speichern Button-->
-        <Grid Grid.Row="{StaticResource BSpRow}" Grid.Column="0">
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="10"/>
-                <ColumnDefinition/>
-                <ColumnDefinition Width="10"/>
-            </Grid.ColumnDefinitions>
-
-            <Button x:Name="btn_s" Grid.Row="1" Grid.Column="1" Content="Speichern" Background="LightGreen" Click="btn_s_Click"/>
-        </Grid>
-
+      
         <!-- Rezept Button Mo-->
         <Grid  Grid.Row="{StaticResource BRHRow}" Grid.Column="0">
             <Grid.ColumnDefinitions>

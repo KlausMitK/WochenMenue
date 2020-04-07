@@ -177,19 +177,7 @@ namespace WochenMenue
             
         }
 
-        // Button zurück zum Menue
-        private void btn_m_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-           
-        }
-
-        //Speichern
-        private void btn_s_Click(object sender, RoutedEventArgs e)
-        {
-            Save();
-        }
-
+ 
         private void Save()
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -263,7 +251,7 @@ namespace WochenMenue
         private void Menue_File_Save_Click(object sender, RoutedEventArgs e)
         {
             // Wichtig ist hier, dass der Fokus aus den Data Grids auf eine anderes Element gesetzt wird, sonst wirg gWoche nicht aktualisiert.
-            btn_s.Focus();
+            txt_S.Focus();
             Save();
         }
 
