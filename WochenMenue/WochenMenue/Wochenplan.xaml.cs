@@ -103,32 +103,27 @@ namespace WochenMenue
 
         private void BtnMiRez_Click(object sender, RoutedEventArgs e)
         {
-            this.Hide();
-            new RezMi().Show();
+            new Rez(MainWindow.gWoche.Mittwoch, this).Show();
         }
 
         private void BtnDoRez_Click(object sender, RoutedEventArgs e)
         {
-            this.Hide();
-            new RezDo().Show();
+            new Rez(MainWindow.gWoche.Donnerstag, this).Show();
         }
 
         private void BtnFrRez_Click(object sender, RoutedEventArgs e)
         {
-            this.Hide();
-            new RezFr().Show();
+            new Rez(MainWindow.gWoche.Freitag, this).Show();
         }
 
         private void BtnSaRez_Click(object sender, RoutedEventArgs e)
         {
-            this.Hide();
-            new RezSa().Show();
+            new Rez(MainWindow.gWoche.Samstag, this).Show();
         }
 
         private void BtnSoRez_Click(object sender, RoutedEventArgs e)
         {
-            this.Hide();
-            new RezSo().Show();
+            new Rez(MainWindow.gWoche.Sonntag, this).Show();
         }
 
         // TextBox\\
