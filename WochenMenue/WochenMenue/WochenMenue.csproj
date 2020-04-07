@@ -77,24 +77,6 @@
     <Compile Include="Rez.xaml.cs">
       <DependentUpon>Rez.xaml</DependentUpon>
     </Compile>
-    <Compile Include="RezDi.xaml.cs">
-      <DependentUpon>RezDi.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="RezMi.xaml.cs">
-      <DependentUpon>RezMi.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="RezDo.xaml.cs">
-      <DependentUpon>RezDo.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="RezFr.xaml.cs">
-      <DependentUpon>RezFr.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="RezSa.xaml.cs">
-      <DependentUpon>RezSa.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="RezSo.xaml.cs">
-      <DependentUpon>RezSo.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Woche.cs" />
     <Compile Include="Zutaten.cs" />
     <Page Include="MainWindow.xaml">
@@ -114,30 +96,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Rez.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="RezDi.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="RezMi.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="RezDo.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="RezFr.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="RezSa.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="RezSo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
