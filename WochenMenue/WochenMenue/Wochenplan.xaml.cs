@@ -93,14 +93,12 @@ namespace WochenMenue
         //Buttons rezepte Hinzufügen\\
         private void BtnMoRez_Click(object sender, RoutedEventArgs e)
         {
-            this.Hide();
-            new RezMo().Show();
+            new Rez(MainWindow.gWoche.Montag, this).Show();
         }
 
         private void BtnDiRez_Click(object sender, RoutedEventArgs e)
         {
-            this.Hide();
-            new RezDi().Show();
+            new Rez(MainWindow.gWoche.Dienstag, this).Show();
         }
 
         private void BtnMiRez_Click(object sender, RoutedEventArgs e)

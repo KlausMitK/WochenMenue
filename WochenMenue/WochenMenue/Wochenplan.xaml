@@ -105,7 +105,7 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Button x:Name="BtnDiRez" Grid.Row="1" Grid.Column="1" FontSize="15"  Background="#FFFBFB6E" Click="BtnMoRez_Click">Rezept Hinzufügen</Button>
+            <Button x:Name="BtnDiRez" Grid.Row="1" Grid.Column="1" FontSize="15"  Background="#FFFBFB6E" Click="BtnDiRez_Click">Rezept Hinzufügen</Button>
         </Grid>
 
         <!-- Rezept Button Mi-->
@@ -135,7 +135,7 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Button x:Name="BtnDoRez" Grid.Row="1" Grid.Column="1" FontSize="15"  Background="#FFFBFB6E" Click="BtnMoRez_Click">Rezept Hinzufügen</Button>
+            <Button x:Name="BtnDoRez" Grid.Row="1" Grid.Column="1" FontSize="15"  Background="#FFFBFB6E" Click="BtnDoRez_Click">Rezept Hinzufügen</Button>
         </Grid>
 
         <!-- Rezept Button Fr-->
@@ -150,7 +150,7 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Button x:Name="BtnFrRez" Grid.Row="1" Grid.Column="1" FontSize="15"  Background="#FFFBFB6E" Click="BtnMoRez_Click">Rezept Hinzufügen</Button>
+            <Button x:Name="BtnFrRez" Grid.Row="1" Grid.Column="1" FontSize="15"  Background="#FFFBFB6E" Click="BtnFrRez_Click">Rezept Hinzufügen</Button>
         </Grid>
 
         <!-- Rezept Button Sa-->
@@ -165,7 +165,7 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Button x:Name="BtnSaRez" Grid.Row="1" Grid.Column="1" FontSize="15"  Background="CornflowerBlue" Click="BtnMoRez_Click">Rezept Hinzufügen</Button>
+            <Button x:Name="BtnSaRez" Grid.Row="1" Grid.Column="1" FontSize="15"  Background="CornflowerBlue" Click="BtnSaRez_Click">Rezept Hinzufügen</Button>
         </Grid>
 
         <!-- Rezept Button So-->
@@ -180,7 +180,7 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Button x:Name="BtnSoRez" Grid.Row="1" Grid.Column="1" FontSize="15"  Background="CornflowerBlue" Click="BtnMoRez_Click">Rezept Hinzufügen</Button>
+            <Button x:Name="BtnSoRez" Grid.Row="1" Grid.Column="1" FontSize="15"  Background="CornflowerBlue" Click="BtnSoRez_Click">Rezept Hinzufügen</Button>
         </Grid>
 
         <Label Content="Montag"  Grid.Row="{StaticResource TagRow}" Grid.Column="0" Foreground="Black" FontSize="18" />
