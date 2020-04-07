@@ -34,7 +34,7 @@ namespace WochenMenue
         }
 
         //Laden
-        private void btn_0_Click(object sender, RoutedEventArgs e)
+        private void btn_WoPla_Click(object sender, RoutedEventArgs e)
         {
             //this.Hide();
             mWochenPlan.Show();
@@ -54,7 +54,7 @@ namespace WochenMenue
             }
         }
 
-        private void btn_b_Click(object sender, RoutedEventArgs e)
+        private void btn_Beenden_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
