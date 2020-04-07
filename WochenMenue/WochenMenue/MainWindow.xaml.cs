@@ -25,16 +25,19 @@ namespace WochenMenue
 
         public static Woche gWoche = new Woche();
 
+        private Wochenplan mWochenPlan = new Wochenplan();
+
         public MainWindow()
         {
             InitializeComponent();
+            mWochenPlan.Bind();
         }
 
         //Laden
         private void btn_0_Click(object sender, RoutedEventArgs e)
         {
             //this.Hide();
-            new Wochenplan().Show();
+            mWochenPlan.Show();
         }
 
         public static void Open()

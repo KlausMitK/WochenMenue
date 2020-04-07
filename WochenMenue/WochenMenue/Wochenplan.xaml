@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WochenMenue"
         xmlns:Sys="clr-namespace:System;assembly=mscorlib" 
         mc:Ignorable="d"
-        Title="Wochen Speiseplan" WindowStyle="SingleBorderWindow" BorderThickness="20" BorderBrush="LightCyan"     Height="550" Width="1000">
+        Title="Wochen Speiseplan" WindowStyle="SingleBorderWindow" BorderThickness="5" BorderBrush="#FF444444"     Height="550" Width="1000" Background="White">
 
     <Window.Resources>
         <Sys:Int32 x:Key="MenRow">0</Sys:Int32>
@@ -41,16 +41,41 @@
             <RowDefinition Height="70"/>
         </Grid.RowDefinitions>
 
-        <DockPanel>
-            <Menu DockPanel.Dock="Top">
-                <MenuItem Header="_File">
-                    <MenuItem Header="_Open" Click="Menue_File_Open_Click" />
-                    <MenuItem Header="_Save" Click="Menue_File_Save_Click" />
-                    <Separator />
-                    <MenuItem Header="_Exit" Click="Menue_File_Exit_Click"/>
-                </MenuItem>
-            </Menu>
-        </DockPanel>
+        <!-- Menueleiste -> Datei + Extras -->      
+        <Grid Grid.Row="{StaticResource MenRow}">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="15"/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="36"/>
+                <ColumnDefinition Width="40"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <DockPanel Grid.Column="0" Grid.Row="0">
+                <Menu DockPanel.Dock="Top">
+                    <MenuItem Header="Datei">
+                        <MenuItem Header="_Öffnen" Click="Menue_File_Open_Click" />
+                        <MenuItem Header="_Speichern" Click="Menue_File_Save_Click" />
+                        <Separator/>
+                        <MenuItem Header="_Beenden" Click="Menue_File_Exit_Click"/>
+                    </MenuItem>
+                </Menu>
+            </DockPanel>
+
+            <DockPanel Grid.Column="1" Grid.Row="0">
+                <Menu DockPanel.Dock="Top">
+                    <MenuItem Header="Extras">
+                        <MenuItem Header="Einkaufsliste" Click="Menue_File_Einkaufsliste_Click"/>
+                    </MenuItem>
+                </Menu>
+            </DockPanel>
+        </Grid>
+       
 
         <TextBox x:Name="txt_S" Grid.Row="{StaticResource SerRow}" Grid.Column="3"  Grid.ColumnSpan="3" TextWrapping="Wrap"  AcceptsReturn="True"  Background="#FFDCDBDB" TextChanged="txt_S_TextChanged"/>
 

@@ -180,8 +180,8 @@ namespace WochenMenue
         // Button zurück zum Menue
         private void btn_m_Click(object sender, RoutedEventArgs e)
         {
-            this.Hide();
-            //new MainWindow().Show();
+            this.Close();
+           
         }
 
         //Speichern
@@ -270,6 +270,17 @@ namespace WochenMenue
         private void Menue_File_Exit_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        //Extras -> Einkaufsliste Menue Button
+        private void Menue_File_Einkaufsliste_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void txt_0_TextChanged()
+        {
+
         }
     }
 }
