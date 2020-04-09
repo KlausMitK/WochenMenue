@@ -27,12 +27,12 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <Button x:Name="btn_0" Grid.Row="1" Grid.Column="1" Content="Zurück" FontSize="18" Background="LightGreen" Click="btn_0_Click"/>    
+            <Button x:Name="btn_0" Grid.Row="1" Grid.Column="1" Content="Zurück" FontSize="14" Background="LightGreen" Click="btn_0_Click"/>    
         </Grid>
         
 
 
-        <DataGrid Grid.Row="0" AutoGenerateColumns="False"  Name="lsV">
+        <DataGrid Grid.Row="0" AutoGenerateColumns="False"  Name="lsV" SelectionChanged="lsV_SelectionChanged">
             <DataGrid.Columns >
 
                 <DataGridTextColumn Header="Zutat" Width="190" Binding="{Binding Name}"></DataGridTextColumn>

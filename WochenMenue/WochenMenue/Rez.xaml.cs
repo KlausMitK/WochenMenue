@@ -36,5 +36,10 @@ namespace WochenMenue
         {
             this.Hide();
         }
+
+        private void lsV_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

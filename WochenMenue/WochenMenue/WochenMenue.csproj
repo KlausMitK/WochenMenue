@@ -70,6 +70,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Einkaufsliste.xaml.cs">
+      <DependentUpon>Einkaufsliste.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Tag.cs" />
     <Compile Include="Wochenplan.xaml.cs">
       <DependentUpon>Wochenplan.xaml</DependentUpon>
@@ -79,6 +82,10 @@
     </Compile>
     <Compile Include="Woche.cs" />
     <Compile Include="Zutaten.cs" />
+    <Page Include="Einkaufsliste.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

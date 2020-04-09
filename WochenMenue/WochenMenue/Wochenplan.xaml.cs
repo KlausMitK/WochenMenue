@@ -153,10 +153,15 @@ namespace WochenMenue
             this.Close();
         }
 
+        private void Menue_File_Drucken_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
         //Extras -> Einkaufsliste Menue Button
         private void Menue_File_Einkaufsliste_Click(object sender, RoutedEventArgs e)
         {
-
+            new Einkaufsliste().Show();
         }
     }
 }
