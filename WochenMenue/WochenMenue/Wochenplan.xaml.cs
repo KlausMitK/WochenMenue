@@ -183,6 +183,7 @@ namespace WochenMenue
         //Extras -> Einkaufsliste Menue Button
         private void Menue_File_Einkaufsliste_Click(object sender, RoutedEventArgs e)
         {
+            MainWindow.gWoche.GenerateEKL();
             new Einkaufsliste().Show();
         }
     }

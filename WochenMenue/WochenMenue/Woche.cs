@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+using System.Collections.ObjectModel;
 
 
 namespace WochenMenue
@@ -20,6 +21,8 @@ namespace WochenMenue
         public Tag Samstag { get; set; }
         public Tag Sonntag { get; set; }
 
+        public ObservableCollection<Zutat> mEKL { get; set; }
+
         public Woche()
         {
             Montag = new Tag();
@@ -29,6 +32,49 @@ namespace WochenMenue
             Freitag = new Tag();
             Samstag = new Tag();
             Sonntag = new Tag();
+
+            mEKL = new ObservableCollection<Zutat>();
+        }
+
+        public ObservableCollection<Zutat> GenerateEKL()
+        {
+            EKLErweitern(Montag);
+
+            return mEKL;
+        }
+
+        private void EKLErweitern(Tag tag)
+        {
+            foreach (Zutat zutat in tag.Rezept)
+            {
+                Zutat tempZutat = FindZutatInEKL(zutat.Name);
+                if (tempZutat != null)
+                {
+                    tempZutat.Menge += zutat.Menge;
+                }
+                else
+                {
+                    Zutat newEKLZutat = new Zutat();
+                    newEKLZutat.Name = zutat.Name;
+                    newEKLZutat.Menge = zutat.Menge;
+                    newEKLZutat.Einheit = zutat.Einheit;
+                    mEKL.Add(newEKLZutat);
+                }
+            }
+        }
+
+        public Zutat FindZutatInEKL(string name)
+        {
+            foreach (Zutat zutat in mEKL)
+            {
+                if (name == zutat.Name)
+                {
+                    return zutat;
+                }
+
+            }
+
+            return null;
         }
 
     }

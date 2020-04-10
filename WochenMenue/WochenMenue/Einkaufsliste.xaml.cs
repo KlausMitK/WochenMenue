@@ -28,17 +28,21 @@ namespace WochenMenue
         public Einkaufsliste()
         {
             InitializeComponent();
+            Bind();
         }
 
-       
+        public void Bind()
+        {
+            //Bind Woche.mEKL mit entsprechendem DataGrid
+            Dtg_Ekl.ItemsSource = MainWindow.gWoche.mEKL;
+        }
+               
 
         private void btn_Back_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
-
         
-
         private void btn_Print_Click(object sender, RoutedEventArgs e)
         {
         }
