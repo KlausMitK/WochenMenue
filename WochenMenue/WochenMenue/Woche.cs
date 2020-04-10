@@ -38,6 +38,8 @@ namespace WochenMenue
 
         public ObservableCollection<Zutat> GenerateEKL()
         {
+            mEKL.Clear();
+
             EKLErweitern(Montag);
             EKLErweitern(Dienstag);
             EKLErweitern(Mittwoch);

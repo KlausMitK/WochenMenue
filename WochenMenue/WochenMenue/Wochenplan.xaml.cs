@@ -144,7 +144,7 @@ namespace WochenMenue
 
         private void Save()
         {
-            // TODO: Einkaufsliste löschen: Muss geändert werden.
+            //TODO: Muss geändert werden. Entscheiden, ob EKL gespeichert wird, oder nicht.
             MainWindow.gWoche.mEKL.Clear();
 
             SaveFileDialog saveFileDialog = new SaveFileDialog();
