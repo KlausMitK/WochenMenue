@@ -1,26 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Text;
+﻿using Microsoft.Win32;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
-using System.IO;
-using Microsoft.Win32;
-
+using System.Windows.Documents.Serialization;
+using System.Windows.Xps;
+using System.Windows.Xps.Packaging;
 using System.Xml.Serialization;
 
+
+
+
 namespace WochenMenue
+
 {
- 
+
     public partial class Wochenplan : Window
     {
 
@@ -84,6 +79,33 @@ namespace WochenMenue
             lsV_So.ItemsSource = MainWindow.gWoche.Sonntag.Rezept;
         }
 
+        // Drucken
+        public void Drucken(FrameworkElement wpf_Element)
+        {
+            XpsDocument doc = new XpsDocument("print_previw.xps", FileAccess.ReadWrite);
+
+            XpsDocumentWriter writer = XpsDocument.CreateXpsDocumentWriter(doc);
+
+            SerializerWriterCollator preview_Document = writer.CreateVisualsCollator();
+
+            FixedDocumentSequence preview = doc.GetFixedDocumentSequence();
+
+            /*preview_Document.BeginBatchWrite();
+
+            preview_Document.Write(wpf_Element);  
+
+            preview_Document.EndBatchWrite();*/
+
+            var window = new Window();
+
+            window.Content = new DocumentViewer { Document = preview };
+
+            window.ShowDialog();
+
+            doc.Close();
+        }
+
+
         //Buttons Rezepte Bearbeiten \\
         private void BtnMoRez_Click(object sender, RoutedEventArgs e)
         {
@@ -119,7 +141,7 @@ namespace WochenMenue
         {
             new Rez(MainWindow.gWoche.Sonntag, this).Show();
         }
-                
+
         private void Save()
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -134,7 +156,7 @@ namespace WochenMenue
                 filestream.Close();
             }
         }
-        
+
         private void Menue_File_Open_Click(object sender, RoutedEventArgs e)
         {
             MainWindow.Open();
@@ -143,7 +165,7 @@ namespace WochenMenue
 
         private void Menue_File_Save_Click(object sender, RoutedEventArgs e)
         {
-            // Wichtig ist hier, dass der Fokus aus den Data Grids auf eine anderes Element gesetzt wird, sonst wirg gWoche nicht aktualisiert.
+            // Wichtig ist hier, dass der Fokus aus den Data Grids auf eine anderes Element gesetzt wird, sonst wird gWoche nicht aktualisiert.
             txt_Suche.Focus();
             Save();
         }
@@ -155,7 +177,7 @@ namespace WochenMenue
 
         private void Menue_File_Drucken_Click(object sender, RoutedEventArgs e)
         {
-
+            Drucken(Grid_1);
         }
 
         //Extras -> Einkaufsliste Menue Button

@@ -18,7 +18,7 @@
     </Window.Resources>
 
     <!-- Aüsseres Grid-->    
-    <Grid>
+    <Grid x:Name="Grid_1">
         
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
