@@ -40,6 +40,8 @@ namespace WochenMenue
 
         private void btn_Back_Click(object sender, RoutedEventArgs e)
         {
+            // TODO: Muss geändert werden
+            MainWindow.gWoche.mEKL.Clear();
             this.Close();
         }
         

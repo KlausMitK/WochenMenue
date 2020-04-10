@@ -144,6 +144,9 @@ namespace WochenMenue
 
         private void Save()
         {
+            // TODO: Einkaufsliste löschen: Muss geändert werden.
+            MainWindow.gWoche.mEKL.Clear();
+
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             if (saveFileDialog.ShowDialog() == true)
             {
@@ -177,6 +180,7 @@ namespace WochenMenue
 
         private void Menue_File_Drucken_Click(object sender, RoutedEventArgs e)
         {
+            // TODO: Die Druckfunktionalität.
             Drucken(Grid_1);
         }
 
