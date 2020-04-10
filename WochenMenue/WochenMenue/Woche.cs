@@ -39,6 +39,12 @@ namespace WochenMenue
         public ObservableCollection<Zutat> GenerateEKL()
         {
             EKLErweitern(Montag);
+            EKLErweitern(Dienstag);
+            EKLErweitern(Mittwoch);
+            EKLErweitern(Donnerstag);
+            EKLErweitern(Freitag);
+            EKLErweitern(Samstag);
+            EKLErweitern(Sonntag);
 
             return mEKL;
         }

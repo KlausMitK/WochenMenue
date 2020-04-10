@@ -135,7 +135,7 @@ Spätzle</Gericht>
         <Einheit>Stück</Einheit>
       </Zutat>
       <Zutat>
-        <Name>Putenschnitzle</Name>
+        <Name>Putenschnitzel</Name>
         <Menge>5</Menge>
         <Einheit>Stück</Einheit>
       </Zutat>
@@ -166,4 +166,86 @@ Spätzle</Gericht>
       </Zutat>
     </Rezept>
   </Sonntag>
+  <mEKL>
+    <Zutat>
+      <Name>Eier</Name>
+      <Menge>54</Menge>
+      <Einheit>Stück</Einheit>
+    </Zutat>
+    <Zutat>
+      <Name>Mehl</Name>
+      <Menge>10</Menge>
+      <Einheit>kg</Einheit>
+    </Zutat>
+    <Zutat>
+      <Name>Schokolade</Name>
+      <Menge>300</Menge>
+      <Einheit>gr</Einheit>
+    </Zutat>
+    <Zutat>
+      <Name>Butter</Name>
+      <Menge>520</Menge>
+      <Einheit>gr</Einheit>
+    </Zutat>
+    <Zutat>
+      <Name>Salz</Name>
+      <Menge>4</Menge>
+      <Einheit>Prise</Einheit>
+    </Zutat>
+    <Zutat>
+      <Name>Äpfel</Name>
+      <Menge>20</Menge>
+      <Einheit>Stück</Einheit>
+    </Zutat>
+    <Zutat>
+      <Name>Hefe</Name>
+      <Menge>500</Menge>
+      <Einheit>gr</Einheit>
+    </Zutat>
+    <Zutat>
+      <Name>Milch</Name>
+      <Menge>4</Menge>
+      <Einheit>Liter</Einheit>
+    </Zutat>
+    <Zutat>
+      <Name>Halumi</Name>
+      <Menge>20</Menge>
+      <Einheit>stück</Einheit>
+    </Zutat>
+    <Zutat>
+      <Name>Paprika</Name>
+      <Menge>12</Menge>
+      <Einheit>Stück</Einheit>
+    </Zutat>
+    <Zutat>
+      <Name>Spinat</Name>
+      <Menge>200</Menge>
+      <Einheit>gr</Einheit>
+    </Zutat>
+    <Zutat>
+      <Name>Stärke</Name>
+      <Menge>40</Menge>
+      <Einheit>gr</Einheit>
+    </Zutat>
+    <Zutat>
+      <Name>Putenschnitzle</Name>
+      <Menge>5</Menge>
+      <Einheit>Stück</Einheit>
+    </Zutat>
+    <Zutat>
+      <Name>Putenschnitzel</Name>
+      <Menge>11</Menge>
+      <Einheit>Stück</Einheit>
+    </Zutat>
+    <Zutat>
+      <Name>Maismehl</Name>
+      <Menge>600</Menge>
+      <Einheit>gr</Einheit>
+    </Zutat>
+    <Zutat>
+      <Name>Rotebohnen</Name>
+      <Menge>1000</Menge>
+      <Einheit>gr</Einheit>
+    </Zutat>
+  </mEKL>
 </Woche>
