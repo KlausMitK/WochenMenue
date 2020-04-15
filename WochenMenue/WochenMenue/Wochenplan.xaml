@@ -19,7 +19,7 @@
 
     <!-- Aüsseres Grid-->    
     <Grid x:Name="Grid_1">
-        
+
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -38,6 +38,17 @@
             <RowDefinition/>
             <RowDefinition Height="70"/>
         </Grid.RowDefinitions>
+
+        <!-- Der folgende Code sertzt die Background Farbe der Zellen bei Selektion-->
+        <Grid.Resources>
+            <Style TargetType="DataGridCell">
+                <Style.Triggers>
+                    <Trigger Property="DataGridCell.IsSelected" Value="True">
+                        <Setter Property="Background" Value="#FF0000" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </Grid.Resources>
 
         <!-- Menueleiste -> Datei + Extras -->      
         <Grid Grid.Row="{StaticResource MenRow}">
@@ -195,12 +206,11 @@
         <TextBox x:Name="txt_GerMo" Grid.Row="{StaticResource GerRow}" Grid.Column="0"  TextWrapping="Wrap" AcceptsReturn="True" FontSize="13"/>
 
         <DataGrid Grid.Row="{StaticResource RezRow}" Grid.Column="0" AutoGenerateColumns="False"  Name="lsV_Mo" SelectionMode="Extended" SelectionUnit="Cell">
-            <DataGrid.Columns>
-
+                               
+           <DataGrid.Columns>
                 <DataGridTextColumn Header="Zutat" Width="66" Binding="{Binding Name}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Menge" Width="36" Binding="{Binding Menge}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Einheit" Width="36" Binding="{Binding Einheit}"></DataGridTextColumn>
-
             </DataGrid.Columns>
 
         </DataGrid>
