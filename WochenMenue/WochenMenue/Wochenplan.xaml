@@ -76,7 +76,7 @@
         </Grid>
        
 
-        <TextBox x:Name="txt_Suche" Grid.Row="{StaticResource SerRow}" Grid.Column="3"  Grid.ColumnSpan="3" TextWrapping="Wrap"  AcceptsReturn="True"  Background="#FFDCDBDB"/>
+        <TextBox x:Name="txt_Suche" Grid.Row="{StaticResource SerRow}" Grid.Column="3"  Grid.ColumnSpan="3" TextWrapping="Wrap"  AcceptsReturn="True"  Background="#FFDCDBDB" TextChanged="txt_Suche_TextChanged"/>
 
       
         <!-- Rezept Button Mo-->
@@ -193,8 +193,8 @@
         <Label Content="Sonntag" Grid.Row="{StaticResource TagRow}" Grid.Column="6" Foreground="CornflowerBlue" FontSize="18" ></Label>
 
         <TextBox x:Name="txt_GerMo" Grid.Row="{StaticResource GerRow}" Grid.Column="0"  TextWrapping="Wrap" AcceptsReturn="True" FontSize="13"/>
-        
-        <DataGrid Grid.Row="{StaticResource RezRow}" Grid.Column="0" AutoGenerateColumns="False"  Name="lsV_Mo" >
+
+        <DataGrid Grid.Row="{StaticResource RezRow}" Grid.Column="0" AutoGenerateColumns="False"  Name="lsV_Mo" SelectionMode="Extended" SelectionUnit="Cell">
             <DataGrid.Columns>
 
                 <DataGridTextColumn Header="Zutat" Width="66" Binding="{Binding Name}"></DataGridTextColumn>

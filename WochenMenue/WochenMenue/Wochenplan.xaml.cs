@@ -9,9 +9,6 @@ using System.Windows.Xps;
 using System.Windows.Xps.Packaging;
 using System.Xml.Serialization;
 
-
-
-
 namespace WochenMenue
 
 {
@@ -189,6 +186,44 @@ namespace WochenMenue
         {
             MainWindow.gWoche.GenerateEKL();
             new Einkaufsliste().Show();
+        }
+
+        private void txt_Suche_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string suchString = txt_Suche.Text;
+
+            //Selektion der Such-Ergebnisse in der Montagsliste
+            SelectFoundCells(lsV_Mo, suchString);
+        }
+
+        private void SelectFoundCells(DataGrid datagrid, string suchString)
+        {
+
+            //Liste der selektieren Zellen vor der Suche Löschen (falls vorher schon gesucht wurde, muss die Selektion rückgängig gemacht werden).
+            datagrid.SelectedCells.Clear();
+
+            // Nur wenn der Suchstring vom Leerstring verschieden ist, soll gesucht werden
+            if (suchString == "")
+            {
+                return;
+            }
+
+            // Suche des Suchstrings in den Namen der Zutaten und Selektion der entsprechenden Zeile wenn es passt.
+            foreach (var item in datagrid.Items)
+            {
+                if (!(item is Zutat))
+                {
+                    return;
+                }
+
+                Zutat zutat = (Zutat)item;
+
+                if (zutat.Name.Contains(suchString))
+                {
+                    datagrid.CurrentCell = new DataGridCellInfo(item, datagrid.Columns[0]);
+                    datagrid.SelectedCells.Add(datagrid.CurrentCell);
+                }
+            }
         }
     }
 }
