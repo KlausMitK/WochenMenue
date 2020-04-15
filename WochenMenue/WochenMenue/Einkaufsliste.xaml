@@ -48,7 +48,7 @@
             </Grid.RowDefinitions>
             
             <Button x:Name="btn_Back" FontSize="14" Grid.Row="1" Grid.Column="2" Content="Zurück" Background="LightGreen" Click="btn_Back_Click"/>
-            <Button x:Name="btn_Print" Content="Drucken" Grid.Row="1" Grid.Column="4" Click="btn_Print_Click"/>
+            
         </Grid>
 
        

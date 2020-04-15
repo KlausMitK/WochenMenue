@@ -43,8 +43,5 @@ namespace WochenMenue
             this.Close();
         }
         
-        private void btn_Print_Click(object sender, RoutedEventArgs e)
-        {
-        }
     }
 }

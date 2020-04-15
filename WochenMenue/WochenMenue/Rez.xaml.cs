@@ -21,13 +21,13 @@ namespace WochenMenue
     /// </summary>
     public partial class Rez : Window
     {
-        Wochenplan mParentWochenplan;
+        //Wochenplan mParentWochenplan;
         Tag mTag;
 
-        public Rez(Tag tag, Wochenplan wochenplan)
+        public Rez(Tag tag /*, Wochenplan wochenplan*/)
         {
             mTag = tag;
-            mParentWochenplan = wochenplan;
+            //mParentWochenplan = wochenplan;
             InitializeComponent();
             lsV.ItemsSource = mTag.Rezept;
         }

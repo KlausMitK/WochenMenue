@@ -4,14 +4,303 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WochenMenue"
+        xmlns:Sys="clr-namespace:System;assembly=mscorlib" 
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Button x:Name="btn_WoPla" Content="Wochenplan" Background="LightGreen" Height="50" Width="100" Margin="346,184,346,185" Click="btn_WoPla_Click"/>
-        <Button x:Name="btn_Beenden" Content="Beenden" Height="50" Width="100" Margin="682,359,10,10" Background="LightSteelBlue" Click="btn_Beenden_Click"></Button>
+        Title="Wochen Speiseplan" WindowStyle="SingleBorderWindow" BorderThickness="5" BorderBrush="#FF444444"     Height="550" Width="1000" Background="White">
 
-        <Label Content="Drücken sie die grüne Taste um ihren Wochenplan zu bearbeiten" Foreground="DarkGray"  FontSize="24" Margin="0,0,10,364"/>
+    <Window.Resources>
+        <Sys:Int32 x:Key="MenRow">0</Sys:Int32>
+        <Sys:Int32 x:Key="SerRow">1</Sys:Int32>
+        <Sys:Int32 x:Key="TagRow">2</Sys:Int32>
+        <Sys:Int32 x:Key="GerRow">3</Sys:Int32>
+        <Sys:Int32 x:Key="RezRow">4</Sys:Int32>
+        <Sys:Int32 x:Key="BRHRow">5</Sys:Int32>
+    </Window.Resources>
+
+    <!-- Aüsseres Grid-->
+    <Grid x:Name="Grid_1">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="75"/>
+            <RowDefinition/>
+            <RowDefinition Height="70"/>
+        </Grid.RowDefinitions>
+
+        <!-- Der folgende Code sertzt die Background Farbe der Zellen bei Selektion-->
+        <Grid.Resources>
+            <Style TargetType="DataGridCell">
+                <Style.Triggers>
+                    <Trigger Property="DataGridCell.IsSelected" Value="True">
+                        <Setter Property="Background" Value="#FF30DC30" />
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </Grid.Resources>
+
+        <!-- Menueleiste -> Datei + Extras -->
+        <Grid Grid.Row="{StaticResource MenRow}">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="15"/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="36"/>
+                <ColumnDefinition Width="40"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <DockPanel Grid.Column="0" Grid.Row="0">
+                <Menu DockPanel.Dock="Top">
+                    <MenuItem Header="Datei">
+                        <MenuItem Header="_Öffnen" Click="Menue_File_Open_Click" />
+                        <MenuItem Header="_Speichern" Click="Menue_File_Save_Click"/>
+                        
+                        <Separator/>
+                        <MenuItem Header="_Beenden" Click="Menue_File_Exit_Click"/>
+                    </MenuItem>
+                </Menu>
+            </DockPanel>
+
+            <DockPanel Grid.Column="1" Grid.Row="0">
+                <Menu DockPanel.Dock="Top">
+                    <MenuItem Header="Extras">
+                        <MenuItem Header="Einkaufsliste" Click="Menue_File_Einkaufsliste_Click"/>
+                    </MenuItem>
+                </Menu>
+            </DockPanel>
+        </Grid>
+
+
+        <TextBox x:Name="txt_Suche" Grid.Row="{StaticResource SerRow}" Grid.Column="3"  Grid.ColumnSpan="3" TextWrapping="Wrap"  AcceptsReturn="True"  Background="#FFDCDBDB" TextChanged="txt_Suche_TextChanged"/>
+
+
+        <!-- Rezept Button Mo-->
+        <Grid  Grid.Row="{StaticResource BRHRow}" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="10"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button x:Name="BtnMoRez" Grid.Row="1" Grid.Column="1" FontSize="13"  Background="#FFFBFB6E" Click="BtnMoRez_Click">Rezept bearbeiten</Button>
+        </Grid>
+
+        <!-- Rezept Button Di-->
+        <Grid  Grid.Row="{StaticResource BRHRow}" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="10"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button x:Name="BtnDiRez" Grid.Row="1" Grid.Column="1" FontSize="13"  Background="#FFFBFB6E" Click="BtnDiRez_Click">Rezept bearbeiten</Button>
+        </Grid>
+
+        <!-- Rezept Button Mi-->
+        <Grid  Grid.Row="{StaticResource BRHRow}" Grid.Column="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="10"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button x:Name="BtnMiRez" Grid.Row="1" Grid.Column="1" FontSize="13"  Background="#FFFBFB6E" Click="BtnMoRez_Click">Rezept bearbeiten</Button>
+        </Grid>
+
+        <!-- Rezept Button Do-->
+        <Grid  Grid.Row="{StaticResource BRHRow}" Grid.Column="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="10"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button x:Name="BtnDoRez" Grid.Row="1" Grid.Column="1" FontSize="13"  Background="#FFFBFB6E" Click="BtnDoRez_Click">Rezept bearbeiten</Button>
+        </Grid>
+
+        <!-- Rezept Button Fr-->
+        <Grid  Grid.Row="{StaticResource BRHRow}" Grid.Column="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="10"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button x:Name="BtnFrRez" Grid.Row="1" Grid.Column="1" FontSize="13"  Background="#FFFBFB6E" Click="BtnFrRez_Click">Rezept bearbeiten</Button>
+        </Grid>
+
+        <!-- Rezept Button Sa-->
+        <Grid  Grid.Row="{StaticResource BRHRow}" Grid.Column="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="10"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button x:Name="BtnSaRez" Grid.Row="1" Grid.Column="1" FontSize="13"  Background="CornflowerBlue" Click="BtnSaRez_Click">Rezept bearbeiten</Button>
+        </Grid>
+
+        <!-- Rezept Button So-->
+        <Grid  Grid.Row="{StaticResource BRHRow}" Grid.Column="6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="10"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Button x:Name="BtnSoRez" Grid.Row="1" Grid.Column="1" FontSize="13"  Background="CornflowerBlue" Click="BtnSoRez_Click">Rezept bearbeiten</Button>
+        </Grid>
+
+        <Label Content="Montag"  Grid.Row="{StaticResource TagRow}" Grid.Column="0" Foreground="Black" FontSize="18" />
+        <Label Content="Dienstag" Grid.Row="{StaticResource TagRow}"  Grid.Column="1" Foreground="Black" FontSize="18" ></Label>
+        <Label Content="Mittwoch" Grid.Row="{StaticResource TagRow}" Grid.Column="2" Foreground="Black" FontSize="18"></Label>
+        <Label Content="Donnerstag" Grid.Row="{StaticResource TagRow}" Grid.Column="3" Foreground="Black" FontSize="18"/>
+        <Label Content="Freitag" Grid.Row="{StaticResource TagRow}" Grid.Column="4" Foreground="Black" FontSize="18" ></Label>
+        <Label Content="Samstag" Grid.Row="{StaticResource TagRow}" Grid.Column="5" Foreground="CornflowerBlue" FontSize="18"></Label>
+        <Label Content="Sonntag" Grid.Row="{StaticResource TagRow}" Grid.Column="6" Foreground="CornflowerBlue" FontSize="18" ></Label>
+
+        <TextBox x:Name="txt_GerMo" Grid.Row="{StaticResource GerRow}" Grid.Column="0"  TextWrapping="Wrap" AcceptsReturn="True" FontSize="13"/>
+
+        <DataGrid Grid.Row="{StaticResource RezRow}" Grid.Column="0" AutoGenerateColumns="False"  Name="lsV_Mo" SelectionMode="Extended" SelectionUnit="Cell">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Zutat" Width="66" Binding="{Binding Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Menge" Width="36" Binding="{Binding Menge}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Einheit" Width="36" Binding="{Binding Einheit}"></DataGridTextColumn>
+            </DataGrid.Columns>
+
+        </DataGrid>
+
+        <TextBox x:Name="txt_GerDi" Grid.Row="{StaticResource GerRow}" Grid.Column="1" TextWrapping="Wrap" AcceptsReturn="True" FontSize="13"/>
+
+        <DataGrid Grid.Row="{StaticResource RezRow}" Grid.Column="1" AutoGenerateColumns="False"  Name="lsV_Di" SelectionMode="Extended" SelectionUnit="Cell">
+            <DataGrid.Columns>
+
+                <DataGridTextColumn  Header="Zutat" Width="66" Binding="{Binding Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Menge" Width="36" Binding="{Binding Menge}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Einheit" Width="36" Binding="{Binding Einheit}"></DataGridTextColumn>
+
+            </DataGrid.Columns>
+
+        </DataGrid>
+
+        <TextBox x:Name="txt_GerMi" Grid.Row="{StaticResource GerRow}" Grid.Column="2" TextWrapping="Wrap" AcceptsReturn="True" FontSize="13"/>
+
+        <DataGrid Grid.Row="{StaticResource RezRow}" Grid.Column="2" AutoGenerateColumns="False" Name="lsV_Mi" SelectionMode="Extended" SelectionUnit="Cell">
+            <DataGrid.Columns>
+
+                <DataGridTextColumn Header="Zutat" Width="66" Binding="{Binding Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Menge" Width="36" Binding="{Binding Menge}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Einheit" Width="36" Binding="{Binding Einheit}"></DataGridTextColumn>
+
+            </DataGrid.Columns>
+
+        </DataGrid>
+
+
+        <TextBox x:Name="txt_GerDo" Grid.Row="{StaticResource GerRow}" Grid.Column="3" TextWrapping="Wrap" AcceptsReturn="True" FontSize="13"/>
+
+        <DataGrid Grid.Row="{StaticResource RezRow}" Grid.Column="3" AutoGenerateColumns="False" Name="lsV_Do" SelectionMode="Extended" SelectionUnit="Cell">
+            <DataGrid.Columns>
+
+                <DataGridTextColumn Header="Zutat" Width="66" Binding="{Binding Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Menge" Width="36" Binding="{Binding Menge}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Einheit" Width="36" Binding="{Binding Einheit}"></DataGridTextColumn>
+
+            </DataGrid.Columns>
+
+        </DataGrid>
+
+
+        <TextBox x:Name="txt_GerFr" Grid.Row="{StaticResource GerRow}" Grid.Column="4" TextWrapping="Wrap" AcceptsReturn="True" FontSize="13"/>
+
+        <DataGrid Grid.Row="{StaticResource RezRow}" Grid.Column="4" AutoGenerateColumns="False" Name="lsV_Fr" SelectionMode="Extended" SelectionUnit="Cell">
+            <DataGrid.Columns>
+
+                <DataGridTextColumn Header="Zutat" Width="66" Binding="{Binding Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Menge" Width="36" Binding="{Binding Menge}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Einheit" Width="36" Binding="{Binding Einheit}"></DataGridTextColumn>
+
+            </DataGrid.Columns>
+
+        </DataGrid>
+
+
+        <TextBox x:Name="txt_GerSa" Grid.Row="{StaticResource GerRow}" Grid.Column="5" TextWrapping="Wrap" AcceptsReturn="True" FontSize="13"/>
+
+        <DataGrid Grid.Row="{StaticResource RezRow}" Grid.Column="5" AutoGenerateColumns="False" Name="lsV_Sa" SelectionMode="Extended" SelectionUnit="Cell">
+            <DataGrid.Columns>
+
+                <DataGridTextColumn Header="Zutat" Width="66" Binding="{Binding Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Menge" Width="36" Binding="{Binding Menge}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Einheit" Width="36" Binding="{Binding Einheit}"></DataGridTextColumn>
+
+            </DataGrid.Columns>
+
+        </DataGrid>
+
+
+        <TextBox x:Name="txt_GerSo" Grid.Row="{StaticResource GerRow}" Grid.Column="6" TextWrapping="Wrap" AcceptsReturn="True" FontSize="13"/>
+
+        <DataGrid Grid.Row="{StaticResource RezRow}" Grid.Column="6" AutoGenerateColumns="False" Name="lsV_So" SelectionMode="Extended" SelectionUnit="Cell">
+            <DataGrid.Columns>
+
+                <DataGridTextColumn Header="Zutat" Width="66" Binding="{Binding Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Menge" Width="36" Binding="{Binding Menge}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Einheit" Width="36" Binding="{Binding Einheit}"></DataGridTextColumn>
+
+            </DataGrid.Columns>
+
+        </DataGrid>
+
+
+
+        <Label Grid.Row="{StaticResource SerRow}" Grid.Column="6" Grid.ColumnSpan="1"  Content="Suchen" FontSize="12"  />
 
     </Grid>
-    
 </Window>
+    

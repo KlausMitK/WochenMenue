@@ -76,9 +76,6 @@
       <DependentUpon>Einkaufsliste.xaml</DependentUpon>
     </Compile>
     <Compile Include="Tag.cs" />
-    <Compile Include="Wochenplan.xaml.cs">
-      <DependentUpon>Wochenplan.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Rez.xaml.cs">
       <DependentUpon>Rez.xaml</DependentUpon>
     </Compile>
@@ -100,10 +97,6 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Wochenplan.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Rez.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
