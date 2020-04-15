@@ -228,5 +228,83 @@ namespace WochenMenue
                 }
             }
         }
+
+        // Stackpanel --> Hizufügen
+        private void Menue_File_Eigenschaften_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        //Gericht aus Pool Buttons
+        private void BtnAPoMo_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnAPoDI_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnAPoMI_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnAPoDo_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnAPoFr_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnAPoSa_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnAPoSo_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        // Gericht Pool Hizufügen Buttons
+        private void BtnZoMo_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnZoDi_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnZoMi_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnZoDo_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnZoFr_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnZoSa_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnZoSo_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WochenMenue"
         xmlns:Sys="clr-namespace:System;assembly=mscorlib" 
         mc:Ignorable="d"
-        Title="Wochen Speiseplan" WindowStyle="SingleBorderWindow" BorderThickness="5" BorderBrush="#FF444444"     Height="550" Width="1000" Background="White">
+        Title="Wochen Speiseplan" WindowStyle="SingleBorderWindow" BorderThickness="5" BorderBrush="#FF444444"     Height="650" Width="1000" Background="White">
 
     <Window.Resources>
         <Sys:Int32 x:Key="MenRow">0</Sys:Int32>
@@ -15,6 +15,7 @@
         <Sys:Int32 x:Key="GerRow">3</Sys:Int32>
         <Sys:Int32 x:Key="RezRow">4</Sys:Int32>
         <Sys:Int32 x:Key="BRHRow">5</Sys:Int32>
+        <Sys:Int32 x:Key="BtnZPo">6</Sys:Int32>
     </Window.Resources>
 
     <!-- Aüsseres Grid-->
@@ -33,10 +34,11 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="25"/>
             <RowDefinition Height="25"/>
-            <RowDefinition Height="40"/>
+            <RowDefinition Height="110"/>
             <RowDefinition Height="75"/>
             <RowDefinition/>
-            <RowDefinition Height="70"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
         </Grid.RowDefinitions>
 
         <!-- Der folgende Code sertzt die Background Farbe der Zellen bei Selektion-->
@@ -70,7 +72,7 @@
                     <MenuItem Header="Datei">
                         <MenuItem Header="_Öffnen" Click="Menue_File_Open_Click" />
                         <MenuItem Header="_Speichern" Click="Menue_File_Save_Click"/>
-                        
+
                         <Separator/>
                         <MenuItem Header="_Beenden" Click="Menue_File_Exit_Click"/>
                     </MenuItem>
@@ -81,6 +83,8 @@
                 <Menu DockPanel.Dock="Top">
                     <MenuItem Header="Extras">
                         <MenuItem Header="Einkaufsliste" Click="Menue_File_Einkaufsliste_Click"/>
+                        <Separator/>
+                        <MenuItem Header="Eigenschaften" Click="Menue_File_Eigenschaften_Click"/>
                     </MenuItem>
                 </Menu>
             </DockPanel>
@@ -94,15 +98,15 @@
         <Grid  Grid.Row="{StaticResource BRHRow}" Grid.Column="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="10"/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="10*"/>
+                <ColumnDefinition Width="111*"/>
                 <ColumnDefinition Width="10"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition Height="10"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Button x:Name="BtnMoRez" Grid.Row="1" Grid.Column="1" FontSize="13"  Background="#FFFBFB6E" Click="BtnMoRez_Click">Rezept bearbeiten</Button>
+            <Button x:Name="BtnMoRez" Grid.Row="1" Grid.Column="1" FontSize="13"  Background="#FFFBFB6E" Click="BtnMoRez_Click" Grid.ColumnSpan="2">Rezept bearbeiten</Button>
         </Grid>
 
         <!-- Rezept Button Di-->
@@ -113,8 +117,7 @@
                 <ColumnDefinition Width="10"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition Height="10"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <Button x:Name="BtnDiRez" Grid.Row="1" Grid.Column="1" FontSize="13"  Background="#FFFBFB6E" Click="BtnDiRez_Click">Rezept bearbeiten</Button>
@@ -128,8 +131,7 @@
                 <ColumnDefinition Width="10"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition Height="10"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <Button x:Name="BtnMiRez" Grid.Row="1" Grid.Column="1" FontSize="13"  Background="#FFFBFB6E" Click="BtnMoRez_Click">Rezept bearbeiten</Button>
@@ -143,9 +145,9 @@
                 <ColumnDefinition Width="10"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
+                <RowDefinition Height="10"/>
                 <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
+
             </Grid.RowDefinitions>
             <Button x:Name="BtnDoRez" Grid.Row="1" Grid.Column="1" FontSize="13"  Background="#FFFBFB6E" Click="BtnDoRez_Click">Rezept bearbeiten</Button>
         </Grid>
@@ -158,8 +160,7 @@
                 <ColumnDefinition Width="10"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition Height="10"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <Button x:Name="BtnFrRez" Grid.Row="1" Grid.Column="1" FontSize="13"  Background="#FFFBFB6E" Click="BtnFrRez_Click">Rezept bearbeiten</Button>
@@ -173,8 +174,7 @@
                 <ColumnDefinition Width="10"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition Height="10"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <Button x:Name="BtnSaRez" Grid.Row="1" Grid.Column="1" FontSize="13"  Background="CornflowerBlue" Click="BtnSaRez_Click">Rezept bearbeiten</Button>
@@ -188,20 +188,145 @@
                 <ColumnDefinition Width="10"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition Height="10"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <Button x:Name="BtnSoRez" Grid.Row="1" Grid.Column="1" FontSize="13"  Background="CornflowerBlue" Click="BtnSoRez_Click">Rezept bearbeiten</Button>
         </Grid>
 
-        <Label Content="Montag"  Grid.Row="{StaticResource TagRow}" Grid.Column="0" Foreground="Black" FontSize="18" />
-        <Label Content="Dienstag" Grid.Row="{StaticResource TagRow}"  Grid.Column="1" Foreground="Black" FontSize="18" ></Label>
-        <Label Content="Mittwoch" Grid.Row="{StaticResource TagRow}" Grid.Column="2" Foreground="Black" FontSize="18"></Label>
-        <Label Content="Donnerstag" Grid.Row="{StaticResource TagRow}" Grid.Column="3" Foreground="Black" FontSize="18"/>
-        <Label Content="Freitag" Grid.Row="{StaticResource TagRow}" Grid.Column="4" Foreground="Black" FontSize="18" ></Label>
-        <Label Content="Samstag" Grid.Row="{StaticResource TagRow}" Grid.Column="5" Foreground="CornflowerBlue" FontSize="18"></Label>
-        <Label Content="Sonntag" Grid.Row="{StaticResource TagRow}" Grid.Column="6" Foreground="CornflowerBlue" FontSize="18" ></Label>
+        <Grid Grid.Row="{StaticResource TagRow}" Grid.Column="0">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="10"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="10"/>
+            </Grid.RowDefinitions>
+
+            <Label Content="Montag" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="1" Foreground="Black"  FontSize="18" />
+            <Button x:Name="BtnAPoMo" Content="Gericht auswählen" Grid.Column="1" Grid.Row="2" FontSize="13" Click="BtnAPoMo_Click"/>
+
+        </Grid>
+
+
+        <Grid Grid.Row="{StaticResource TagRow}" Grid.Column="1">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="10"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="10"/>
+            </Grid.RowDefinitions>
+
+            <Label Content="Dienstag" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="1" Foreground="Black"  FontSize="18" />
+            <Button x:Name="BtnAPoDI" Content="Gericht auswählen" Grid.Column="1" Grid.Row="2" FontSize="13" Click="BtnAPoDI_Click"/>
+
+        </Grid>
+
+        <Grid Grid.Row="{StaticResource TagRow}" Grid.Column="2">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="10"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="10"/>
+            </Grid.RowDefinitions>
+
+            <Label Content="Mittwoch" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="1" Foreground="Black"  FontSize="18" />
+            <Button x:Name="BtnAPoMI" Content="Gericht auswählen" Grid.Column="1" Grid.Row="2" FontSize="13" Click="BtnAPoMI_Click"/>
+
+        </Grid>
+
+        <Grid Grid.Row="{StaticResource TagRow}" Grid.Column="3">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="10"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="10"/>
+            </Grid.RowDefinitions>
+
+            <Label Content="Donnerstag" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="1" Foreground="Black"  FontSize="18" />
+            <Button x:Name="BtnAPoDo" Content="Gericht auswählen" Grid.Column="1" Grid.Row="2" FontSize="13" Click="BtnAPoDo_Click"/>
+
+        </Grid>
+
+        <Grid Grid.Row="{StaticResource TagRow}" Grid.Column="4">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="10"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="10"/>
+            </Grid.RowDefinitions>
+
+            <Label Content="Freitag" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="1" Foreground="Black"  FontSize="18" />
+            <Button x:Name="BtnAPoFr" Content="Gericht auswählen" Grid.Column="1" Grid.Row="2" FontSize="13" Click="BtnAPoFr_Click"/>
+
+        </Grid>
+
+        <Grid Grid.Row="{StaticResource TagRow}" Grid.Column="5">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="10"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="10"/>
+            </Grid.RowDefinitions>
+
+            <Label Content="Samstag" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="1" FontSize="18" Foreground="CornflowerBlue"/>
+            <Button x:Name="BtnAPoSa" Content="Gericht auswählen" Grid.Column="1" Grid.Row="2" FontSize="13" Click="BtnAPoSa_Click" />
+
+        </Grid>
+
+        <Grid Grid.Row="{StaticResource TagRow}" Grid.Column="6">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="10"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="10"/>
+            </Grid.RowDefinitions>
+
+            <Label Content="Sonntag" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="1" FontSize="18" Foreground="CornflowerBlue"/>
+            <Button x:Name="BtnAPoSo" Content="Gericht auswählen" Grid.Column="1" Grid.Row="2" FontSize="13" Click="BtnAPoSo_Click" />
+
+        </Grid>
 
         <TextBox x:Name="txt_GerMo" Grid.Row="{StaticResource GerRow}" Grid.Column="0"  TextWrapping="Wrap" AcceptsReturn="True" FontSize="13"/>
 
@@ -297,9 +422,131 @@
 
         </DataGrid>
 
+        <Label Grid.Row="{StaticResource SerRow}" Grid.Column="6" Grid.ColumnSpan="1"  Content="Suchen" FontSize="12"/>
+
+        <Grid Grid.Row="{StaticResource BtnZPo}" Grid.Column="0">
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="10"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Button x:Name="BtnZoMo" Grid.Row="1" Grid.Column="1" Content="Gericht Hinzufügen" FontSize="13" Click="BtnZoMo_Click"/>
+
+        </Grid>
+
+        <Grid Grid.Row="{StaticResource BtnZPo}" Grid.Column="1">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="10"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Button x:Name="BtnZoDi" Grid.Row="1" Grid.Column="1" Content="Gericht Hinzufügen" FontSize="13" Click="BtnZoDi_Click"/>
+
+        </Grid>
 
 
-        <Label Grid.Row="{StaticResource SerRow}" Grid.Column="6" Grid.ColumnSpan="1"  Content="Suchen" FontSize="12"  />
+        <Grid Grid.Row="{StaticResource BtnZPo}" Grid.Column="2">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="10"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Button x:Name="BtnZoMi" Grid.Row="1" Grid.Column="1" Content="Gericht Hinzufügen" FontSize="13" Click="BtnZoMi_Click"/>
+
+        </Grid>
+
+
+        <Grid Grid.Row="{StaticResource BtnZPo}" Grid.Column="3">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="10"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Button x:Name="BtnZoDo" Grid.Row="1" Grid.Column="1" Content="Gericht Hinzufügen" FontSize="13" Click="BtnZoDo_Click"/>
+
+        </Grid>
+
+
+        <Grid Grid.Row="{StaticResource BtnZPo}" Grid.Column="4">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="10"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Button x:Name="BtnZoFr" Grid.Row="1" Grid.Column="1" Content="Gericht Hinzufügen" FontSize="13" Click="BtnZoFr_Click"/>
+
+        </Grid>
+
+
+        <Grid Grid.Row="{StaticResource BtnZPo}" Grid.Column="5">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="10"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Button x:Name="BtnZoSa" Grid.Row="1" Grid.Column="1" Content="Gericht Hinzufügen" FontSize="13" Click="BtnZoSa_Click"/>
+
+        </Grid>
+
+
+        <Grid Grid.Row="{StaticResource BtnZPo}" Grid.Column="6">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="10"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Button x:Name="BtnZoSo" Grid.Row="1" Grid.Column="1" Content="Gericht Hinzufügen" FontSize="13" Click="BtnZoSo_Click"/>
+
+        </Grid>
 
     </Grid>
 </Window>
