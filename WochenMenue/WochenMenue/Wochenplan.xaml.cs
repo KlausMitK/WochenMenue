@@ -194,6 +194,12 @@ namespace WochenMenue
 
             //Selektion der Such-Ergebnisse in der Montagsliste
             SelectFoundCells(lsV_Mo, suchString);
+            SelectFoundCells(lsV_Di, suchString);
+            SelectFoundCells(lsV_Mi, suchString);
+            SelectFoundCells(lsV_Do, suchString);
+            SelectFoundCells(lsV_Fr, suchString);
+            SelectFoundCells(lsV_Sa, suchString);
+            SelectFoundCells(lsV_So, suchString);
         }
 
         private void SelectFoundCells(DataGrid datagrid, string suchString)
