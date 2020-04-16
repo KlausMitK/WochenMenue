@@ -1,0 +1,82 @@
+﻿<Window x:Class="WochenMenue.Eigenschaften"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WochenMenue"
+        mc:Ignorable="d"
+        Title="Eigenschaften" Height="450" Width="800">
+    <!--Äuseres Grid-->
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Label Content="Eigenschaften" Grid.Row="0" Grid.Column="0" FontSize="18" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        
+        <Grid Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            
+            <Label Content="Speicherort für Rezeptpool:" Grid.Column="1" Grid.ColumnSpan="2" FontSize="18" VerticalAlignment="Center"/>
+
+        </Grid>
+        
+        
+
+
+        <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="20"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBox x:Name="Txt_PoolPath" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Background="LightGray" TextChanged="Txt_PoolPath_TextChanged"/>
+            <Button x:Name="BtnÄndern" Content="Ändern" Grid.Row="0" Grid.Column="5" Click="BtnÄndern_Click"/>
+
+            <Grid Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Button x:Name="BtnOk" Content="OK" Grid.Column="1" Click="BtnOk_Click"/>
+                <Button x:Name="BtnAbbrechen" Content="Abbrechen" Grid.Column="3" Grid.ColumnSpan="2" Click="BtnAbbrechen_Click"/>
+
+            </Grid>
+
+        </Grid>
+
+        
+
+    </Grid>
+</Window>
