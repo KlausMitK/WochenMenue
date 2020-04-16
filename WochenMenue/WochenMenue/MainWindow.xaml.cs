@@ -24,6 +24,7 @@ namespace WochenMenue
     {
 
         public static Woche gWoche = new Woche();
+        public static string gPoolPath = @"D:\Daten Klaus\SVN Working Copies Programmierprojekte\WochenMenue\TestDaten\Pool.xml";
 
         //private Wochenplan mWochenPlan = new Wochenplan();
 
@@ -41,35 +42,35 @@ namespace WochenMenue
             bind0.Source = MainWindow.gWoche.Montag;
             txt_GerMo.SetBinding(TextBox.TextProperty, bind0);
 
-            lsV_Mo.ItemsSource = MainWindow.gWoche.Montag.Rezept;
+            lsV_Mo.ItemsSource = MainWindow.gWoche.Montag.Zutaten;
 
             //Dienstag
             Binding bind1 = new Binding("Gericht");
             bind1.Source = MainWindow.gWoche.Dienstag;
             txt_GerDi.SetBinding(TextBox.TextProperty, bind1);
 
-            lsV_Di.ItemsSource = MainWindow.gWoche.Dienstag.Rezept;
+            lsV_Di.ItemsSource = MainWindow.gWoche.Dienstag.Zutaten;
 
             //Mittwoch
             Binding bind2 = new Binding("Gericht");
             bind2.Source = MainWindow.gWoche.Mittwoch;
             txt_GerMi.SetBinding(TextBox.TextProperty, bind2);
 
-            lsV_Mi.ItemsSource = MainWindow.gWoche.Mittwoch.Rezept;
+            lsV_Mi.ItemsSource = MainWindow.gWoche.Mittwoch.Zutaten;
 
             //Donnerstag
             Binding bind3 = new Binding("Gericht");
             bind3.Source = MainWindow.gWoche.Donnerstag;
             txt_GerDo.SetBinding(TextBox.TextProperty, bind3);
 
-            lsV_Do.ItemsSource = MainWindow.gWoche.Donnerstag.Rezept;
+            lsV_Do.ItemsSource = MainWindow.gWoche.Donnerstag.Zutaten;
 
             //Freitag
             Binding bind4 = new Binding("Gericht");
             bind4.Source = MainWindow.gWoche.Freitag;
             txt_GerFr.SetBinding(TextBox.TextProperty, bind4);
 
-            lsV_Fr.ItemsSource = MainWindow.gWoche.Freitag.Rezept;
+            lsV_Fr.ItemsSource = MainWindow.gWoche.Freitag.Zutaten;
 
 
             //Samstag
@@ -77,7 +78,7 @@ namespace WochenMenue
             bind5.Source = MainWindow.gWoche.Samstag;
             txt_GerSa.SetBinding(TextBox.TextProperty, bind5);
 
-            lsV_Sa.ItemsSource = MainWindow.gWoche.Samstag.Rezept;
+            lsV_Sa.ItemsSource = MainWindow.gWoche.Samstag.Zutaten;
 
 
             //Sonntag
@@ -85,7 +86,7 @@ namespace WochenMenue
             bind6.Source = MainWindow.gWoche.Sonntag;
             txt_GerSo.SetBinding(TextBox.TextProperty, bind6);
 
-            lsV_So.ItemsSource = MainWindow.gWoche.Sonntag.Rezept;
+            lsV_So.ItemsSource = MainWindow.gWoche.Sonntag.Zutaten;
         }
 
         
@@ -229,6 +230,26 @@ namespace WochenMenue
             }
         }
 
+        private void GerichtInPool(Tag tag)
+        {
+            string Gericht = tag.Gericht;
+            List<Zutat> list = new List<Zutat>();
+
+            foreach (Zutat zutat in tag.Zutaten)
+            {
+                list.Add(zutat);
+            }
+
+            RezeptPool rezPool = new RezeptPool();
+            rezPool.AddGericht(Gericht, list);
+
+            XmlSerializer serializer = new XmlSerializer(typeof(RezeptPool));
+
+            FileStream filestream = new FileStream(MainWindow.gPoolPath, FileMode.Create);
+            serializer.Serialize(filestream, rezPool);
+            filestream.Close();
+        }
+
         // Stackpanel --> Hizufügen
         private void Menue_File_Eigenschaften_Click(object sender, RoutedEventArgs e)
         {
@@ -274,7 +295,7 @@ namespace WochenMenue
         // Gericht Pool Hizufügen Buttons
         private void BtnZoMo_Click(object sender, RoutedEventArgs e)
         {
-
+            //GerichtInPool(gWoche.Montag);
         }
 
         private void BtnZoDi_Click(object sender, RoutedEventArgs e)

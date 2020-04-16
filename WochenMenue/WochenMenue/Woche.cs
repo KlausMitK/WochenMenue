@@ -53,7 +53,7 @@ namespace WochenMenue
 
         private void EKLErweitern(Tag tag)
         {
-            foreach (Zutat zutat in tag.Rezept)
+            foreach (Zutat zutat in tag.Zutaten)
             {
                 Zutat tempZutat = FindZutatInEKL(zutat.Name);
                 if (tempZutat != null)

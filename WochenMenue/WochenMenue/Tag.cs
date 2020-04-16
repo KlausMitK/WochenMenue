@@ -14,12 +14,12 @@ namespace WochenMenue
     public class Tag
     {
         public string Gericht { get; set; }
-        public ObservableCollection<Zutat> Rezept { get; set; }
+        public ObservableCollection<Zutat> Zutaten { get; set; }
 
         public Tag()
         {
           Gericht = "";
-          Rezept = new ObservableCollection<Zutat>();
+          Zutaten = new ObservableCollection<Zutat>();
         }
     }
 }

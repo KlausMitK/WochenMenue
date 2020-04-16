@@ -81,7 +81,7 @@
       <DependentUpon>Rez.xaml</DependentUpon>
     </Compile>
     <Compile Include="Woche.cs" />
-    <Compile Include="Zutaten.cs" />
+    <Compile Include="Zutat.cs" />
     <Page Include="Einkaufsliste.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

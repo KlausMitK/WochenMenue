@@ -29,7 +29,7 @@ namespace WochenMenue
             mTag = tag;
             //mParentWochenplan = wochenplan;
             InitializeComponent();
-            lsV.ItemsSource = mTag.Rezept;
+            lsV.ItemsSource = mTag.Zutaten;
         }
 
         private void btn_0_Click(object sender, RoutedEventArgs e)

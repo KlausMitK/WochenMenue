@@ -9,7 +9,7 @@ using System.Collections.ObjectModel;
 namespace WochenMenue
 {
     [Serializable]
-    class RezeptPool
+    public class RezeptPool
     {
 
         private Dictionary<string, List<Zutat>> mRezeptMap;
