@@ -3,7 +3,7 @@
   <Montag>
     <Gericht>Kuchen
 Spätzle</Gericht>
-    <Rezept>
+    <Zutaten>
       <Zutat>
         <Name>Eier</Name>
         <Menge>12</Menge>
@@ -39,11 +39,11 @@ Spätzle</Gericht>
         <Menge>1</Menge>
         <Einheit>kg</Einheit>
       </Zutat>
-    </Rezept>
+    </Zutaten>
   </Montag>
   <Dienstag>
     <Gericht>Pfannenkuchen</Gericht>
-    <Rezept>
+    <Zutaten>
       <Zutat>
         <Name>Butter</Name>
         <Menge>10</Menge>
@@ -59,11 +59,11 @@ Spätzle</Gericht>
         <Menge>10</Menge>
         <Einheit>Stück</Einheit>
       </Zutat>
-    </Rezept>
+    </Zutaten>
   </Dienstag>
   <Mittwoch>
     <Gericht>Pizza</Gericht>
-    <Rezept>
+    <Zutaten>
       <Zutat>
         <Name>Mehl</Name>
         <Menge>1</Menge>
@@ -84,11 +84,11 @@ Spätzle</Gericht>
         <Menge>1</Menge>
         <Einheit>Liter</Einheit>
       </Zutat>
-    </Rezept>
+    </Zutaten>
   </Mittwoch>
   <Donnerstag>
     <Gericht>Halumi Pfanne</Gericht>
-    <Rezept>
+    <Zutaten>
       <Zutat>
         <Name>Halumi</Name>
         <Menge>10</Menge>
@@ -104,11 +104,11 @@ Spätzle</Gericht>
         <Menge>100</Menge>
         <Einheit>gr</Einheit>
       </Zutat>
-    </Rezept>
+    </Zutaten>
   </Donnerstag>
   <Freitag>
     <Gericht>Pudding</Gericht>
-    <Rezept>
+    <Zutaten>
       <Zutat>
         <Name>Schokolade</Name>
         <Menge>50</Menge>
@@ -124,11 +124,11 @@ Spätzle</Gericht>
         <Menge>1</Menge>
         <Einheit>Liter</Einheit>
       </Zutat>
-    </Rezept>
+    </Zutaten>
   </Freitag>
   <Samstag>
     <Gericht>Schnitzel</Gericht>
-    <Rezept>
+    <Zutaten>
       <Zutat>
         <Name>Eier</Name>
         <Menge>2</Menge>
@@ -144,11 +144,11 @@ Spätzle</Gericht>
         <Menge>2</Menge>
         <Einheit>kg</Einheit>
       </Zutat>
-    </Rezept>
+    </Zutaten>
   </Samstag>
   <Sonntag>
     <Gericht>Taccos</Gericht>
-    <Rezept>
+    <Zutaten>
       <Zutat>
         <Name>Putenschnitzel</Name>
         <Menge>3</Menge>
@@ -164,7 +164,7 @@ Spätzle</Gericht>
         <Menge>500</Menge>
         <Einheit>gr</Einheit>
       </Zutat>
-    </Rezept>
+    </Zutaten>
   </Sonntag>
   <mEKL />
 </Woche>

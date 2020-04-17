@@ -12,28 +12,39 @@ namespace WochenMenue
     public class RezeptPool
     {
 
-        private Dictionary<string, List<Zutat>> mRezeptMap;
+        private ObservableCollection<Gericht> mGerichte;
 
         //Constructor
         public RezeptPool()
         {
-            mRezeptMap = new Dictionary<string, List<Zutat>>();
+            mGerichte = new ObservableCollection<Gericht>();
         }
 
-        public Dictionary<string, List<Zutat>> RezeptMap
+        public ObservableCollection<Gericht> Gerichte
         {
-            get{ return mRezeptMap;}
-            set { mRezeptMap = value;}
+            get{ return mGerichte; }
+            set { mGerichte = value;}
         }
 
-        public void AddGericht(string Gericht, List<Zutat> ZutatenListe)
+        public void AddGericht(Gericht gericht)
         {
-            mRezeptMap.Add(Gericht, ZutatenListe);
+            mGerichte.Add(gericht);
         }
         
-        public List<Zutat> FindeZutatenFuer(string Gericht)
+        public Gericht FindeGericht (string gerichtName)
         {
-            return mRezeptMap[Gericht];
+            foreach (Gericht gericht in Gerichte)
+            {
+                //TODO: Wenn ein Gericht zweimla drin ist, dann verliert er das zweite Gericht
+                if (gericht.Name == gerichtName)
+                {
+                    return gericht;
+                }
+            }
+            
+            
+            return null;
+            
         }
     }
 }

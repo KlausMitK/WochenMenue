@@ -232,16 +232,16 @@ namespace WochenMenue
 
         private void GerichtInPool(Tag tag)
         {
-            string Gericht = tag.Gericht;
-            List<Zutat> list = new List<Zutat>();
+            string GerichtName = tag.Gericht;
 
+            Gericht gericht = new Gericht(GerichtName);
             foreach (Zutat zutat in tag.Zutaten)
             {
-                list.Add(zutat);
+                gericht.Zutaten.Add(zutat);
             }
-
+                        
             RezeptPool rezPool = new RezeptPool();
-            rezPool.AddGericht(Gericht, list);
+            rezPool.AddGericht(gericht);
 
             XmlSerializer serializer = new XmlSerializer(typeof(RezeptPool));
 
@@ -295,7 +295,7 @@ namespace WochenMenue
         // Gericht Pool Hizufügen Buttons
         private void BtnZoMo_Click(object sender, RoutedEventArgs e)
         {
-            //GerichtInPool(gWoche.Montag);
+            GerichtInPool(gWoche.Montag);
         }
 
         private void BtnZoDi_Click(object sender, RoutedEventArgs e)
