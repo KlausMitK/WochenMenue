@@ -27,11 +27,15 @@ namespace WochenMenue
         public void Warning (string WarrnigText)
         {
             //TODO: Domink fertig implementieren.
+            string OutputText = "W: " + WarrnigText + " \n";
+            OutputTextBlock.Text = OutputText;
         }
 
         public void Info (string InfoText)
         {
             //TODO: Domink fertig implementieren.
+            string OutputText = "I: " + InfoText + " \n";
+            OutputTextBlock.Text = OutputText;
         }
     }
 }
