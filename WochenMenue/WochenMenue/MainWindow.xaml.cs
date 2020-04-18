@@ -305,31 +305,37 @@ namespace WochenMenue
 
         private void BtnZoDi_Click(object sender, RoutedEventArgs e)
         {
+            // TODO: Dominik: Info ins Logging schreiben.
             GerichtInPool(gWoche.Dienstag);
         }
 
         private void BtnZoMi_Click(object sender, RoutedEventArgs e)
         {
+            // TODO: Dominik: Info ins Logging schreiben.
             GerichtInPool(gWoche.Mittwoch);
         }
 
         private void BtnZoDo_Click(object sender, RoutedEventArgs e)
         {
+            // TODO: Dominik: Info ins Logging schreiben.
             GerichtInPool(gWoche.Donnerstag);
         }
 
         private void BtnZoFr_Click(object sender, RoutedEventArgs e)
         {
+            // TODO: Dominik: Info ins Logging schreiben.
             GerichtInPool(gWoche.Freitag);
         }
 
         private void BtnZoSa_Click(object sender, RoutedEventArgs e)
         {
+            // TODO: Dominik: Info ins Logging schreiben.
             GerichtInPool(gWoche.Samstag);
         }
 
         private void BtnZoSo_Click(object sender, RoutedEventArgs e)
         {
+            // TODO: Dominik: Info ins Logging schreiben.
             GerichtInPool(gWoche.Sonntag);
         }
     }
