@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WochenMenue"
         xmlns:Sys="clr-namespace:System;assembly=mscorlib" 
         mc:Ignorable="d"
-        Title="Wochen Speiseplan" WindowStyle="SingleBorderWindow" BorderThickness="5" BorderBrush="#FF444444"     Height="650" Width="1000" Background="White">
+        Title="Wochen Speiseplan" WindowStyle="SingleBorderWindow" BorderThickness="5" BorderBrush="#FF444444"     Height="800" Width="1150" Background="White">
 
     <Window.Resources>
         <Sys:Int32 x:Key="MenRow">0</Sys:Int32>
@@ -16,6 +16,7 @@
         <Sys:Int32 x:Key="RezRow">4</Sys:Int32>
         <Sys:Int32 x:Key="BRHRow">5</Sys:Int32>
         <Sys:Int32 x:Key="BtnZPo">6</Sys:Int32>
+        <Sys:Int32 x:Key="TxbLog">7</Sys:Int32>
     </Window.Resources>
 
     <!-- Aüsseres Grid-->
@@ -34,12 +35,12 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="25"/>
             <RowDefinition Height="25"/>
-            <RowDefinition Height="110"/>
+            <RowDefinition Height="90"/>
             <RowDefinition Height="75"/>
             <RowDefinition/>
             <RowDefinition Height="40"/>
             <RowDefinition Height="40"/>
-            <RowDefinition Height="80"/>
+            <RowDefinition Height="110"/>
         </Grid.RowDefinitions>
 
         <!-- Der folgende Code sertzt die Background Farbe der Zellen bei Selektion-->
@@ -549,25 +550,34 @@
 
         </Grid>
 
-        <Grid Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="7">
-
+        <Grid Grid.Row="{StaticResource TxbLog}" Grid.Column="0" Grid.ColumnSpan="7">
+        
+            
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5"/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
+                <ColumnDefinition Width="5"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="10"/>
                 <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
                 <RowDefinition Height="10"/>
             </Grid.RowDefinitions>
 
-            <TextBlock x:Name="TxbLog" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Background="White" FontSize="13" Foreground="Black" />
-            
+            <Border BorderBrush="#FF444444"  BorderThickness="4" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="4">
+
+                <TextBlock x:Name="TxbLog" Background="White"  FontSize="13" Foreground="Black" TextWrapping="Wrap"/>
+                
+            </Border>
+
         </Grid>
         
-        
-
     </Grid>
+    
 </Window>
     
