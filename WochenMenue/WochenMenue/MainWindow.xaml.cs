@@ -338,5 +338,15 @@ namespace WochenMenue
             // TODO: Dominik: Info ins Logging schreiben.
             GerichtInPool(gWoche.Sonntag);
         }
+
+        private void TxbLog_Scroll(object sender, System.Windows.Controls.Primitives.ScrollEventArgs e)
+        {
+
+        }
+
+        private void TxbLog_TouchEnter(object sender, TouchEventArgs e)
+        {
+
+        }
     }
 }
