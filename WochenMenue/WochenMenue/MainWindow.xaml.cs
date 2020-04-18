@@ -253,7 +253,7 @@ namespace WochenMenue
         // Stackpanel --> Hizufügen
         private void Menue_File_Eigenschaften_Click(object sender, RoutedEventArgs e)
         {
-
+            new Eigenschaften().Show();
         }
 
         //Gericht aus Pool Buttons

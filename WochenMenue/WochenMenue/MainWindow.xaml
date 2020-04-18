@@ -39,6 +39,7 @@
             <RowDefinition/>
             <RowDefinition Height="40"/>
             <RowDefinition Height="40"/>
+            <RowDefinition Height="80"/>
         </Grid.RowDefinitions>
 
         <!-- Der folgende Code sertzt die Background Farbe der Zellen bei Selektion-->
