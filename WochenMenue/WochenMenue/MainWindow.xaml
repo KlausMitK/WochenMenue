@@ -549,6 +549,25 @@
 
         </Grid>
 
+        <Grid Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="7">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10"/>
+                <RowDefinition/>
+                <RowDefinition Height="10"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock x:Name="TxbLog" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Background="White" FontSize="13" Foreground="Black" />
+            
+        </Grid>
+        
+        
+
     </Grid>
 </Window>
     
