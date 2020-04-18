@@ -25,6 +25,7 @@ namespace WochenMenue
 
         public static Woche gWoche = new Woche();
         public static string gPoolPath = @"D:\Daten Klaus\SVN Working Copies Programmierprojekte\WochenMenue\TestDaten\Pool.xml";
+        public static Logging gLog;
 
         //private Wochenplan mWochenPlan = new Wochenplan();
 
@@ -32,6 +33,7 @@ namespace WochenMenue
         {
             InitializeComponent();
             Bind();
+            gLog = new Logging(this.TxbLog);
         }
 
         public void Bind()
@@ -239,7 +241,8 @@ namespace WochenMenue
             {
                 gericht.Zutaten.Add(zutat);
             }
-                        
+
+            // TODO: rezPool aus Datei lesen und dann neues Rezept hinzufügen.                        
             RezeptPool rezPool = new RezeptPool();
             rezPool.AddGericht(gericht);
 
@@ -295,7 +298,9 @@ namespace WochenMenue
         // Gericht Pool Hizufügen Buttons
         private void BtnZoMo_Click(object sender, RoutedEventArgs e)
         {
+            MainWindow.gLog.Info("Start Hinzufügen Gericht Montag ...");
             GerichtInPool(gWoche.Montag);
+            MainWindow.gLog.Info("Ende Hinzufügen Gericht Montag.");
         }
 
         private void BtnZoDi_Click(object sender, RoutedEventArgs e)
