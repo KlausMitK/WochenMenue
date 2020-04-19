@@ -30,6 +30,7 @@ namespace WochenMenue
         {
             InitializeComponent();
             oldFileName = MainWindow.gPoolPath;
+            Txt_PoolPath.Text = oldFileName;
         }
 
         private void BtnÄndern_Click(object sender, RoutedEventArgs e)
