@@ -62,5 +62,46 @@ Spätzle</Name>
         </Zutat>
       </Zutaten>
     </Gericht>
+    <Gericht>
+      <Name>Kuchen
+Spätzle</Name>
+      <Zutaten>
+        <Zutat>
+          <Name>Eier</Name>
+          <Menge>12</Menge>
+          <Einheit>Stück</Einheit>
+        </Zutat>
+        <Zutat>
+          <Name>Mehl</Name>
+          <Menge>1</Menge>
+          <Einheit>kg</Einheit>
+        </Zutat>
+        <Zutat>
+          <Name>Schokolade</Name>
+          <Menge>200</Menge>
+          <Einheit>gr</Einheit>
+        </Zutat>
+        <Zutat>
+          <Name>Butter</Name>
+          <Menge>250</Menge>
+          <Einheit>gr</Einheit>
+        </Zutat>
+        <Zutat>
+          <Name>Salz</Name>
+          <Menge>1</Menge>
+          <Einheit>Prise</Einheit>
+        </Zutat>
+        <Zutat>
+          <Name>Eier</Name>
+          <Menge>10</Menge>
+          <Einheit>Stück</Einheit>
+        </Zutat>
+        <Zutat>
+          <Name>Mehl</Name>
+          <Menge>1</Menge>
+          <Einheit>kg</Einheit>
+        </Zutat>
+      </Zutaten>
+    </Gericht>
   </Gerichte>
 </RezeptPool>
