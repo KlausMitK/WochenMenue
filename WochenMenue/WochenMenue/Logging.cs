@@ -9,33 +9,33 @@ namespace WochenMenue
 {
     public class Logging
     {
-        TextBlock mTextBlock;
+        TextBox mTextBox;
 
-        public TextBlock OutputTextBlock { get { return mTextBlock; } set{ mTextBlock = value; } } 
+        public TextBox OutputTextBox { get { return mTextBox; } set{ mTextBox = value; } } 
 
-        public Logging(TextBlock tB)
+        public Logging(TextBox tB)
         {
-            OutputTextBlock = tB;
+            OutputTextBox = tB;
         }
 
         public void Error (string ErrorText)
         {
             string OutputText = "E: " + ErrorText + " \n";
-            OutputTextBlock.Text = OutputText;
+            OutputTextBox.AppendText(OutputText);
         }
 
         public void Warning (string WarrnigText)
         {
             //TODO: Domink fertig implementieren.
             string OutputText = "W: " + WarrnigText + " \n";
-            OutputTextBlock.Text = OutputText;
+            OutputTextBox.AppendText(OutputText);
         }
 
         public void Info (string InfoText)
         {
             //TODO: Domink fertig implementieren.
             string OutputText = "I: " + InfoText + " \n";
-            OutputTextBlock.Text = OutputText;
+            OutputTextBox.AppendText(OutputText);
         }
     }
 }
