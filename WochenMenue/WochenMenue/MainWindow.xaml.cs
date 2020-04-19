@@ -242,12 +242,17 @@ namespace WochenMenue
                 gericht.Zutaten.Add(zutat);
             }
 
-            // TODO: rezPool aus Datei lesen und dann neues Rezept hinzufügen.                        
+            // TODO: rezPool aus Datei lesen und dann neues Rezept hinzufügen.      
+
             RezeptPool rezPool = new RezeptPool();
+            XmlSerializer serializer = new XmlSerializer(typeof(RezeptPool));
+            FileStream fileStream = new FileStream(MainWindow.gPoolPath, FileMode.Open);
+            rezPool = (RezeptPool)serializer.Deserialize(fileStream);
+            fileStream.Close();
+                        
             rezPool.AddGericht(gericht);
 
-            XmlSerializer serializer = new XmlSerializer(typeof(RezeptPool));
-
+            serializer = new XmlSerializer(typeof(RezeptPool));
             FileStream filestream = new FileStream(MainWindow.gPoolPath, FileMode.Create);
             serializer.Serialize(filestream, rezPool);
             filestream.Close();
