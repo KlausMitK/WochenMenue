@@ -29,7 +29,7 @@ namespace WochenMenue
         public Eigenschaften()
         {
             InitializeComponent();
-            oldFileName = Txt_PoolPath.Text;
+            oldFileName = MainWindow.gPoolPath;
         }
 
         private void BtnÄndern_Click(object sender, RoutedEventArgs e)
@@ -40,6 +40,7 @@ namespace WochenMenue
             {
                 string fileName = openFileDialog.FileName;
                 Txt_PoolPath.Text = fileName;
+                MainWindow.gPoolPath = fileName;
             }
 
 
@@ -53,6 +54,7 @@ namespace WochenMenue
         private void BtnAbbrechen_Click(object sender, RoutedEventArgs e)
         {
             Txt_PoolPath.Text = oldFileName;
+            MainWindow.gPoolPath = oldFileName;
             this.Close();
         }
 
