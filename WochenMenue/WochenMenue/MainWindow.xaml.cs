@@ -252,7 +252,16 @@ namespace WochenMenue
 
             MainWindow.gLog.Info("RezeptPool: " + gPoolPath + " ist geladen");
 
-            rezPool.AddGericht(gericht);
+            if (rezPool.FindeGericht(GerichtName) == null)
+            {
+                rezPool.AddGericht(gericht);
+            }
+            else
+            {
+                MainWindow.gLog.Warning("Das Gericht " + GerichtName + " ist bereits im RezeptPool vorhanden");
+                return; // Das folgende muss in dem Fall nicht mehr gemacht werden.
+            }
+            
 
             MainWindow.gLog.Info("RezeptPool: " + gPoolPath + " wird aktualisiert ...");
 
