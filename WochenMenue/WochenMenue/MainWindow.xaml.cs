@@ -306,37 +306,49 @@ namespace WochenMenue
         private void BtnZoDi_Click(object sender, RoutedEventArgs e)
         {
             // TODO: Dominik: Info ins Logging schreiben.
+            MainWindow.gLog.Info("Start Hinzufügen Gericht Dienstag ...");
             GerichtInPool(gWoche.Dienstag);
+            MainWindow.gLog.Info("Ende Hinzufügen Gericht Dienstag.");
         }
 
         private void BtnZoMi_Click(object sender, RoutedEventArgs e)
         {
             // TODO: Dominik: Info ins Logging schreiben.
+            MainWindow.gLog.Info("Start Hinzufügen Gericht Mittwoch ...");
             GerichtInPool(gWoche.Mittwoch);
+            MainWindow.gLog.Info("Ende Hinzufügen Gericht Mittwoch.");
         }
 
         private void BtnZoDo_Click(object sender, RoutedEventArgs e)
         {
             // TODO: Dominik: Info ins Logging schreiben.
+            MainWindow.gLog.Info("Start Hinzufügen Gericht Donnerstag ...");
             GerichtInPool(gWoche.Donnerstag);
+            MainWindow.gLog.Info("Ende Hinzufügen Gericht Donnerstag.");
         }
 
         private void BtnZoFr_Click(object sender, RoutedEventArgs e)
         {
-            // TODO: Dominik: Info ins Logging schreiben.
+            // TODO: Dominik: Info ins Logging schreiben
+            MainWindow.gLog.Info("Start Hinzufügen Gericht Freitag ...");
             GerichtInPool(gWoche.Freitag);
+            MainWindow.gLog.Info("Ende Hinzufügen Gericht Freitag.");
         }
 
         private void BtnZoSa_Click(object sender, RoutedEventArgs e)
         {
             // TODO: Dominik: Info ins Logging schreiben.
+            MainWindow.gLog.Info("Start Hinzufügen Gericht Samstag ...");
             GerichtInPool(gWoche.Samstag);
+            MainWindow.gLog.Info("Ende Hinzufügen Gericht Samstag.");
         }
 
         private void BtnZoSo_Click(object sender, RoutedEventArgs e)
         {
             // TODO: Dominik: Info ins Logging schreiben.
+            MainWindow.gLog.Info("Start Hinzufügen Gericht Sonntag ...");
             GerichtInPool(gWoche.Sonntag);
+            MainWindow.gLog.Info("Ende Hinzufügen Gericht Sonntag.");
         }
 
         private void TxbLog_Scroll(object sender, System.Windows.Controls.Primitives.ScrollEventArgs e)

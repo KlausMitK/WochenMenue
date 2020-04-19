@@ -427,7 +427,7 @@
         <Label Grid.Row="{StaticResource SerRow}" Grid.Column="6" Grid.ColumnSpan="1"  Content="Suchen" FontSize="12"/>
 
         <Grid Grid.Row="{StaticResource BtnZPo}" Grid.Column="0">
-            
+
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="10"/>
                 <ColumnDefinition/>
@@ -551,8 +551,8 @@
         </Grid>
 
         <Grid Grid.Row="{StaticResource TxbLog}" Grid.Column="0" Grid.ColumnSpan="7">
-        
-            
+
+
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="5"/>
                 <ColumnDefinition/>
@@ -572,12 +572,12 @@
             <Border BorderBrush="#FF444444"  BorderThickness="4" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="4">
 
                 <TextBox x:Name="TxbLog" Background="White"  FontSize="13" Foreground="Black" TextWrapping="Wrap" AcceptsReturn="True" IsReadOnly="True" VerticalScrollBarVisibility="Visible"/>
-                
+
             </Border>
 
         </Grid>
-        
+
     </Grid>
-    
+
 </Window>
     
