@@ -9,32 +9,32 @@ namespace WochenMenue
 {
     public class Logging
     {
-        TextBox mTextBox;
+        RichTextBox mTextBox;
 
-        public TextBox OutputTextBox { get { return mTextBox; } set{ mTextBox = value; } } 
+        public RichTextBox OutputTextBox { get { return mTextBox; } set{ mTextBox = value; } } 
 
-        public Logging(TextBox tB)
+        public Logging(RichTextBox tB)
         {
             OutputTextBox = tB;
         }
 
         public void Error (string ErrorText)
         {
-            string OutputText = "E: " + ErrorText + " \n";
+            string OutputText = "E: " + ErrorText + "\r";
             OutputTextBox.AppendText(OutputText);
         }
 
         public void Warning (string WarrnigText)
         {
             //TODO: Domink fertig implementieren.
-            string OutputText = "W: " + WarrnigText + " \n";
+            string OutputText = "W: " + WarrnigText + "\r";
             OutputTextBox.AppendText(OutputText);
         }
 
         public void Info (string InfoText)
         {
             //TODO: Domink fertig implementieren.
-            string OutputText = "I: " + InfoText + " \n";
+            string OutputText = "I: " + InfoText + "\r";
             OutputTextBox.AppendText(OutputText);
         }
     }
