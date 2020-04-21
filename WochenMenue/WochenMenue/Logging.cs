@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using System.Drawing;
+using System.Windows.Documents;
+using System.Windows.Media;
 
 namespace WochenMenue
 {
@@ -20,22 +23,33 @@ namespace WochenMenue
 
         public void Error (string ErrorText)
         {
+            //TODO: Roten Hintergrund implementieren.
             string OutputText = "E: " + ErrorText + "\r";
             OutputTextBox.AppendText(OutputText);
         }
 
         public void Warning (string WarrnigText)
         {
-            //TODO: Domink fertig implementieren.
+            //TODO: Gelben Hintergrund implementieren.
             string OutputText = "W: " + WarrnigText + "\r";
-            OutputTextBox.AppendText(OutputText);
         }
 
         public void Info (string InfoText)
         {
-            //TODO: Domink fertig implementieren.
             string OutputText = "I: " + InfoText + "\r";
-            OutputTextBox.AppendText(OutputText);
+
+            BrushConverter bc = new BrushConverter();
+            TextRange textRange = new TextRange(OutputTextBox.Document.ContentEnd, OutputTextBox.Document.ContentEnd);
+            textRange.Text = OutputText;
+
+            try
+            {
+                textRange.ApplyPropertyValue(TextElement.BackgroundProperty, bc.ConvertFromString("Green"));
+            }
+            catch (FormatException)
+            {
+
+            }
         }
     }
 }
