@@ -25,13 +25,38 @@ namespace WochenMenue
         {
             //TODO: Roten Hintergrund implementieren.
             string OutputText = "E: " + ErrorText + "\r";
-            OutputTextBox.AppendText(OutputText);
+
+            BrushConverter bc = new BrushConverter();
+            TextRange textRange = new TextRange(OutputTextBox.Document.ContentEnd, OutputTextBox.Document.ContentEnd);
+            textRange.Text = OutputText;
+
+            try
+            {
+                textRange.ApplyPropertyValue(TextElement.ForegroundProperty, bc.ConvertFromString("Red"));
+            }
+            catch (FormatException)
+            {
+
+            }
         }
 
         public void Warning (string WarrnigText)
         {
-            //TODO: Gelben Hintergrund implementieren.
             string OutputText = "W: " + WarrnigText + "\r";
+
+            BrushConverter bc = new BrushConverter();
+            TextRange textRange = new TextRange(OutputTextBox.Document.ContentEnd, OutputTextBox.Document.ContentEnd);
+            textRange.Text = OutputText;
+
+            try
+            {
+                textRange.ApplyPropertyValue(TextElement.ForegroundProperty, bc.ConvertFromString("Orange"));
+            }
+            catch (FormatException)
+            {
+
+            }
+
         }
 
         public void Info (string InfoText)
@@ -44,7 +69,7 @@ namespace WochenMenue
 
             try
             {
-                textRange.ApplyPropertyValue(TextElement.BackgroundProperty, bc.ConvertFromString("Green"));
+                textRange.ApplyPropertyValue(TextElement.ForegroundProperty, bc.ConvertFromString("Green"));
             }
             catch (FormatException)
             {
