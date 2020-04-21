@@ -72,6 +72,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="IniFile.cs" />
     <Compile Include="Logging.cs" />
     <Compile Include="Gericht.cs" />
     <Compile Include="Eigenschaften.xaml.cs">

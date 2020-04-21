@@ -49,6 +49,10 @@ namespace WochenMenue
 
         private void BtnOk_Click(object sender, RoutedEventArgs e)
         {
+            string iniFilePath = MainWindow.gIniFilePath;
+            IniFile iniFile = new IniFile(MainWindow.gIniFilePath);
+
+            iniFile.IniWriteValue("Path", "PoolPath", MainWindow.gPoolPath);
             this.Close();
         }
 

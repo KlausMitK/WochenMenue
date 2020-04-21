@@ -14,15 +14,24 @@ namespace WochenMenue
     {
 
         public static Woche gWoche = new Woche();
-        public static string gPoolPath = @"D:\Daten Klaus\SVN Working Copies Programmierprojekte\WochenMenue\TestDaten\Pool.xml";
+        public static string gPoolPath = "";
         public static Logging gLog;
-
-        //private Wochenplan mWochenPlan = new Wochenplan();
+        public static string gIniFilePath;
 
         public MainWindow()
         {
             InitializeComponent();
             Bind();
+
+            string exePath = System.Reflection.Assembly.GetExecutingAssembly().Location;
+            string iniDirectory = System.IO.Path.GetDirectoryName(exePath);
+            gIniFilePath = iniDirectory + "\\WochenMenue.ini";
+
+            IniFile iniFile = new IniFile(gIniFilePath);
+
+            //TODO: Auslesen des letzten PoolPath und in gPoolPAth speichern.
+            gPoolPath = iniFile.IniReadValue("Path", "PoolPath");
+
             gLog = new Logging(this.TxbLog);
         }
 
