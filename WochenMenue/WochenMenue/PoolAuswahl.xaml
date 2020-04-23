@@ -55,10 +55,10 @@
         <Grid Grid.Row="2" Grid.RowSpan="4" Grid.Column="1" Grid.ColumnSpan="3">
 
 
-            <DataGrid  Name="DtG_PoA" SelectionMode="Extended" SelectionUnit="Cell">
+            <DataGrid  Name="DtG_PoA" AutoGenerateColumns="False" SelectionMode="Extended" SelectionUnit="Cell">
 
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="Gericht" Binding="{Binding Einheit}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Gericht" Binding="{Binding Path = Name}"></DataGridTextColumn>
                 </DataGrid.Columns>
 
             </DataGrid>
