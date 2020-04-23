@@ -23,6 +23,7 @@ namespace WochenMenue
             InitializeComponent();
             Bind();
 
+            // iniFile muss im gleichen Verzeichnis wie exe-Datei leigen
             string exePath = System.Reflection.Assembly.GetExecutingAssembly().Location;
             string iniDirectory = System.IO.Path.GetDirectoryName(exePath);
             gIniFilePath = iniDirectory + "\\WochenMenue.ini";
@@ -30,8 +31,10 @@ namespace WochenMenue
             IniFile iniFile = new IniFile(gIniFilePath);
 
             //TODO: Auslesen des letzten PoolPath und in gPoolPAth speichern.
+            //Wenn ini-File nicht gefunden wird, wird PoolPAth auf "" gesetzt
             gPoolPath = iniFile.IniReadValue("Path", "PoolPath");
 
+            // Logging initialisieren
             gLog = new Logging(this.TxbLog);
         }
 

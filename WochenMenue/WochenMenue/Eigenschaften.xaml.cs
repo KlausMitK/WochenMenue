@@ -43,8 +43,6 @@ namespace WochenMenue
                 Txt_PoolPath.Text = fileName;
                 MainWindow.gPoolPath = fileName;
             }
-
-
         }
 
         private void BtnOk_Click(object sender, RoutedEventArgs e)
