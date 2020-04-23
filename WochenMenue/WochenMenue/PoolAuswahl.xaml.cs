@@ -48,7 +48,26 @@ namespace WochenMenue
 
         private void Btn_Aus_Click(object sender, RoutedEventArgs e)
         {
+            Gericht gericht =  (Gericht) DtG_PoA.SelectedItem;
 
+            if (gericht != null)
+            {
+                MainWindow.gLog.Info("Gericht " + gericht.Name + " ausgewählt.");
+                MainWindow.gWoche.Montag.Gericht = gericht.Name;
+
+                foreach (Zutat zutat in gericht.Zutaten)
+                {
+                    MainWindow.gWoche.Montag.Zutaten.Add(zutat);
+                }
+
+                this.Close();
+                
+            }
+            else
+            {
+                MainWindow.gLog.Error("Es wurd kein Gericht ausgewählt.");
+            }
+            
         }
 
         private void txt_Suchen_TextChanged(object sender, TextChangedEventArgs e)
