@@ -231,7 +231,7 @@
             </Grid.RowDefinitions>
 
             <Label Content="Dienstag" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="1" Foreground="Black"  FontSize="18" />
-            <Button x:Name="BtnAPoDI" Content="Gericht auswählen" Grid.Column="1" Grid.Row="2" FontSize="13" Click="BtnAPoDI_Click"/>
+            <Button x:Name="BtnAPoDI" Content="Gericht auswählen" Grid.Column="1" Grid.Row="2" FontSize="13" Click="BtnAPoDI_Click" Height="31" VerticalAlignment="Top"/>
 
         </Grid>
 

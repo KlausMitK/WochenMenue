@@ -281,37 +281,37 @@ namespace WochenMenue
         //Gericht aus Pool Buttons
         private void BtnAPoMo_Click(object sender, RoutedEventArgs e)
         {
-
+            new PoolAuswahl().ShowDialog();
         }
 
         private void BtnAPoDI_Click(object sender, RoutedEventArgs e)
         {
-
+            new PoolAuswahl().ShowDialog();
         }
 
         private void BtnAPoMI_Click(object sender, RoutedEventArgs e)
         {
-
+            new PoolAuswahl().ShowDialog();
         }
 
         private void BtnAPoDo_Click(object sender, RoutedEventArgs e)
         {
-
+            new PoolAuswahl().ShowDialog();
         }
 
         private void BtnAPoFr_Click(object sender, RoutedEventArgs e)
         {
-
+            new PoolAuswahl().ShowDialog();
         }
 
         private void BtnAPoSa_Click(object sender, RoutedEventArgs e)
         {
-
+            new PoolAuswahl().ShowDialog();
         }
 
         private void BtnAPoSo_Click(object sender, RoutedEventArgs e)
         {
-
+            new PoolAuswahl().ShowDialog();
         }
 
         // Gericht Pool Hizufügen Buttons

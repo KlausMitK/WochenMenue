@@ -78,6 +78,9 @@
     <Compile Include="Eigenschaften.xaml.cs">
       <DependentUpon>Eigenschaften.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PoolAuswahl.xaml.cs">
+      <DependentUpon>PoolAuswahl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="RezeptPool.cs" />
     <Compile Include="Einkaufsliste.xaml.cs">
       <DependentUpon>Einkaufsliste.xaml</DependentUpon>
@@ -108,6 +111,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="PoolAuswahl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Rez.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
