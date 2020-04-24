@@ -40,21 +40,15 @@ namespace WochenMenue
 
         public void Bind()
         {
-
             //Montag
-            /*Binding bind0 = new Binding("Gericht");
-            bind0.Source = MainWindow.gWoche.Montag;
-            txt_GerMo.SetBinding(TextBox.TextProperty, bind0);*/
-            txt_GerMo.DataContext = MainWindow.gWoche.Montag;
-            lsV_Mo.ItemsSource = MainWindow.gWoche.Montag.Zutaten;
+            txt_GerMo.DataContext = gWoche.Montag;
+            lsV_Mo.ItemsSource = gWoche.Montag.Zutaten;
 
             //Dienstag
-            Binding bind1 = new Binding("Gericht");
-            bind1.Source = MainWindow.gWoche.Dienstag;
-            txt_GerDi.SetBinding(TextBox.TextProperty, bind1);
+            txt_GerDi.DataContext = gWoche.Dienstag;
+            lsV_Di.ItemsSource = gWoche.Dienstag.Zutaten;
 
-            lsV_Di.ItemsSource = MainWindow.gWoche.Dienstag.Zutaten;
-
+            //TODO: Dominik
             //Mittwoch
             Binding bind2 = new Binding("Gericht");
             bind2.Source = MainWindow.gWoche.Mittwoch;
@@ -62,6 +56,7 @@ namespace WochenMenue
 
             lsV_Mi.ItemsSource = MainWindow.gWoche.Mittwoch.Zutaten;
 
+            //TODO: Dominik
             //Donnerstag
             Binding bind3 = new Binding("Gericht");
             bind3.Source = MainWindow.gWoche.Donnerstag;
@@ -69,6 +64,7 @@ namespace WochenMenue
 
             lsV_Do.ItemsSource = MainWindow.gWoche.Donnerstag.Zutaten;
 
+            //TODO: Dominik
             //Freitag
             Binding bind4 = new Binding("Gericht");
             bind4.Source = MainWindow.gWoche.Freitag;
@@ -76,7 +72,7 @@ namespace WochenMenue
 
             lsV_Fr.ItemsSource = MainWindow.gWoche.Freitag.Zutaten;
 
-
+            //TODO: Dominik
             //Samstag
             Binding bind5 = new Binding("Gericht");
             bind5.Source = MainWindow.gWoche.Samstag;
@@ -84,7 +80,7 @@ namespace WochenMenue
 
             lsV_Sa.ItemsSource = MainWindow.gWoche.Samstag.Zutaten;
 
-
+            //TODO: Dominik
             //Sonntag
             Binding bind6 = new Binding("Gericht");
             bind6.Source = MainWindow.gWoche.Sonntag;
@@ -161,13 +157,13 @@ namespace WochenMenue
                 MainWindow.gWoche = (Woche)serializer.Deserialize(fileStream);
                 fileStream.Close();
             }
+            Bind();
         }
 
 
         private void Menue_File_Open_Click(object sender, RoutedEventArgs e)
         {
             Open();
-            Bind();
         }
 
         private void Menue_File_Save_Click(object sender, RoutedEventArgs e)

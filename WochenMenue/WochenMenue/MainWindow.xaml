@@ -342,7 +342,7 @@
 
         </DataGrid>
 
-        <TextBox x:Name="txt_GerDi" Grid.Row="{StaticResource GerRow}" Grid.Column="1" TextWrapping="Wrap" AcceptsReturn="True" FontSize="13"/>
+        <TextBox x:Name="txt_GerDi" Grid.Row="{StaticResource GerRow}" Grid.Column="1" TextWrapping="Wrap" AcceptsReturn="True" FontSize="13" Text="{Binding Path=Gericht, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
         <DataGrid Grid.Row="{StaticResource RezRow}" Grid.Column="1" AutoGenerateColumns="False"  Name="lsV_Di" SelectionMode="Extended" SelectionUnit="Cell">
             <DataGrid.Columns>
@@ -355,7 +355,7 @@
 
         </DataGrid>
 
-        <TextBox x:Name="txt_GerMi" Grid.Row="{StaticResource GerRow}" Grid.Column="2" TextWrapping="Wrap" AcceptsReturn="True" FontSize="13"/>
+        <TextBox x:Name="txt_GerMi" Grid.Row="{StaticResource GerRow}" Grid.Column="2" TextWrapping="Wrap" AcceptsReturn="True" FontSize="13" Text="{Binding Path=Gericht, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
         <DataGrid Grid.Row="{StaticResource RezRow}" Grid.Column="2" AutoGenerateColumns="False" Name="lsV_Mi" SelectionMode="Extended" SelectionUnit="Cell">
             <DataGrid.Columns>
@@ -369,7 +369,7 @@
         </DataGrid>
 
 
-        <TextBox x:Name="txt_GerDo" Grid.Row="{StaticResource GerRow}" Grid.Column="3" TextWrapping="Wrap" AcceptsReturn="True" FontSize="13"/>
+        <TextBox x:Name="txt_GerDo" Grid.Row="{StaticResource GerRow}" Grid.Column="3" TextWrapping="Wrap" AcceptsReturn="True" FontSize="13" Text="{Binding Path=Gericht, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
         <DataGrid Grid.Row="{StaticResource RezRow}" Grid.Column="3" AutoGenerateColumns="False" Name="lsV_Do" SelectionMode="Extended" SelectionUnit="Cell">
             <DataGrid.Columns>
@@ -383,7 +383,7 @@
         </DataGrid>
 
 
-        <TextBox x:Name="txt_GerFr" Grid.Row="{StaticResource GerRow}" Grid.Column="4" TextWrapping="Wrap" AcceptsReturn="True" FontSize="13"/>
+        <TextBox x:Name="txt_GerFr" Grid.Row="{StaticResource GerRow}" Grid.Column="4" TextWrapping="Wrap" AcceptsReturn="True" FontSize="13" Text="{Binding Path=Gericht, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
         <DataGrid Grid.Row="{StaticResource RezRow}" Grid.Column="4" AutoGenerateColumns="False" Name="lsV_Fr" SelectionMode="Extended" SelectionUnit="Cell">
             <DataGrid.Columns>
@@ -397,7 +397,7 @@
         </DataGrid>
 
 
-        <TextBox x:Name="txt_GerSa" Grid.Row="{StaticResource GerRow}" Grid.Column="5" TextWrapping="Wrap" AcceptsReturn="True" FontSize="13"/>
+        <TextBox x:Name="txt_GerSa" Grid.Row="{StaticResource GerRow}" Grid.Column="5" TextWrapping="Wrap" AcceptsReturn="True" FontSize="13" Text="{Binding Path=Gericht, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
         <DataGrid Grid.Row="{StaticResource RezRow}" Grid.Column="5" AutoGenerateColumns="False" Name="lsV_Sa" SelectionMode="Extended" SelectionUnit="Cell">
             <DataGrid.Columns>
@@ -411,7 +411,7 @@
         </DataGrid>
 
 
-        <TextBox x:Name="txt_GerSo" Grid.Row="{StaticResource GerRow}" Grid.Column="6" TextWrapping="Wrap" AcceptsReturn="True" FontSize="13"/>
+        <TextBox x:Name="txt_GerSo" Grid.Row="{StaticResource GerRow}" Grid.Column="6" TextWrapping="Wrap" AcceptsReturn="True" FontSize="13" Text="{Binding Path=Gericht, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
         <DataGrid Grid.Row="{StaticResource RezRow}" Grid.Column="6" AutoGenerateColumns="False" Name="lsV_So" SelectionMode="Extended" SelectionUnit="Cell">
             <DataGrid.Columns>
