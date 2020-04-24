@@ -42,10 +42,10 @@ namespace WochenMenue
         {
 
             //Montag
-            Binding bind0 = new Binding("Gericht");
+            /*Binding bind0 = new Binding("Gericht");
             bind0.Source = MainWindow.gWoche.Montag;
-            txt_GerMo.SetBinding(TextBox.TextProperty, bind0);
-
+            txt_GerMo.SetBinding(TextBox.TextProperty, bind0);*/
+            txt_GerMo.DataContext = MainWindow.gWoche.Montag;
             lsV_Mo.ItemsSource = MainWindow.gWoche.Montag.Zutaten;
 
             //Dienstag
@@ -285,6 +285,7 @@ namespace WochenMenue
         private void BtnAPoMo_Click(object sender, RoutedEventArgs e)
         {
             new PoolAuswahl().ShowDialog();
+            Bind();
         }
 
         private void BtnAPoDI_Click(object sender, RoutedEventArgs e)
