@@ -284,38 +284,38 @@ namespace WochenMenue
         //Gericht aus Pool Buttons
         private void BtnAPoMo_Click(object sender, RoutedEventArgs e)
         {
-            new PoolAuswahl().ShowDialog();
-            Bind();
+            new PoolAuswahl(MainWindow.gWoche.Montag).ShowDialog();
+            
         }
 
         private void BtnAPoDI_Click(object sender, RoutedEventArgs e)
         {
-            new PoolAuswahl().ShowDialog();
+            new PoolAuswahl(MainWindow.gWoche.Dienstag).ShowDialog();
         }
 
         private void BtnAPoMI_Click(object sender, RoutedEventArgs e)
         {
-            new PoolAuswahl().ShowDialog();
+            new PoolAuswahl(MainWindow.gWoche.Mittwoch).ShowDialog();
         }
 
         private void BtnAPoDo_Click(object sender, RoutedEventArgs e)
         {
-            new PoolAuswahl().ShowDialog();
+            new PoolAuswahl(MainWindow.gWoche.Donnerstag).ShowDialog();
         }
 
         private void BtnAPoFr_Click(object sender, RoutedEventArgs e)
         {
-            new PoolAuswahl().ShowDialog();
+            new PoolAuswahl(MainWindow.gWoche.Freitag).ShowDialog();
         }
 
         private void BtnAPoSa_Click(object sender, RoutedEventArgs e)
         {
-            new PoolAuswahl().ShowDialog();
+            new PoolAuswahl(MainWindow.gWoche.Samstag).ShowDialog();
         }
 
         private void BtnAPoSo_Click(object sender, RoutedEventArgs e)
         {
-            new PoolAuswahl().ShowDialog();
+            new PoolAuswahl(MainWindow.gWoche.Sonntag).ShowDialog();
         }
 
         // Gericht Pool Hizufügen Buttons

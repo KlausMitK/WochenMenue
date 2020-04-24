@@ -24,9 +24,12 @@ namespace WochenMenue
     {
 
         //TODO: Hier brauchen wir eine Propoerty "Tag"
+        public Tag Wochentag { get; set; }
 
-        public PoolAuswahl()
+        public PoolAuswahl(Tag tag)
         {
+            Wochentag = tag;
+
             InitializeComponent();
 
             //Lade Pool (Deserialisieren)
@@ -56,11 +59,12 @@ namespace WochenMenue
             if (gericht != null)
             {
                 MainWindow.gLog.Info("Gericht " + gericht.Name + " ausgewählt.");
-                MainWindow.gWoche.Montag.Gericht = gericht.Name;
+                Wochentag.Gericht = gericht.Name;
 
+                Wochentag.Zutaten.Clear();
                 foreach (Zutat zutat in gericht.Zutaten)
                 {
-                    MainWindow.gWoche.Montag.Zutaten.Add(zutat);
+                    Wochentag.Zutaten.Add(zutat);
                 }
 
                 this.Close();
