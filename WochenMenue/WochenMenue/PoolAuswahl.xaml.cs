@@ -22,6 +22,9 @@ namespace WochenMenue
     /// </summary>
     public partial class PoolAuswahl : Window
     {
+
+        //TODO: Hier brauchen wir eine Propoerty "Tag"
+
         public PoolAuswahl()
         {
             InitializeComponent();
