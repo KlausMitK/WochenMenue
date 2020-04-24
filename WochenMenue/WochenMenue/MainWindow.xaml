@@ -571,7 +571,7 @@
 
             <Border BorderBrush="#FF444444"  BorderThickness="4" Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="4">
 
-                <RichTextBox x:Name="TxbLog" Background="White"  FontSize="13" Foreground="Black" IsReadOnly="True" VerticalScrollBarVisibility="Visible"/>
+                <RichTextBox x:Name="TxbLog" Background="White"  FontSize="13" Foreground="Black" IsReadOnly="True" VerticalScrollBarVisibility="Auto"/>
 
             </Border>
 

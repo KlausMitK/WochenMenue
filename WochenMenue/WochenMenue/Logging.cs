@@ -38,6 +38,8 @@ namespace WochenMenue
             {
 
             }
+
+            OutputTextBox.ScrollToEnd();
         }
 
         public void Warning (string WarrnigText)
@@ -57,6 +59,7 @@ namespace WochenMenue
 
             }
 
+            OutputTextBox.ScrollToEnd();
         }
 
         public void Info (string InfoText)
@@ -75,6 +78,8 @@ namespace WochenMenue
             {
 
             }
+
+            OutputTextBox.ScrollToEnd();
         }
     }
 }
