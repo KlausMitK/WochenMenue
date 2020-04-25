@@ -40,6 +40,7 @@ namespace WochenMenue
 
         public void Bind()
         {
+
             //Montag
             txt_GerMo.DataContext = gWoche.Montag;
             lsV_Mo.ItemsSource = gWoche.Montag.Zutaten;
@@ -48,45 +49,27 @@ namespace WochenMenue
             txt_GerDi.DataContext = gWoche.Dienstag;
             lsV_Di.ItemsSource = gWoche.Dienstag.Zutaten;
 
-            //TODO: Dominik
             //Mittwoch
-            Binding bind2 = new Binding("Gericht");
-            bind2.Source = MainWindow.gWoche.Mittwoch;
-            txt_GerMi.SetBinding(TextBox.TextProperty, bind2);
+            txt_GerMi.DataContext = gWoche.Mittwoch;
+            lsV_Mi.ItemsSource = gWoche.Mittwoch.Zutaten;
 
-            lsV_Mi.ItemsSource = MainWindow.gWoche.Mittwoch.Zutaten;
 
-            //TODO: Dominik
             //Donnerstag
-            Binding bind3 = new Binding("Gericht");
-            bind3.Source = MainWindow.gWoche.Donnerstag;
-            txt_GerDo.SetBinding(TextBox.TextProperty, bind3);
+            txt_GerDo.DataContext = gWoche.Donnerstag;
+            lsV_Do.ItemsSource = gWoche.Donnerstag.Zutaten;
 
-            lsV_Do.ItemsSource = MainWindow.gWoche.Donnerstag.Zutaten;
 
-            //TODO: Dominik
             //Freitag
-            Binding bind4 = new Binding("Gericht");
-            bind4.Source = MainWindow.gWoche.Freitag;
-            txt_GerFr.SetBinding(TextBox.TextProperty, bind4);
+            txt_GerFr.DataContext = gWoche.Freitag;
+            lsV_Fr.ItemsSource = gWoche.Freitag.Zutaten;
 
-            lsV_Fr.ItemsSource = MainWindow.gWoche.Freitag.Zutaten;
-
-            //TODO: Dominik
             //Samstag
-            Binding bind5 = new Binding("Gericht");
-            bind5.Source = MainWindow.gWoche.Samstag;
-            txt_GerSa.SetBinding(TextBox.TextProperty, bind5);
+            txt_GerSa.DataContext = gWoche.Samstag;
+            lsV_Sa.ItemsSource = gWoche.Samstag.Zutaten;
 
-            lsV_Sa.ItemsSource = MainWindow.gWoche.Samstag.Zutaten;
-
-            //TODO: Dominik
             //Sonntag
-            Binding bind6 = new Binding("Gericht");
-            bind6.Source = MainWindow.gWoche.Sonntag;
-            txt_GerSo.SetBinding(TextBox.TextProperty, bind6);
-
-            lsV_So.ItemsSource = MainWindow.gWoche.Sonntag.Zutaten;
+            txt_GerSo.DataContext = gWoche.Sonntag;
+            lsV_So.ItemsSource = gWoche.Sonntag.Zutaten;
         }
 
 
