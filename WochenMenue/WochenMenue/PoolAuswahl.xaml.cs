@@ -33,6 +33,8 @@ namespace WochenMenue
 
             InitializeComponent();
 
+            txt_Suchen.Focus();
+
             //Lade Pool (Deserialisieren)
             MainWindow.gLog.Info("RezeptPool: " + MainWindow.gPoolPath + " wird geladen...");
 
@@ -80,6 +82,7 @@ namespace WochenMenue
 
         private void txt_Suchen_TextChanged(object sender, TextChangedEventArgs e)
         {
+
             TextBox t = (TextBox)sender;
             string filter = t.Text;
             ICollectionView cv = CollectionViewSource.GetDefaultView(DtG_PoA.ItemsSource);
