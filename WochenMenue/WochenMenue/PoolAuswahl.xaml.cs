@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Xml.Serialization;
 using System.IO;
+using System.ComponentModel;
 
 
 namespace WochenMenue
@@ -79,7 +80,19 @@ namespace WochenMenue
 
         private void txt_Suchen_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            TextBox t = (TextBox)sender;
+            string filter = t.Text;
+            ICollectionView cv = CollectionViewSource.GetDefaultView(DtG_PoA.ItemsSource);
+            if (filter == "")
+                cv.Filter = null;
+            else
+            {
+                cv.Filter = o =>
+                {
+                    Gericht p = o as Gericht;
+                    return (p.Name.ToUpper().StartsWith(filter.ToUpper()));
+                };
+            }
         }
     }
 }
