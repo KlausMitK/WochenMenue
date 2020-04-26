@@ -52,6 +52,8 @@ namespace UnitTests
             Assert.AreEqual("Spätzle", mWoche.Dienstag.Gericht);
             Assert.AreEqual("", mWoche.Mittwoch.Gericht);
             Assert.AreEqual("", mWoche.Freitag.Gericht);
+
+            
         }
     }
 }
