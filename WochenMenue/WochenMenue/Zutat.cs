@@ -16,7 +16,7 @@ namespace WochenMenue
         public Zutat(string name, int menge, string einheit)
         {
             Name = name;
-            Menge = 0;
+            Menge = menge;
             Einheit = einheit;
         }
 
