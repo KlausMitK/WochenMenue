@@ -21,6 +21,7 @@ namespace WochenMenue
         {
             WritePrivateProfileString(Section, Key, Value, this.path);
         }
+        
 
         public string IniReadValue(string Section, string Key)
         {

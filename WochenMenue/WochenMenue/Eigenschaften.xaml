@@ -13,8 +13,10 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
@@ -57,26 +59,51 @@
             <TextBox x:Name="Txt_PoolPath" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Background="LightGray" TextChanged="Txt_PoolPath_TextChanged"/>
             <Button x:Name="BtnÄndern" Content="Ändern" Grid.Row="0" Grid.Column="5" Click="BtnÄndern_Click"/>
 
-            <Grid Grid.Row="2" Grid.Column="3" Grid.ColumnSpan="3">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-
-                <Button x:Name="BtnOk" Content="OK" Grid.Column="1" Click="BtnOk_Click"/>
-                <Button x:Name="BtnAbbrechen" Content="Abbrechen" Grid.Column="3" Grid.ColumnSpan="2" Click="BtnAbbrechen_Click"/>
-
-            </Grid>
-
         </Grid>
 
-        
+        <Grid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0" Grid.RowSpan="4" Grid.Column="1" Grid.ColumnSpan="3">
+                <Label FontWeight="Bold">Logging Level</Label>
+                <RadioButton>Error</RadioButton>
+                <RadioButton>Warning</RadioButton>
+                <RadioButton>Info</RadioButton>
+            </StackPanel>
+            
+        </Grid>
+
+        <Grid Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Button x:Name="BtnOk" Content="OK" Grid.Row="1" Grid.Column="1" Click="BtnOk_Click"/>
+            <Button x:Name="BtnAbbrechen" Content="Abbrechen" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2" Click="BtnAbbrechen_Click"/>
+
+        </Grid>
 
     </Grid>
 </Window>
