@@ -16,6 +16,15 @@ namespace WochenMenue
     {
         private string mGericht;
 
+        //
+        private int mPropChangedCount;
+
+        //
+        public int PropChangeCount()
+        {
+            return mPropChangedCount;
+        }
+
         public string Gericht
         {
             get
@@ -30,6 +39,7 @@ namespace WochenMenue
 
         public Tag()
         {
+          mPropChangedCount = 0;
           Gericht = "";
           Zutaten = new ObservableCollection<Zutat>();
         }
@@ -42,6 +52,7 @@ namespace WochenMenue
             {
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
+            mPropChangedCount++;
         }
     }
 }
