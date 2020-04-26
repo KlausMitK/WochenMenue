@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WochenMenue"
         mc:Ignorable="d"
-        Title="Eigenschaften" Height="450" Width="800">
+        Title="Eigenschaften" Height="450" Width="500">
     <!--Äuseres Grid-->
     <Grid>
         <Grid.ColumnDefinitions>
@@ -13,7 +13,7 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -31,8 +31,8 @@
                 <ColumnDefinition Width="20"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            
-            <Label Content="Speicherort für Rezeptpool:" Grid.Column="1" Grid.ColumnSpan="2" FontSize="18" VerticalAlignment="Center"/>
+
+            <Label Content="Speicherort für Rezeptpool:" Grid.Column="1" Grid.ColumnSpan="2" FontWeight="Bold" VerticalAlignment="Center"/>
 
         </Grid>
         
@@ -56,14 +56,14 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <TextBox x:Name="Txt_PoolPath" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Background="LightGray" TextChanged="Txt_PoolPath_TextChanged"/>
+            <TextBox x:Name="Txt_PoolPath" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="3" Background="White" TextChanged="Txt_PoolPath_TextChanged"/>
             <Button x:Name="BtnÄndern" Content="Ändern" Grid.Row="0" Grid.Column="5" Click="BtnÄndern_Click"/>
 
         </Grid>
 
         <Grid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="20"/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -74,7 +74,7 @@
                 <RowDefinition/>
                 <RowDefinition/>
                 <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition Height="10"/>
             </Grid.RowDefinitions>
 
             <StackPanel Grid.Row="0" Grid.RowSpan="4" Grid.Column="1" Grid.ColumnSpan="3">
@@ -86,13 +86,13 @@
             
         </Grid>
 
-        <Grid Grid.Row="4" Grid.Column="3" Grid.ColumnSpan="3">
+        <Grid Grid.Row="4" Grid.Column="2" Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
+
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition Width="20"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition/>
@@ -100,8 +100,8 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
-            <Button x:Name="BtnOk" Content="OK" Grid.Row="1" Grid.Column="1" Click="BtnOk_Click"/>
-            <Button x:Name="BtnAbbrechen" Content="Abbrechen" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2" Click="BtnAbbrechen_Click"/>
+            <Button x:Name="BtnOk" Content="OK" Grid.Row="1" Grid.Column="0" Click="BtnOk_Click"/>
+            <Button x:Name="BtnAbbrechen" Content="Abbrechen" Grid.Row="1" Grid.Column="2" Click="BtnAbbrechen_Click"/>
 
         </Grid>
 

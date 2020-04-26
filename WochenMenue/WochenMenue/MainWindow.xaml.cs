@@ -72,7 +72,7 @@ namespace WochenMenue
             lsV_So.ItemsSource = gWoche.Sonntag.Zutaten;
         }
 
-
+        
         //Buttons Rezepte Bearbeiten \\
         private void BtnMoRez_Click(object sender, RoutedEventArgs e)
         {
