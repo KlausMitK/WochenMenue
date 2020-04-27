@@ -32,14 +32,21 @@ namespace WochenMenue
         {
             InitializeComponent();
             mEKL = ekl;
-            //Bind();
+
+            BrushConverter bc = new BrushConverter();
+            TextRange textRange = new TextRange(Dtg_Ekl.Document.ContentEnd, Dtg_Ekl.Document.ContentEnd);
+            textRange.Text = "Einkaufsliste"+"\n";
+            textRange.ApplyPropertyValue(TextElement.FontSizeProperty, "20");
+            textRange.ApplyPropertyValue(TextElement.FontWeightProperty, FontWeights.Bold);
+
+
             foreach (Zutat zutat in mEKL)
             {
-                BrushConverter bc = new BrushConverter();
-                TextRange textRange = new TextRange(Dtg_Ekl.Document.ContentEnd, Dtg_Ekl.Document.ContentEnd);
+                bc = new BrushConverter();
+                textRange = new TextRange(Dtg_Ekl.Document.ContentEnd, Dtg_Ekl.Document.ContentEnd);
                 textRange.Text = zutat.ToString()+"\r";
-
-            
+                textRange.ApplyPropertyValue(TextElement.FontSizeProperty, "15");
+                textRange.ApplyPropertyValue(TextElement.FontWeightProperty, FontWeights.Normal);
             }
 
         }
@@ -60,7 +67,17 @@ namespace WochenMenue
         //Button Drucken
         private void btn_Drucken_Click(object sender, RoutedEventArgs e)
         {
-
+            
+            PrintDialog pd = new PrintDialog();
+            if ((pd.ShowDialog() == true))
+            {
+                MainWindow.gLog.Info("Drucken gestartet ...");
+                //use either one of the below
+                //pd.PrintVisual(Dtg_Ekl as Visual, "printing as visual");
+                pd.PrintDocument((((IDocumentPaginatorSource)Dtg_Ekl.Document).DocumentPaginator), "printing as paginator");
+                MainWindow.gLog.Info("Drucken beendet.");
+            }
+            this.Close();
         }
     }
 }

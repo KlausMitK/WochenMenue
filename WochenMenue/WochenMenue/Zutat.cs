@@ -29,7 +29,7 @@ namespace WochenMenue
 
         public override string ToString()
         {
-          return this.Name + ":" + this.Menge + " " + this.Einheit;
+          return this.Name + ": " + this.Menge + " " + this.Einheit;
         }
 
     }

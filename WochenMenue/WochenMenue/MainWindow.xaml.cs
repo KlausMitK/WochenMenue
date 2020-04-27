@@ -166,7 +166,7 @@ namespace WochenMenue
         private void Menue_File_Einkaufsliste_Click(object sender, RoutedEventArgs e)
         {
             MainWindow.gWoche.GenerateEKL();
-            new Einkaufsliste(MainWindow.gWoche.mEKL).Show();
+            new Einkaufsliste(MainWindow.gWoche.mEKL).ShowDialog();
         }
 
         private void txt_Suche_TextChanged(object sender, TextChangedEventArgs e)
