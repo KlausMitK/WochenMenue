@@ -21,25 +21,17 @@
 
 
 
-        <DataGrid Name="Dtg_Ekl" Grid.Row="0" AutoGenerateColumns="False">
-            
-                <DataGrid.Columns >
-                    <DataGridTextColumn Header="Zutat" Width="190" Binding="{Binding Name}"></DataGridTextColumn>
-                    <DataGridTextColumn Header="Menge" Width="80" Binding="{Binding Menge}"></DataGridTextColumn>
-                    <DataGridTextColumn Header="Einheit" Width="80" Binding="{Binding Einheit}"></DataGridTextColumn>
-                </DataGrid.Columns>
-                  
-            </DataGrid>
-        
-        
+        <RichTextBox Name="Dtg_Ekl" Grid.Row="0" Background="White" FontSize="15"/>
+
+
         <!--Zurück Button-->
         <Grid Grid.Row="1" >
             <Grid.ColumnDefinitions>
-                <ColumnDefinition />
+                <ColumnDefinition Width="20"/>
                 <ColumnDefinition/>
-                <ColumnDefinition Width="100" />
-                <ColumnDefinition Width="15"/>
-                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="60"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="20"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="0"/>
@@ -47,8 +39,9 @@
                 <RowDefinition Height="0"/>
             </Grid.RowDefinitions>
             
-            <Button x:Name="btn_Back" FontSize="14" Grid.Row="1" Grid.Column="2" Content="Zurück" Background="LightGreen" Click="btn_Back_Click"/>
-            
+            <Button x:Name="btn_Back" FontSize="14" Grid.Row="1" Grid.Column="1" Content="Zurück" Background="LightGreen" Click="btn_Back_Click"/>
+            <Button x:Name="btn_Drucken" Grid.Row="1" Grid.Column="3" Content="Drucken" FontSize="14" Background="LightGray" Click="btn_Drucken_Click"/>
+
         </Grid>
 
        

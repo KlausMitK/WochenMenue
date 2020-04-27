@@ -17,6 +17,7 @@ using System.Windows.Shapes;
 using System.Windows.Documents.Serialization;
 using System.Windows.Xps;
 using System.Windows.Xps.Packaging;
+using System.Collections.ObjectModel;
 
 namespace WochenMenue
 {
@@ -25,16 +26,29 @@ namespace WochenMenue
     /// </summary>
     public partial class Einkaufsliste : Window
     {
-        public Einkaufsliste()
+        public ObservableCollection<Zutat> mEKL { get; set; }
+
+        public Einkaufsliste(ObservableCollection<Zutat> ekl)
         {
             InitializeComponent();
-            Bind();
+            mEKL = ekl;
+            //Bind();
+            foreach (Zutat zutat in mEKL)
+            {
+                BrushConverter bc = new BrushConverter();
+                TextRange textRange = new TextRange(Dtg_Ekl.Document.ContentEnd, Dtg_Ekl.Document.ContentEnd);
+                textRange.Text = zutat.ToString()+"\r";
+
+            
+            }
+
         }
 
         public void Bind()
         {
             //Bind Woche.mEKL mit entsprechendem DataGrid
-            Dtg_Ekl.ItemsSource = MainWindow.gWoche.mEKL;
+            //Dtg_Ekl.  ItemsSource = MainWindow.gWoche.mEKL;
+            
         }
                
 
@@ -42,6 +56,11 @@ namespace WochenMenue
         {
             this.Close();
         }
-        
+
+        //Button Drucken
+        private void btn_Drucken_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
