@@ -12,74 +12,32 @@ namespace WochenMenue
 {
     public class Logging
     {
-        RichTextBox mTextBox;
+        private ILogOutput mOutputContainer;
 
-        public RichTextBox OutputTextBox { get { return mTextBox; } set{ mTextBox = value; } } 
-
-        public Logging(RichTextBox tB)
+        public Logging(ILogOutput outputContainer)
         {
-            OutputTextBox = tB;
+            mOutputContainer = outputContainer;
         }
 
         public void Error (string ErrorText)
         {
-            //TODO: Roten Hintergrund implementieren.
             string OutputText = "E: " + ErrorText + "\r";
 
-            BrushConverter bc = new BrushConverter();
-            TextRange textRange = new TextRange(OutputTextBox.Document.ContentEnd, OutputTextBox.Document.ContentEnd);
-            textRange.Text = OutputText;
-
-            try
-            {
-                textRange.ApplyPropertyValue(TextElement.ForegroundProperty, bc.ConvertFromString("Red"));
-            }
-            catch (FormatException)
-            {
-
-            }
-
-            OutputTextBox.ScrollToEnd();
+            mOutputContainer.Write(OutputText);
         }
 
         public void Warning (string WarrnigText)
         {
             string OutputText = "W: " + WarrnigText + "\r";
 
-            BrushConverter bc = new BrushConverter();
-            TextRange textRange = new TextRange(OutputTextBox.Document.ContentEnd, OutputTextBox.Document.ContentEnd);
-            textRange.Text = OutputText;
-
-            try
-            {
-                textRange.ApplyPropertyValue(TextElement.ForegroundProperty, bc.ConvertFromString("Orange"));
-            }
-            catch (FormatException)
-            {
-
-            }
-
-            OutputTextBox.ScrollToEnd();
+            mOutputContainer.Write(OutputText);
         }
 
         public void Info (string InfoText)
         {
             string OutputText = "I: " + InfoText + "\r";
 
-            BrushConverter bc = new BrushConverter();
-            TextRange textRange = new TextRange(OutputTextBox.Document.ContentEnd, OutputTextBox.Document.ContentEnd);
-            textRange.Text = OutputText;
-
-            try
-            {
-                textRange.ApplyPropertyValue(TextElement.ForegroundProperty, bc.ConvertFromString("Green"));
-            }
-            catch (FormatException)
-            {
-
-            }
-
-            OutputTextBox.ScrollToEnd();
+            mOutputContainer.Write(OutputText);
         }
     }
 }

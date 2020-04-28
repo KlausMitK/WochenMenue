@@ -15,7 +15,7 @@ namespace UnitTests
         }
 
         [Test]
-        public void zutatTest() 
+        public void ToStringTest() 
         {
             Zutat zutat = new Zutat();
 
@@ -25,8 +25,5 @@ namespace UnitTests
 
             Assert.AreEqual("milch: 1 Liter", zutat.ToString());
         }
-        
-
-        
     }
 }

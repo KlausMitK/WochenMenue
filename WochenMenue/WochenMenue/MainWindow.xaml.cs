@@ -35,7 +35,8 @@ namespace WochenMenue
             gPoolPath = iniFile.IniReadValue("Path", "PoolPath");
 
             // Logging initialisieren
-            gLog = new Logging(this.TxbLog);
+            LogOutputRTB outputRTB = new LogOutputRTB(TxbLog);
+            gLog = new Logging(outputRTB);
         }
 
         public void Bind()
