@@ -23,6 +23,8 @@ namespace WochenMenue
             InitializeComponent();
             Bind();
 
+            PropValues prop = PropValues.Instance();
+            
             // iniFile muss im gleichen Verzeichnis wie exe-Datei leigen
             string exePath = System.Reflection.Assembly.GetExecutingAssembly().Location;
             string iniDirectory = System.IO.Path.GetDirectoryName(exePath);
