@@ -55,7 +55,10 @@ namespace WochenMenue
         public string SavePath
         {
 
-            get { return mSavePath; }
+            get 
+            { 
+                return mSavePath; 
+            }
             set 
             {
                 mSavePath = value;
@@ -83,6 +86,7 @@ namespace WochenMenue
         private PropValues()
         {
             mPropChangedCount = 0;
+            SavePath = "";
         }
 
         private bool CheckLoggingLevel(string level)

@@ -108,7 +108,7 @@ namespace WochenMenue
             new Rez(MainWindow.gWoche.Sonntag).Show();
         }
 
-        private void Save()
+        private void SaveAs()
         {
             MainWindow.gWoche.mEKL.Clear();
 
@@ -122,6 +122,7 @@ namespace WochenMenue
                 FileStream filestream = new FileStream(fileName, FileMode.Create);
                 serializer.Serialize(filestream, MainWindow.gWoche);
                 filestream.Close();
+                PropValues.Instance().SavePath = fileName;
             }
         }
 
@@ -147,11 +148,11 @@ namespace WochenMenue
             Open();
         }
 
-        private void Menue_File_Save_Click(object sender, RoutedEventArgs e)
+        private void Menue_File_SaveAs_Click(object sender, RoutedEventArgs e)
         {
             // Wichtig ist hier, dass der Fokus aus den Data Grids auf eine anderes Element gesetzt wird, sonst wird gWoche nicht aktualisiert.
             txt_Suche.Focus();
-            Save();
+            SaveAs();
         }
 
         private void Menue_File_Exit_Click(object sender, RoutedEventArgs e)
