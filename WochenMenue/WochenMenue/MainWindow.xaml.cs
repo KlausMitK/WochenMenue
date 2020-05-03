@@ -138,6 +138,7 @@ namespace WochenMenue
                 FileStream fileStream = new FileStream(fileName, FileMode.Open);
                 MainWindow.gWoche = (Woche)serializer.Deserialize(fileStream);
                 fileStream.Close();
+                PropValues.Instance().SavePath = fileName;
             }
             Bind();
         }
@@ -354,6 +355,37 @@ namespace WochenMenue
         private void TxbLog_TouchEnter(object sender, TouchEventArgs e)
         {
 
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Save()
+        {
+            string fileName = PropValues.Instance().SavePath;
+
+            XmlSerializer serializer = new XmlSerializer(typeof(Woche));
+
+            FileStream filestream = new FileStream(fileName, FileMode.Create);
+            serializer.Serialize(filestream, MainWindow.gWoche);
+            filestream.Close();
+        }
+
+        // Speichern
+        private void Menue_File_Save_Click(object sender, RoutedEventArgs e)
+        {
+            txt_Suche.Focus();
+            if(PropValues.Instance().SavePath == "")
+            {
+                SaveAs();
+            }
+            else
+            {
+                Save();
+            }
+            
         }
     }
 }

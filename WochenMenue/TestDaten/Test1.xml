@@ -1,83 +1,38 @@
 <?xml version="1.0"?>
 <Woche xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Montag>
-    <Gericht>1</Gericht>
-    <Rezept>
+    <Gericht>12</Gericht>
+    <Zutaten>
       <Zutat>
-        <Name>1</Name>
-        <Menge>100</Menge>
-        <Einheit>gr</Einheit>
+        <Name />
+        <Menge>0</Menge>
+        <Einheit />
       </Zutat>
-      <Zutat>
-        <Name>2</Name>
-        <Menge>300</Menge>
-        <Einheit>l</Einheit>
-      </Zutat>
-      <Zutat>
-        <Name>4</Name>
-        <Menge>400</Menge>
-        <Einheit>kg</Einheit>
-      </Zutat>
-    </Rezept>
+    </Zutaten>
   </Montag>
   <Dienstag>
-    <Gericht>2</Gericht>
-    <Rezept>
-      <Zutat>
-        <Name>2</Name>
-        <Menge>100</Menge>
-        <Einheit>gr</Einheit>
-      </Zutat>
-    </Rezept>
+    <Gericht>23</Gericht>
+    <Zutaten />
   </Dienstag>
   <Mittwoch>
-    <Gericht>3</Gericht>
-    <Rezept>
-      <Zutat>
-        <Name>3</Name>
-        <Menge>100</Menge>
-        <Einheit>gr</Einheit>
-      </Zutat>
-    </Rezept>
+    <Gericht>34</Gericht>
+    <Zutaten />
   </Mittwoch>
   <Donnerstag>
-    <Gericht>4</Gericht>
-    <Rezept>
-      <Zutat>
-        <Name>4</Name>
-        <Menge>100</Menge>
-        <Einheit>gr</Einheit>
-      </Zutat>
-    </Rezept>
+    <Gericht>45</Gericht>
+    <Zutaten />
   </Donnerstag>
   <Freitag>
-    <Gericht>5</Gericht>
-    <Rezept>
-      <Zutat>
-        <Name>5</Name>
-        <Menge>100</Menge>
-        <Einheit>gr</Einheit>
-      </Zutat>
-    </Rezept>
+    <Gericht>56</Gericht>
+    <Zutaten />
   </Freitag>
   <Samstag>
-    <Gericht>6</Gericht>
-    <Rezept>
-      <Zutat>
-        <Name>6</Name>
-        <Menge>100</Menge>
-        <Einheit>gr</Einheit>
-      </Zutat>
-    </Rezept>
+    <Gericht>67</Gericht>
+    <Zutaten />
   </Samstag>
   <Sonntag>
-    <Gericht>8</Gericht>
-    <Rezept>
-      <Zutat>
-        <Name>7</Name>
-        <Menge>100</Menge>
-        <Einheit>gr</Einheit>
-      </Zutat>
-    </Rezept>
+    <Gericht>78</Gericht>
+    <Zutaten />
   </Sonntag>
+  <mEKL />
 </Woche>

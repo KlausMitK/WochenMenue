@@ -31,7 +31,7 @@ namespace WochenMenue
             InitializeComponent();
             oldFileName = PropValues.Instance().PoolPath;
             Txt_PoolPath.DataContext = PropValues.Instance();
-                //Text = oldFileName;
+            TxtSpecherOrtWchPl.DataContext = PropValues.Instance();
         }
 
         private void BtnÄndern_Click(object sender, RoutedEventArgs e)
