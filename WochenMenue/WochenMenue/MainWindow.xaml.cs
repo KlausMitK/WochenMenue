@@ -14,7 +14,7 @@ namespace WochenMenue
     {
 
         public static Woche gWoche = new Woche();
-        public static string gPoolPath = "";
+
         public static Logging gLog;
         public static string gIniFilePath;
 
@@ -30,13 +30,6 @@ namespace WochenMenue
             string iniDirectory = System.IO.Path.GetDirectoryName(exePath);
             gIniFilePath = iniDirectory + "\\WochenMenue.ini";
 
-            IniFile iniFile = new IniFile(gIniFilePath);
-
-            //TODO: Auslesen des letzten PoolPath und in gPoolPAth speichern.
-            //Wenn ini-File nicht gefunden wird, wird PoolPAth auf "" gesetzt
-            gPoolPath = iniFile.IniReadValue("Path", "PoolPath");
-
-            // Logging initialisieren
             LogOutputRTB outputRTB = new LogOutputRTB(TxbLog);
             gLog = new Logging(outputRTB);
         }
@@ -114,7 +107,6 @@ namespace WochenMenue
 
         private void Save()
         {
-            //TODO: Muss geändert werden. Entscheiden, ob EKL gespeichert wird, oder nicht.
             MainWindow.gWoche.mEKL.Clear();
 
             SaveFileDialog saveFileDialog = new SaveFileDialog();
@@ -226,15 +218,15 @@ namespace WochenMenue
                 gericht.Zutaten.Add(zutat);
             }
 
-            MainWindow.gLog.Info("RezeptPool: " + gPoolPath + " wird geladen...");
+            MainWindow.gLog.Info("RezeptPool: " + PropValues.Instance().PoolPath + " wird geladen...");
 
             RezeptPool rezPool = new RezeptPool();
             XmlSerializer serializer = new XmlSerializer(typeof(RezeptPool));
-            FileStream fileStream = new FileStream(MainWindow.gPoolPath, FileMode.Open);
+            FileStream fileStream = new FileStream(PropValues.Instance().PoolPath, FileMode.Open);
             rezPool = (RezeptPool)serializer.Deserialize(fileStream);
             fileStream.Close();
 
-            MainWindow.gLog.Info("RezeptPool: " + gPoolPath + " ist geladen");
+            MainWindow.gLog.Info("RezeptPool: " + PropValues.Instance().PoolPath + " ist geladen");
 
             if (rezPool.FindeGericht(GerichtName) == null)
             {
@@ -247,14 +239,14 @@ namespace WochenMenue
             }
 
 
-            MainWindow.gLog.Info("RezeptPool: " + gPoolPath + " wird aktualisiert ...");
+            MainWindow.gLog.Info("RezeptPool: " + PropValues.Instance().PoolPath + " wird aktualisiert ...");
 
             serializer = new XmlSerializer(typeof(RezeptPool));
-            FileStream filestream = new FileStream(MainWindow.gPoolPath, FileMode.Create);
+            FileStream filestream = new FileStream(PropValues.Instance().PoolPath, FileMode.Create);
             serializer.Serialize(filestream, rezPool);
             filestream.Close();
 
-            MainWindow.gLog.Info("RezeptPool: " + gPoolPath + " ist aktualisiert");
+            MainWindow.gLog.Info("RezeptPool: " + PropValues.Instance().PoolPath + " ist aktualisiert");
         }
 
         // Stackpanel --> Hizufügen
@@ -310,7 +302,6 @@ namespace WochenMenue
 
         private void BtnZoDi_Click(object sender, RoutedEventArgs e)
         {
-            // TODO: Dominik: Info ins Logging schreiben.
             MainWindow.gLog.Info("Start Hinzufügen Gericht Dienstag ...");
             GerichtInPool(gWoche.Dienstag);
             MainWindow.gLog.Info("Ende Hinzufügen Gericht Dienstag.");
@@ -318,7 +309,6 @@ namespace WochenMenue
 
         private void BtnZoMi_Click(object sender, RoutedEventArgs e)
         {
-            // TODO: Dominik: Info ins Logging schreiben.
             MainWindow.gLog.Info("Start Hinzufügen Gericht Mittwoch ...");
             GerichtInPool(gWoche.Mittwoch);
             MainWindow.gLog.Info("Ende Hinzufügen Gericht Mittwoch.");
@@ -326,7 +316,6 @@ namespace WochenMenue
 
         private void BtnZoDo_Click(object sender, RoutedEventArgs e)
         {
-            // TODO: Dominik: Info ins Logging schreiben.
             MainWindow.gLog.Info("Start Hinzufügen Gericht Donnerstag ...");
             GerichtInPool(gWoche.Donnerstag);
             MainWindow.gLog.Info("Ende Hinzufügen Gericht Donnerstag.");
@@ -334,7 +323,6 @@ namespace WochenMenue
 
         private void BtnZoFr_Click(object sender, RoutedEventArgs e)
         {
-            // TODO: Dominik: Info ins Logging schreiben
             MainWindow.gLog.Info("Start Hinzufügen Gericht Freitag ...");
             GerichtInPool(gWoche.Freitag);
             MainWindow.gLog.Info("Ende Hinzufügen Gericht Freitag.");
@@ -342,7 +330,6 @@ namespace WochenMenue
 
         private void BtnZoSa_Click(object sender, RoutedEventArgs e)
         {
-            // TODO: Dominik: Info ins Logging schreiben.
             MainWindow.gLog.Info("Start Hinzufügen Gericht Samstag ...");
             GerichtInPool(gWoche.Samstag);
             MainWindow.gLog.Info("Ende Hinzufügen Gericht Samstag.");
@@ -350,7 +337,6 @@ namespace WochenMenue
 
         private void BtnZoSo_Click(object sender, RoutedEventArgs e)
         {
-            // TODO: Dominik: Info ins Logging schreiben.
             MainWindow.gLog.Info("Start Hinzufügen Gericht Sonntag ...");
             GerichtInPool(gWoche.Sonntag);
             MainWindow.gLog.Info("Ende Hinzufügen Gericht Sonntag.");

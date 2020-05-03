@@ -29,8 +29,9 @@ namespace WochenMenue
         public Eigenschaften()
         {
             InitializeComponent();
-            oldFileName = MainWindow.gPoolPath;
-            Txt_PoolPath.Text = oldFileName;
+            oldFileName = PropValues.Instance().PoolPath;
+            Txt_PoolPath.DataContext = PropValues.Instance();
+                //Text = oldFileName;
         }
 
         private void BtnÄndern_Click(object sender, RoutedEventArgs e)
@@ -41,29 +42,19 @@ namespace WochenMenue
             {
                 string fileName = openFileDialog.FileName;
                 Txt_PoolPath.Text = fileName;
-                MainWindow.gPoolPath = fileName;
+                PropValues.Instance().PoolPath = fileName;
             }
         }
 
         private void BtnOk_Click(object sender, RoutedEventArgs e)
         {
-            string iniFilePath = MainWindow.gIniFilePath;
-            IniFile iniFile = new IniFile(MainWindow.gIniFilePath);
-
-            iniFile.IniWriteValue("Path", "PoolPath", MainWindow.gPoolPath);
             this.Close();
         }
 
         private void BtnAbbrechen_Click(object sender, RoutedEventArgs e)
         {
-            Txt_PoolPath.Text = oldFileName;
-            MainWindow.gPoolPath = oldFileName;
+            PropValues.Instance().PoolPath = oldFileName;
             this.Close();
-        }
-
-        private void Txt_PoolPath_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
         }
     }
 }

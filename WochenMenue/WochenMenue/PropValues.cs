@@ -37,10 +37,17 @@ namespace WochenMenue
 
         public string PoolPath
         {
-            get { return mPoolPath; }
+            get 
+            {
+                IniFile iniFile = new IniFile(MainWindow.gIniFilePath);
+                mPoolPath = iniFile.IniReadValue("Path", "PoolPath");
+                return mPoolPath; 
+            }
             set
             {
                 mPoolPath = value;
+                IniFile iniFile = new IniFile(MainWindow.gIniFilePath);
+                iniFile.IniWriteValue("Path", "PoolPath", mPoolPath);
                 NotifyPropertyChanged("PoolPath");
             }
         }

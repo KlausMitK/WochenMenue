@@ -36,15 +36,15 @@ namespace WochenMenue
             txt_Suchen.Focus();
 
             //Lade Pool (Deserialisieren)
-            MainWindow.gLog.Info("RezeptPool: " + MainWindow.gPoolPath + " wird geladen...");
+            MainWindow.gLog.Info("RezeptPool: " + PropValues.Instance().PoolPath + " wird geladen...");
 
             RezeptPool rezPool = new RezeptPool();
             XmlSerializer serializer = new XmlSerializer(typeof(RezeptPool));
-            FileStream fileStream = new FileStream(MainWindow.gPoolPath, FileMode.Open);
+            FileStream fileStream = new FileStream(PropValues.Instance().PoolPath, FileMode.Open);
             rezPool = (RezeptPool)serializer.Deserialize(fileStream);
             fileStream.Close();
 
-            MainWindow.gLog.Info("RezeptPool: " + MainWindow.gPoolPath + " ist geladen");
+            MainWindow.gLog.Info("RezeptPool: " + PropValues.Instance().PoolPath + " ist geladen");
 
             //Binding
             DtG_PoA.ItemsSource = rezPool.Gerichte;
