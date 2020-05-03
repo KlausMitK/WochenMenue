@@ -32,7 +32,7 @@ namespace WochenMenue
             gIniFilePath = iniDirectory + "\\WochenMenue.ini";
 
             outputRTB = new LogOutputRTB(TxbLog);
-            gLog = new Logging();
+            gLog = Logging.Instance();
             gLog.SetOutputcontainer(outputRTB);
             
         }

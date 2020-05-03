@@ -19,7 +19,7 @@ namespace UnitTests
         {
             string log = "";
             LogOutputString logOutputString = new LogOutputString(log);
-            Logging logging = new Logging();
+            Logging logging = Logging.Instance();
             logging.SetOutputcontainer(logOutputString);
             logging.Error("Es gab einen Fehler.");
             Assert.AreEqual("E: Es gab einen Fehler.\r", logOutputString.LogMessage);
@@ -30,7 +30,7 @@ namespace UnitTests
         {
             string log = "";
             LogOutputString logOutputString = new LogOutputString(log);
-            Logging logging = new Logging();
+            Logging logging = Logging.Instance();
             logging.SetOutputcontainer(logOutputString);
             logging.Error("Es gab eine Warnung.");
             Assert.AreEqual("E: Es gab eine Warnung.\r", logOutputString.LogMessage);
@@ -41,7 +41,7 @@ namespace UnitTests
         {
             string log = "";
             LogOutputString logOutputString = new LogOutputString(log);
-            Logging logging = new Logging();
+            Logging logging = Logging.Instance();
             logging.SetOutputcontainer(logOutputString);
             logging.Error("Es gab eine Info.");
             Assert.AreEqual("E: Es gab eine Info.\r", logOutputString.LogMessage);

@@ -39,14 +39,14 @@ namespace WochenMenue
         {
             get 
             {
-                IniFile iniFile = new IniFile();
+                IniFile iniFile = IniFile.Instance();
                 mPoolPath = iniFile.IniReadValue("Path", "PoolPath");
                 return mPoolPath; 
             }
             set
             {
                 mPoolPath = value;
-                IniFile iniFile = new IniFile();
+                IniFile iniFile = IniFile.Instance();
                 iniFile.IniWriteValue("Path", "PoolPath", mPoolPath);
                 NotifyPropertyChanged("PoolPath");
             }

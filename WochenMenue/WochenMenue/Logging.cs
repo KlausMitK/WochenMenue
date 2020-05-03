@@ -14,7 +14,17 @@ namespace WochenMenue
     {
         private ILogOutput mOutputContainer;
 
-        public Logging()
+        private static Logging mInstance = null;
+        
+        public static Logging Instance()
+        {
+            if(mInstance == null)
+            {
+                mInstance = new Logging();
+            }
+            return mInstance;
+        }
+        private Logging()
         {
             mOutputContainer = null; ;
         }
