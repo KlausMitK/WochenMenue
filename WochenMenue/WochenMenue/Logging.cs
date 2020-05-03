@@ -14,11 +14,16 @@ namespace WochenMenue
     {
         private ILogOutput mOutputContainer;
 
-        public Logging(ILogOutput outputContainer)
+        public Logging()
+        {
+            mOutputContainer = null; ;
+        }
+
+        public void SetOutputcontainer(ILogOutput outputContainer)
         {
             mOutputContainer = outputContainer;
         }
-
+                
         public void Error (string ErrorText)
         {
             string OutputText = "E: " + ErrorText + "\r";

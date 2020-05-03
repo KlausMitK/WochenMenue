@@ -13,9 +13,9 @@ namespace WochenMenue
         [DllImport("kernel32")]
         private static extern int GetPrivateProfileString(string section, string key, string def, StringBuilder retVal, int size, string filePath);
 
-        public IniFile(string INIPath)
+        public IniFile()
         {
-            path = INIPath;
+            path = MainWindow.gIniFilePath;
         }
         public void IniWriteValue(string Section, string Key, string Value)
         {
