@@ -108,24 +108,6 @@ namespace WochenMenue
             new Rez(MainWindow.gWoche.Sonntag).Show();
         }
 
-        private void SaveAs()
-        {
-            MainWindow.gWoche.mEKL.Clear();
-
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-            if (saveFileDialog.ShowDialog() == true)
-            {
-                string fileName = saveFileDialog.FileName;
-
-                XmlSerializer serializer = new XmlSerializer(typeof(Woche));
-
-                FileStream filestream = new FileStream(fileName, FileMode.Create);
-                serializer.Serialize(filestream, MainWindow.gWoche);
-                filestream.Close();
-                PropValues.Instance().SavePath = fileName;
-            }
-        }
-
         // Datein Laden
         public void Open()
         {
@@ -149,12 +131,6 @@ namespace WochenMenue
             Open();
         }
 
-        private void Menue_File_SaveAs_Click(object sender, RoutedEventArgs e)
-        {
-            // Wichtig ist hier, dass der Fokus aus den Data Grids auf eine anderes Element gesetzt wird, sonst wird gWoche nicht aktualisiert.
-            txt_Suche.Focus();
-            SaveAs();
-        }
 
         private void Menue_File_Exit_Click(object sender, RoutedEventArgs e)
         {
@@ -362,30 +338,55 @@ namespace WochenMenue
 
         }
 
-        private void Save()
+        //Speichern unter
+        private void SaveAs()
         {
-            string fileName = PropValues.Instance().SavePath;
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            if (saveFileDialog.ShowDialog() == true)
+            {
+                string fileName = saveFileDialog.FileName;
+
+                XmlSerializer serializer = new XmlSerializer(typeof(Woche));
+
+                Save(fileName);
+                PropValues.Instance().SavePath = fileName;
+            }
+        }
+
+        //Speichern
+        private void Save(string fileName)
+        {
+            MainWindow.gWoche.mEKL.Clear();
 
             XmlSerializer serializer = new XmlSerializer(typeof(Woche));
-
             FileStream filestream = new FileStream(fileName, FileMode.Create);
             serializer.Serialize(filestream, MainWindow.gWoche);
             filestream.Close();
+            Logging.Instance().Info(fileName + " wurde gespeichert.");
         }
 
-        // Speichern
+        //Speichern 
         private void Menue_File_Save_Click(object sender, RoutedEventArgs e)
         {
             txt_Suche.Focus();
             if(PropValues.Instance().SavePath == "")
             {
+                // Beim ersten mal, muus der Speicher-Dialog geöffnet werden.
                 SaveAs();
             }
             else
             {
-                Save();
+                Save(PropValues.Instance().SavePath);
             }
             
+        }
+
+        // Speichern unter
+        private void Menue_File_SaveAs_Click(object sender, RoutedEventArgs e)
+        {
+            // Wichtig ist hier, dass der Fokus aus den Data Grids auf eine anderes Element gesetzt wird, sonst wird gWoche nicht aktualisiert.
+            txt_Suche.Focus();
+            SaveAs();
         }
     }
 }
