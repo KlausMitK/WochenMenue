@@ -121,6 +121,7 @@ namespace WochenMenue
                 MainWindow.gWoche = (Woche)serializer.Deserialize(fileStream);
                 fileStream.Close();
                 PropValues.Instance().SavePath = fileName;
+                Logging.Instance().Info(fileName + " wurde geladen.");
             }
             Bind();
         }
@@ -128,7 +129,34 @@ namespace WochenMenue
 
         private void Menue_File_Open_Click(object sender, RoutedEventArgs e)
         {
-            Open();
+            if (PropValues.Instance().SavePath != "")
+            {
+                // Fragen, ob gespeichert werden soll, dann ggfl. Speichern.
+
+                MessageBoxResult result = MessageBox.Show("Soll die geöffnete Datei gespeichert werden?", "WochenMenue", MessageBoxButton.YesNoCancel);
+                switch (result)
+                {
+                    case MessageBoxResult.Yes:
+                        Save(PropValues.Instance().SavePath);
+                        gWoche = new Woche();
+                        PropValues.Instance().SavePath = "";
+                        Bind();
+                        Open();
+                        break;
+                    case MessageBoxResult.No:
+                        gWoche = new Woche();
+                        PropValues.Instance().SavePath = "";
+                        Bind();
+                        Open();
+                        break;
+                    case MessageBoxResult.Cancel:
+                        break;
+                }
+            }
+            else
+            {
+                Open(); 
+            }
         }
 
 
