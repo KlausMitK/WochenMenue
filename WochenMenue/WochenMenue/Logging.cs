@@ -37,22 +37,26 @@ namespace WochenMenue
         public void Error (string ErrorText)
         {
             string OutputText = "E: " + ErrorText + "\r";
-
             mOutputContainer.Write(OutputText);
         }
 
         public void Warning (string WarrnigText)
         {
-            string OutputText = "W: " + WarrnigText + "\r";
+            if (PropValues.Instance().ErrorLvl != "E")
+            {
+                string OutputText = "W: " + WarrnigText + "\r";
+                mOutputContainer.Write(OutputText);
+            }
 
-            mOutputContainer.Write(OutputText);
         }
 
         public void Info (string InfoText)
         {
-            string OutputText = "I: " + InfoText + "\r";
-
-            mOutputContainer.Write(OutputText);
+            if (PropValues.Instance().ErrorLvl == "I")
+            {
+                string OutputText = "I: " + InfoText + "\r";
+                mOutputContainer.Write(OutputText);
+            }
         }
     }
 }
