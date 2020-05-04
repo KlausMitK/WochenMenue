@@ -56,5 +56,21 @@ namespace WochenMenue
             PropValues.Instance().PoolPath = oldFileName;
             this.Close();
         }
+
+        // Radiobutton
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void RadioButton_Checked_1(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void RadioButton_Checked_2(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

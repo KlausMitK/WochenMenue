@@ -81,9 +81,9 @@
 
             <StackPanel Grid.Row="0" Grid.RowSpan="4" Grid.Column="1" Grid.ColumnSpan="3">
                 <Label FontWeight="Bold">Logging Level</Label>
-                <RadioButton>Error</RadioButton>
-                <RadioButton>Warning</RadioButton>
-                <RadioButton>Info</RadioButton>
+                <RadioButton Checked="RadioButton_Checked">Error</RadioButton>
+                <RadioButton Checked="RadioButton_Checked_1">Warning</RadioButton>
+                <RadioButton Checked="RadioButton_Checked_2">Info</RadioButton>
             </StackPanel>
             
         </Grid>
