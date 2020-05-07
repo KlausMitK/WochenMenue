@@ -32,6 +32,25 @@ namespace WochenMenue
             oldFileName = PropValues.Instance().PoolPath;
             Txt_PoolPath.DataContext = PropValues.Instance();
             TxtSpecherOrtWchPl.DataContext = PropValues.Instance();
+
+            string logLevel = IniFile.Instance().IniReadValue("LoggingLevel", "LogLevel");
+
+            if (logLevel == "E")
+            {
+                RBE.IsChecked=true;
+            }
+            else if (logLevel == "W")
+            {
+                RBW.IsChecked=true;
+            }
+            else if (logLevel == "I")
+            {
+                RBI.IsChecked=true;
+            }
+            else
+            {
+                throw new Exception("Unerlaubter Wert für LoggingLevel!");
+            }
         }
 
         private void BtnÄndern_Click(object sender, RoutedEventArgs e)
@@ -58,19 +77,19 @@ namespace WochenMenue
         }
 
         // Radiobutton
-        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        private void CheckedError(object sender, RoutedEventArgs e)
         {
-
+            PropValues.Instance().LogLevel = "E";
         }
 
-        private void RadioButton_Checked_1(object sender, RoutedEventArgs e)
+        private void CheckedWarning(object sender, RoutedEventArgs e)
         {
-
+            PropValues.Instance().LogLevel = "W";
         }
 
-        private void RadioButton_Checked_2(object sender, RoutedEventArgs e)
+        private void CheckedInfo(object sender, RoutedEventArgs e)
         {
-
+            PropValues.Instance().LogLevel = "I";
         }
     }
 }

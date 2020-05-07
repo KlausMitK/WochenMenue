@@ -16,7 +16,7 @@ namespace WochenMenue
 
         private string mPoolPath;
         private string mSavePath;
-        private string mErrorLvl;
+        
 
         //  Singleton Member
         private static PropValues mInstance = null;
@@ -66,15 +66,18 @@ namespace WochenMenue
             }
         }
             
-        public string ErrorLvl
+        public string LogLevel
         {
-            get { return mErrorLvl; }
+            get 
+            {
+                string logLevel = IniFile.Instance().IniReadValue("LoggingLevel", "LogLevel");
+                return logLevel;
+            }
             set
             {
                 if (CheckLoggingLevel(value) == true)
                 {
-                    mErrorLvl = value;
-                    NotifyPropertyChanged("ErrorLvl");
+                    IniFile.Instance().IniWriteValue("LoggingLevel", "LogLevel", value);
                 }
                 else
                 {

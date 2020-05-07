@@ -42,7 +42,7 @@ namespace WochenMenue
 
         public void Warning (string WarrnigText)
         {
-            if (PropValues.Instance().ErrorLvl != "E")
+            if (PropValues.Instance().LogLevel != "E")
             {
                 string OutputText = "W: " + WarrnigText + "\r";
                 mOutputContainer.Write(OutputText);
@@ -52,7 +52,7 @@ namespace WochenMenue
 
         public void Info (string InfoText)
         {
-            if (PropValues.Instance().ErrorLvl == "I")
+            if (PropValues.Instance().LogLevel == "I")
             {
                 string OutputText = "I: " + InfoText + "\r";
                 mOutputContainer.Write(OutputText);
