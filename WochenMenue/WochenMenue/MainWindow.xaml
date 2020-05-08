@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WochenMenue"
         xmlns:Sys="clr-namespace:System;assembly=mscorlib" 
         mc:Ignorable="d"
-        Title="Wochen Speiseplan" WindowStyle="SingleBorderWindow" BorderThickness="5" BorderBrush="#FF444444"     Height="800" Width="1150" Background="White">
+        Title="{Binding Path=SavePath, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" WindowStyle="SingleBorderWindow" BorderThickness="5" BorderBrush="#FF444444"     Height="800" Width="1150" Background="White">
 
     <Window.Resources>
         <Sys:Int32 x:Key="MenRow">0</Sys:Int32>

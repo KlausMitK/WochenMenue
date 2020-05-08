@@ -221,5 +221,9 @@
         </Zutat>
       </Zutaten>
     </Gericht>
+    <Gericht>
+      <Name />
+      <Zutaten />
+    </Gericht>
   </Gerichte>
 </RezeptPool>

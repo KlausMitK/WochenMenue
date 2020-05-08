@@ -46,5 +46,16 @@ namespace UnitTests
             logging.Error("Es gab eine Info.");
             Assert.AreEqual("E: Es gab eine Info.\r", logOutputString.LogMessage);
         }
+
+        [Test]
+        public void LogginLevelValueTest()
+        {
+            /*
+            PropValues propValues = PropValues.Instance();
+            string logLevelError = "E";
+            propValues.LogLevel = logLevelError;
+            Assert.AreEqual(propValues.LogLevel, logLevelError);
+            */
+        }
     }
 }

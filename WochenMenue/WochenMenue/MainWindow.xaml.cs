@@ -16,7 +16,7 @@ namespace WochenMenue
         public static Woche gWoche = new Woche();
 
         public static Logging gLog;
-        public static string gIniFilePath;
+        public static string gIniFilePath="";
         public static ILogOutput outputRTB; 
 
         public MainWindow()
@@ -39,6 +39,7 @@ namespace WochenMenue
 
         public void Bind()
         {
+            this.DataContext = PropValues.Instance();
 
             //Montag
             txt_GerMo.DataContext = gWoche.Montag;

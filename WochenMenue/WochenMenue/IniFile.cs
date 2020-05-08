@@ -6,7 +6,7 @@ namespace WochenMenue
 {
     public class IniFile
     {
-        public string path { get; private set; }
+        public string Path { get;  set; }
 
         [DllImport("kernel32")]
         private static extern long WritePrivateProfileString(string section, string key, string val, string filePath);
@@ -26,18 +26,18 @@ namespace WochenMenue
 
         private IniFile()
         {
-            path = MainWindow.gIniFilePath;
+            Path = MainWindow.gIniFilePath;
         }
         public void IniWriteValue(string Section, string Key, string Value)
         {
-            WritePrivateProfileString(Section, Key, Value, this.path);
+            WritePrivateProfileString(Section, Key, Value, this.Path);
         }
         
 
         public string IniReadValue(string Section, string Key)
         {
             StringBuilder temp = new StringBuilder(255);
-            int i = GetPrivateProfileString(Section, Key, "", temp, 255, this.path);
+            int i = GetPrivateProfileString(Section, Key, "", temp, 255, this.Path);
             return temp.ToString();
         }
     }
