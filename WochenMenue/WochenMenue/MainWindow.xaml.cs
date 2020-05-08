@@ -39,6 +39,7 @@ namespace WochenMenue
 
         public void Bind()
         {
+            // Damit der Window Title auf den SavePAth gesetzt wird.
             this.DataContext = PropValues.Instance();
 
             //Montag
