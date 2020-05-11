@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WochenMenue
+namespace BusinessLogic
 {
     [Serializable]
     public class Zutat

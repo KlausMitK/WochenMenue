@@ -9,7 +9,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 
 
-namespace WochenMenue
+namespace BusinessLogic
 {
     [Serializable]
     public class Tag : INotifyPropertyChanged

@@ -8,7 +8,7 @@ using System.IO;
 using System.Collections.ObjectModel;
 
 
-namespace WochenMenue
+namespace BusinessLogic
 {
     [Serializable]
     public class Woche

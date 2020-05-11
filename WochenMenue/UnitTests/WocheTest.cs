@@ -1,5 +1,5 @@
 using NUnit.Framework;
-using WochenMenue;
+using BusinessLogic;
 using System.Collections.ObjectModel;
 
 namespace UnitTests

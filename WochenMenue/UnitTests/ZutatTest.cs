@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using WochenMenue;
+using BusinessLogic;
 using NUnit.Framework;
 
 namespace UnitTests

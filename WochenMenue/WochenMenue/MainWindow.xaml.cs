@@ -6,7 +6,8 @@ using System.Windows.Data;
 using System.Windows.Input;
 using System.Xml.Serialization;
 using Utils;
-
+using BusinessLogic;
+using System.Windows.Navigation;
 
 namespace WochenMenue
 {
@@ -119,12 +120,10 @@ namespace WochenMenue
             if (openFileDialog.ShowDialog() == true)
             {
                 string fileName = openFileDialog.FileName;
-                XmlSerializer serializer = new XmlSerializer(typeof(Woche));
-                FileStream fileStream = new FileStream(fileName, FileMode.Open);
-                MainWindow.gWoche = (Woche)serializer.Deserialize(fileStream);
-                fileStream.Close();
-                PropValues.Instance().SavePath = fileName;
-                Logging.Instance().Info(fileName + " wurde geladen.");
+
+                LoadSaveFile loadSaveFile = new Utils.LoadSaveFile();
+                MainWindow.gWoche = loadSaveFile.Load(fileName);
+                
             }
             Bind();
         }
@@ -140,7 +139,8 @@ namespace WochenMenue
                 switch (result)
                 {
                     case MessageBoxResult.Yes:
-                        Save(PropValues.Instance().SavePath);
+                        LoadSaveFile loadSvaeFile = new LoadSaveFile();
+                        loadSvaeFile.Save(MainWindow.gWoche, PropValues.Instance().SavePath);
                         gWoche = new Woche();
                         PropValues.Instance().SavePath = "";
                         Bind();
@@ -379,22 +379,12 @@ namespace WochenMenue
 
                 XmlSerializer serializer = new XmlSerializer(typeof(Woche));
 
-                Save(fileName);
+                LoadSaveFile loadSaveFile = new LoadSaveFile();
+                loadSaveFile.Save(MainWindow.gWoche, fileName);
                 PropValues.Instance().SavePath = fileName;
             }
         }
-
-        //Speichern
-        private void Save(string fileName)
-        {
-            MainWindow.gWoche.mEKL.Clear();
-
-            XmlSerializer serializer = new XmlSerializer(typeof(Woche));
-            FileStream filestream = new FileStream(fileName, FileMode.Create);
-            serializer.Serialize(filestream, MainWindow.gWoche);
-            filestream.Close();
-            Logging.Instance().Info(fileName + " wurde gespeichert.");
-        }
+                        
 
         //Speichern 
         private void Menue_File_Save_Click(object sender, RoutedEventArgs e)
@@ -405,9 +395,10 @@ namespace WochenMenue
                 // Beim ersten mal, muus der Speicher-Dialog geöffnet werden.
                 SaveAs();
             }
-            else
+            else  // ... später kann einfach in den bekannte nSpeicherpfad gespeichert werden.
             {
-                Save(PropValues.Instance().SavePath);
+                LoadSaveFile loadSaveFile = new LoadSaveFile();
+                loadSaveFile.Save(MainWindow.gWoche, PropValues.Instance().SavePath);
             }
             
         }

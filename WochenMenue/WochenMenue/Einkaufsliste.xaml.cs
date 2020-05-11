@@ -19,6 +19,8 @@ using System.Windows.Xps;
 using System.Windows.Xps.Packaging;
 using System.Collections.ObjectModel;
 
+using BusinessLogic;
+
 namespace WochenMenue
 {
     /// <summary>

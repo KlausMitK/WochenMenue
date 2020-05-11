@@ -72,7 +72,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Gericht.cs" />
     <Compile Include="Eigenschaften.xaml.cs">
       <DependentUpon>Eigenschaften.xaml</DependentUpon>
     </Compile>
@@ -80,16 +79,12 @@
     <Compile Include="PoolAuswahl.xaml.cs">
       <DependentUpon>PoolAuswahl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="RezeptPool.cs" />
     <Compile Include="Einkaufsliste.xaml.cs">
       <DependentUpon>Einkaufsliste.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Tag.cs" />
     <Compile Include="Rez.xaml.cs">
       <DependentUpon>Rez.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Woche.cs" />
-    <Compile Include="Zutat.cs" />
     <Page Include="Eigenschaften.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -158,6 +153,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BusinessLogic\BusinessLogic.csproj">
+      <Project>{e7b50126-2775-42ec-935f-02cb5bcda7df}</Project>
+      <Name>BusinessLogic</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Utils\Utils.csproj">
       <Project>{c93728dd-1319-4bf3-91b9-ca13f2e0e4e2}</Project>
       <Name>Utils</Name>
