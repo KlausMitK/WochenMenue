@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using NUnit.Framework;
 using WochenMenue;
+using Utils;
 
 namespace UnitTests
 {
@@ -50,12 +51,14 @@ namespace UnitTests
         [Test]
         public void LogginLevelValueTest()
         {
-            /*
+            string exePath = System.Reflection.Assembly.GetExecutingAssembly().Location;
+            string iniDirectory = System.IO.Path.GetDirectoryName(exePath);
+            IniFile.gIniFileName = iniDirectory + "\\test.ini";
+
             PropValues propValues = PropValues.Instance();
             string logLevelError = "E";
             propValues.LogLevel = logLevelError;
             Assert.AreEqual(propValues.LogLevel, logLevelError);
-            */
         }
     }
 }

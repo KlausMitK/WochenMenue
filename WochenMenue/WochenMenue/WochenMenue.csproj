@@ -14,6 +14,7 @@
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -26,7 +27,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -72,17 +72,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ILogOutput.cs" />
-    <Compile Include="IniFile.cs" />
-    <Compile Include="Logging.cs" />
     <Compile Include="Gericht.cs" />
     <Compile Include="Eigenschaften.xaml.cs">
       <DependentUpon>Eigenschaften.xaml</DependentUpon>
     </Compile>
+    <Compile Include="LogOutputRTB.cs" />
     <Compile Include="PoolAuswahl.xaml.cs">
       <DependentUpon>PoolAuswahl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PropValues.cs" />
     <Compile Include="RezeptPool.cs" />
     <Compile Include="Einkaufsliste.xaml.cs">
       <DependentUpon>Einkaufsliste.xaml</DependentUpon>
@@ -159,6 +156,12 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Utils\Utils.csproj">
+      <Project>{c93728dd-1319-4bf3-91b9-ca13f2e0e4e2}</Project>
+      <Name>Utils</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

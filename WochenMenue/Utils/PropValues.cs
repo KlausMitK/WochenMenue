@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 //using System.Collections.ObjectModel;
 using System.ComponentModel;
 
-namespace WochenMenue
+
+namespace Utils
 {
     public class PropValues : INotifyPropertyChanged
     {
-
         //
         private int mPropChangedCount;
 

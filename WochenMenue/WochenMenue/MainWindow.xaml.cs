@@ -5,6 +5,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Input;
 using System.Xml.Serialization;
+using Utils;
 
 
 namespace WochenMenue
@@ -16,7 +17,7 @@ namespace WochenMenue
         public static Woche gWoche = new Woche();
 
         public static Logging gLog;
-        public static string gIniFilePath="";
+        //public static string gIniFilePath="";
         public static ILogOutput outputRTB; 
 
         public MainWindow()
@@ -29,7 +30,7 @@ namespace WochenMenue
             // iniFile muss im gleichen Verzeichnis wie exe-Datei leigen
             string exePath = System.Reflection.Assembly.GetExecutingAssembly().Location;
             string iniDirectory = System.IO.Path.GetDirectoryName(exePath);
-            gIniFilePath = iniDirectory + "\\WochenMenue.ini";
+            IniFile.gIniFileName = iniDirectory + "\\WochenMenue.ini";
 
             outputRTB = new LogOutputRTB(TxbLog);
             gLog = Logging.Instance();

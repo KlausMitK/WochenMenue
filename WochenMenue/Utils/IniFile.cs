@@ -2,10 +2,13 @@
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace WochenMenue
+namespace Utils
 {
     public class IniFile
     {
+        public static string gIniFileName;
+
+
         public string Path { get;  set; }
 
         [DllImport("kernel32")]
@@ -19,14 +22,14 @@ namespace WochenMenue
         {
             if(mInstance == null)
             {
-                mInstance = new IniFile();
+                mInstance = new IniFile(gIniFileName);
             }
             return mInstance;
         }
 
-        private IniFile()
+        private IniFile(string iniFilePath)
         {
-            Path = MainWindow.gIniFilePath;
+            Path = iniFilePath;
         }
         public void IniWriteValue(string Section, string Key, string Value)
         {
