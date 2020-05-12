@@ -59,6 +59,14 @@ namespace UnitTests
             string logLevelError = "E";
             propValues.LogLevel = logLevelError;
             Assert.AreEqual(propValues.LogLevel, logLevelError);
+
+            string LogLevelWarning = "W";
+            propValues.LogLevel = LogLevelWarning;
+            Assert.AreEqual(propValues.LogLevel, LogLevelWarning);
+
+            string LogLevelInfo = "I";
+            propValues.LogLevel = LogLevelInfo;
+            Assert.AreEqual(propValues.LogLevel, LogLevelInfo);
         }
     }
 }
