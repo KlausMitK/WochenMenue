@@ -15,9 +15,11 @@ namespace Utils
 
         }
 
-        public void GerichtInPool(Tag tag)
+        public bool GerichtInPool(Tag tag)
         {
             string GerichtName = tag.Gericht;
+
+            bool retValue = false;
 
             Gericht gericht = new Gericht(GerichtName);
             foreach (Zutat zutat in tag.Zutaten)
@@ -38,11 +40,13 @@ namespace Utils
             if (rezPool.FindeGericht(GerichtName) == null)
             {
                 rezPool.AddGericht(gericht);
+                retValue = true;
             }
             else
             {
                 Logging.Instance().Warning("Das Gericht " + GerichtName + " ist bereits im RezeptPool vorhanden");
-                return; // Das folgende muss in dem Fall nicht mehr gemacht werden.
+                retValue = false;
+                return retValue; // Das folgende muss in dem Fall nicht mehr gemacht werden.
             }
 
 
@@ -54,6 +58,7 @@ namespace Utils
             filestream.Close();
 
             Logging.Instance().Info("RezeptPool: " + PropValues.Instance().PoolPath + " ist aktualisiert");
+            return retValue;
         }
     }
 }
