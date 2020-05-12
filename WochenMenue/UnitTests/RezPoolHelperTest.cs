@@ -49,16 +49,12 @@ namespace UnitTests
             serializer.Serialize(fileStream, rezPool);
             fileStream.Close();
 
-
-
             RezeptPoolHelper rezPoolHelper = new RezeptPoolHelper();
             bool value = rezPoolHelper.GerichtInPool(Montag);
             Assert.AreEqual(true, value);
 
             value = rezPoolHelper.GerichtInPool(Montag);
             Assert.AreEqual(false, value);
-
-            
         }
     }
 }
