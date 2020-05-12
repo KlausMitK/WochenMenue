@@ -31,6 +31,11 @@ namespace Utils
         {
             mOutputContainer = outputContainer;
         }
+
+        public ILogOutput GetOutputContainer()
+        {
+            return mOutputContainer;
+        }
                 
         public void Error (string ErrorText)
         {

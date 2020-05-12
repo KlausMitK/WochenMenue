@@ -12,49 +12,33 @@ namespace UnitTests
         [SetUp]
         public void setup()
         {
-            
+            SetUpIniAndLogging.SetUp();
         }
 
         [Test]
         public void ErrorTest()
         {
-            string log = "";
-            LogOutputString logOutputString = new LogOutputString(log);
-            Logging logging = Logging.Instance();
-            logging.SetOutputcontainer(logOutputString);
-            logging.Error("Es gab einen Fehler.");
-            Assert.AreEqual("E: Es gab einen Fehler.\r", logOutputString.LogMessage);
+            Logging.Instance().Error("Es gab einen Fehler.");
+            Assert.AreEqual("E: Es gab einen Fehler.\r", ((LogOutputString)Logging.Instance().GetOutputContainer()).LogMessage);
         }
 
         [Test]
         public void WarningTest()
         {
-            string log = "";
-            LogOutputString logOutputString = new LogOutputString(log);
-            Logging logging = Logging.Instance();
-            logging.SetOutputcontainer(logOutputString);
-            logging.Error("Es gab eine Warnung.");
-            Assert.AreEqual("E: Es gab eine Warnung.\r", logOutputString.LogMessage);
+            Logging.Instance().Error("Es gab eine Warnung.");
+            Assert.AreEqual("E: Es gab eine Warnung.\r", ((LogOutputString)Logging.Instance().GetOutputContainer()).LogMessage);
         }
 
         [Test]
         public void InfoTest()
         {
-            string log = "";
-            LogOutputString logOutputString = new LogOutputString(log);
-            Logging logging = Logging.Instance();
-            logging.SetOutputcontainer(logOutputString);
-            logging.Error("Es gab eine Info.");
-            Assert.AreEqual("E: Es gab eine Info.\r", logOutputString.LogMessage);
+            Logging.Instance().Error("Es gab eine Info.");
+            Assert.AreEqual("E: Es gab eine Info.\r", ((LogOutputString)Logging.Instance().GetOutputContainer()).LogMessage);
         }
 
         [Test]
         public void LogginLevelValueTest()
         {
-            string exePath = System.Reflection.Assembly.GetExecutingAssembly().Location;
-            string iniDirectory = System.IO.Path.GetDirectoryName(exePath);
-            IniFile.gIniFileName = iniDirectory + "\\test.ini";
-
             PropValues propValues = PropValues.Instance();
             string logLevelError = "E";
             propValues.LogLevel = logLevelError;
