@@ -30,8 +30,6 @@ namespace UnitTests
             Logging logging = Logging.Instance();
             logging.SetOutputcontainer(logOutputString);
 
-            PropValues.Instance().PoolPath = @"E:\Programmier Projekte\WochenMenue\TestDaten\TestPool.xml";
-
             Tag Montag = new Tag();
             Montag.Gericht = "Schnitzel";
             Zutat Ei = new Zutat();
