@@ -25,15 +25,15 @@ namespace UnitTests
         [Test]
         public void WarningTest()
         {
-            Logging.Instance().Error("Es gab eine Warnung.");
-            Assert.AreEqual("E: Es gab eine Warnung.\r", ((LogOutputString)Logging.Instance().GetOutputContainer()).LogMessage);
+            Logging.Instance().Warning("Es gab eine Warnung.");
+            Assert.AreEqual("W: Es gab eine Warnung.\r", ((LogOutputString)Logging.Instance().GetOutputContainer()).LogMessage);
         }
 
         [Test]
         public void InfoTest()
         {
-            Logging.Instance().Error("Es gab eine Info.");
-            Assert.AreEqual("E: Es gab eine Info.\r", ((LogOutputString)Logging.Instance().GetOutputContainer()).LogMessage);
+            Logging.Instance().Info("Es gab eine Info.");
+            Assert.AreEqual("I: Es gab eine Info.\r", ((LogOutputString)Logging.Instance().GetOutputContainer()).LogMessage);
         }
 
         [Test]
