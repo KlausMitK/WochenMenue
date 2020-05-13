@@ -1,13 +1,10 @@
 ﻿using Microsoft.Win32;
-using System.IO;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
 using System.Windows.Input;
 using System.Xml.Serialization;
 using Utils;
 using BusinessLogic;
-using System.Windows.Navigation;
 
 namespace WochenMenue
 {

@@ -1,7 +1,5 @@
 ﻿using NUnit.Framework;
 using BusinessLogic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
 
 namespace UnitTests
 {
