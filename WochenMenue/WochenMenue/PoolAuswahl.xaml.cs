@@ -16,7 +16,6 @@ namespace WochenMenue
     public partial class PoolAuswahl : Window
     {
 
-        //TODO: Hier brauchen wir eine Propoerty "Tag"
         public Tag Wochentag { get; set; }
 
         public PoolAuswahl(Tag tag)
