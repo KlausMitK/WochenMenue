@@ -20,7 +20,7 @@ namespace UnitTests
         {
             //TODO: Ein File aus dem Test-Ordner laden
             LoadSaveFile loadSaveFile = new LoadSaveFile();
-            Woche woche = loadSaveFile.Load(@"E:\Programmier Projekte\WochenMenue\TestDaten\Volle RezeplisteTest.xml");
+            Woche woche = loadSaveFile.Load(PropValues.Instance().TestDirectory + "\\Volle RezeplisteTest.xml");
 
             Assert.AreEqual(woche.Montag.Gericht, "Kuchen, Spätzle");
 
@@ -71,9 +71,9 @@ namespace UnitTests
             woche.Montag = montag;
 
             LoadSaveFile laodSaveFile = new LoadSaveFile();
-            laodSaveFile.Save(woche, @"E:\Programmier Projekte\WochenMenue\TestDaten\SaveTest.xml");
+            laodSaveFile.Save(woche, PropValues.Instance().TestDirectory + "\\SaveTest.xml");
 
-            Woche newWoche = laodSaveFile.Load(@"E:\Programmier Projekte\WochenMenue\TestDaten\SaveTest.xml");
+            Woche newWoche = laodSaveFile.Load(PropValues.Instance().TestDirectory + "\\SaveTest.xml");
 
             Assert.AreEqual(newWoche.Montag.Gericht, "Schnitzel");
             Assert.AreEqual(newWoche.Montag.Zutaten.Count, 1);
@@ -88,12 +88,6 @@ namespace UnitTests
             TesteTag(newWoche.Freitag);
             TesteTag(newWoche.Samstag);
             TesteTag(newWoche.Sonntag);
-
-            //TODO: Prüfen, dass nur ein Tag in der Woche ist
-
-            //TODO: Prüfen, dass das Gericht für den Tag stimmt
-
-            //TODO: Prüfen, dass die Zutaten für den Tag stimmen
         }
 
         private void TesteTag(Tag tag)

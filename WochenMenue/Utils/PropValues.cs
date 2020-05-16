@@ -80,6 +80,19 @@ namespace Utils
                 }
             }
         }
+
+        public string TestDirectory
+        {
+            get
+            {
+                return IniFile.Instance().IniReadValue("Test", "TestDirectory");
+            }
+
+            set
+            {
+                IniFile.Instance().IniWriteValue("Test", "TestDirectory", value);
+            }
+        }
        
         private PropValues()
         {
