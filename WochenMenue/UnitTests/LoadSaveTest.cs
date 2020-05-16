@@ -20,14 +20,35 @@ namespace UnitTests
         {
             //TODO: Ein File aus dem Test-Ordner laden
             LoadSaveFile loadSaveFile = new LoadSaveFile();
-            Woche woche = loadSaveFile.Load("XXXXX___FILE____NAME");
+            Woche woche = loadSaveFile.Load(@"E:\Programmier Projekte\WochenMenue\TestDaten\Volle RezeplisteTest.xml");
 
-            Assert.AreEqual(woche.Montag.Gericht, "Eierpampe");
+            Assert.AreEqual(woche.Montag.Gericht, "Kuchen, Spätzle");
 
-            Assert.AreEqual(woche.Dienstag.Zutaten[0].Name, "Eier");
+            Assert.AreEqual(woche.Dienstag.Zutaten[0].Name, "Butter");
 
-            Assert.AreEqual(woche.Dienstag.Zutaten[0].Menge, 2);
+            Assert.AreEqual(woche.Dienstag.Zutaten[0].Menge, 10);
 
+            Assert.AreEqual(woche.Mittwoch.Zutaten[2].Einheit, "gr");
+
+            Assert.AreEqual(woche.Donnerstag.Zutaten.Count, 3);
+
+            Assert.AreEqual(woche.Freitag.Zutaten[1].Menge, 20);
+
+            Assert.AreEqual(woche.Samstag.Zutaten[2].Name, "Mehl");
+
+            Assert.AreEqual(woche.Sonntag.Zutaten[0].Einheit, "Stück");
+
+            Assert.AreEqual(woche.Dienstag.Gericht, "Pfannenkuchen");
+
+            Assert.AreEqual(woche.Mittwoch.Gericht, "Pizza");
+
+            Assert.AreEqual(woche.Donnerstag.Gericht, "Halumi Pfanne");
+
+            Assert.AreEqual(woche.Freitag.Gericht, "Pudding");
+
+            Assert.AreEqual(woche.Samstag.Gericht, "Schnitzel");
+
+            Assert.AreEqual(woche.Sonntag.Gericht, "Taccos");
 
             //TODO: Für mehrere Tage püfen, ob Gerichte und Zutaten stimmen.
         }
@@ -37,11 +58,36 @@ namespace UnitTests
         {
             //TODO: Einen Tag mit einem Gericht und Zutaten anlegen
 
-            //TODO:Den Tag in eine Woche einhängen
+            Tag montag = new Tag();
 
-            //TODO: Diese Woche speichern
+            montag.Gericht = "Schnitzel";
+            Zutat Fleisch = new Zutat();
+            Fleisch.Name = "Fleisch";
+            Fleisch.Menge = 500;
+            Fleisch.Einheit = "gr";
+            montag.Zutaten.Add(Fleisch);
 
-            //TODO: Dann die Woche laden
+            Woche woche = new Woche();
+            woche.Montag = montag;
+
+            LoadSaveFile laodSaveFile = new LoadSaveFile();
+            laodSaveFile.Save(woche, @"E:\Programmier Projekte\WochenMenue\TestDaten\SaveTest.xml");
+
+            Woche newWoche = laodSaveFile.Load(@"E:\Programmier Projekte\WochenMenue\TestDaten\SaveTest.xml");
+
+            Assert.AreEqual(newWoche.Montag.Gericht, "Schnitzel");
+            Assert.AreEqual(newWoche.Montag.Zutaten.Count, 1);
+
+            Assert.AreEqual(newWoche.Montag.Zutaten[0].Name, "Fleisch");
+            Assert.AreEqual(newWoche.Montag.Zutaten[0].Menge, 500);
+            Assert.AreEqual(newWoche.Montag.Zutaten[0].Einheit, "gr");
+
+            TesteTag(newWoche.Dienstag);
+            TesteTag(newWoche.Mittwoch);
+            TesteTag(newWoche.Donnerstag);
+            TesteTag(newWoche.Freitag);
+            TesteTag(newWoche.Samstag);
+            TesteTag(newWoche.Sonntag);
 
             //TODO: Prüfen, dass nur ein Tag in der Woche ist
 
@@ -50,6 +96,11 @@ namespace UnitTests
             //TODO: Prüfen, dass die Zutaten für den Tag stimmen
         }
 
+        private void TesteTag(Tag tag)
+        {
+            Assert.AreEqual(tag.Zutaten.Count, 0);
+            Assert.AreEqual(tag.Gericht, "");
+        }
 
     }
 }
