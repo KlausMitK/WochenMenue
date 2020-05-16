@@ -18,48 +18,29 @@ namespace UnitTests
         [Test]
         public void LoadTest()
         {
-            //TODO: Ein File aus dem Test-Ordner laden
             LoadSaveFile loadSaveFile = new LoadSaveFile();
             Woche woche = loadSaveFile.Load(PropValues.Instance().TestDirectory + "\\Volle RezeplisteTest.xml");
 
             Assert.AreEqual(woche.Montag.Gericht, "Kuchen, Spätzle");
-
             Assert.AreEqual(woche.Dienstag.Zutaten[0].Name, "Butter");
-
             Assert.AreEqual(woche.Dienstag.Zutaten[0].Menge, 10);
-
             Assert.AreEqual(woche.Mittwoch.Zutaten[2].Einheit, "gr");
-
             Assert.AreEqual(woche.Donnerstag.Zutaten.Count, 3);
-
             Assert.AreEqual(woche.Freitag.Zutaten[1].Menge, 20);
-
             Assert.AreEqual(woche.Samstag.Zutaten[2].Name, "Mehl");
-
             Assert.AreEqual(woche.Sonntag.Zutaten[0].Einheit, "Stück");
-
             Assert.AreEqual(woche.Dienstag.Gericht, "Pfannenkuchen");
-
             Assert.AreEqual(woche.Mittwoch.Gericht, "Pizza");
-
             Assert.AreEqual(woche.Donnerstag.Gericht, "Halumi Pfanne");
-
             Assert.AreEqual(woche.Freitag.Gericht, "Pudding");
-
             Assert.AreEqual(woche.Samstag.Gericht, "Schnitzel");
-
             Assert.AreEqual(woche.Sonntag.Gericht, "Taccos");
-
-            //TODO: Für mehrere Tage püfen, ob Gerichte und Zutaten stimmen.
         }
 
         [Test]
         public void SaveTest()
         {
-            //TODO: Einen Tag mit einem Gericht und Zutaten anlegen
-
             Tag montag = new Tag();
-
             montag.Gericht = "Schnitzel";
             Zutat Fleisch = new Zutat();
             Fleisch.Name = "Fleisch";
