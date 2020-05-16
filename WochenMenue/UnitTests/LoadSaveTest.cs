@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using BusinessLogic;
 using NUnit.Framework;
 using Utils;
 
@@ -18,6 +19,15 @@ namespace UnitTests
         public void LoadTest()
         {
             //TODO: Ein File aus dem Test-Ordner laden
+            LoadSaveFile loadSaveFile = new LoadSaveFile();
+            Woche woche = loadSaveFile.Load("XXXXX___FILE____NAME");
+
+            Assert.AreEqual(woche.Montag.Gericht, "Eierpampe");
+
+            Assert.AreEqual(woche.Dienstag.Zutaten[0].Name, "Eier");
+
+            Assert.AreEqual(woche.Dienstag.Zutaten[0].Menge, 2);
+
 
             //TODO: Für mehrere Tage püfen, ob Gerichte und Zutaten stimmen.
         }
