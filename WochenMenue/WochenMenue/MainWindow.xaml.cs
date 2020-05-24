@@ -372,5 +372,10 @@ namespace WochenMenue
             txt_Suche.Focus();
             SaveAs();
         }
+
+        private void lsV_Do_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

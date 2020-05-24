@@ -35,9 +35,9 @@
         <DataGrid Grid.Row="0" AutoGenerateColumns="False"  Name="lsV" SelectionChanged="lsV_SelectionChanged">
             <DataGrid.Columns >
 
-                <DataGridTextColumn Header="Zutat" Width="190" Binding="{Binding Name}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Menge" Width="80" Binding="{Binding Menge}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Einheit" Width="80" Binding="{Binding Einheit}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Zutat" Width="Auto" Binding="{Binding Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Menge" Width="Auto" Binding="{Binding Menge}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Einheit" Width="Auto" Binding="{Binding Einheit}"></DataGridTextColumn>
 
             </DataGrid.Columns>
 
