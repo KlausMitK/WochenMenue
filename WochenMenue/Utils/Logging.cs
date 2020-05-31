@@ -1,5 +1,7 @@
 ﻿
 
+using System.IO;
+
 namespace Utils
 {
     public class Logging
@@ -58,7 +60,10 @@ namespace Utils
 
         public void WriteLogfile(string fileName)
         {
-
+            StreamWriter streamWriter = new StreamWriter(fileName);
+            streamWriter.WriteLine(mOutputContainer.LogText());
+            streamWriter.Close();
+            streamWriter.Dispose();
         }
     }
 }
