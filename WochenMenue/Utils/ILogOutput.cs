@@ -21,7 +21,7 @@ namespace Utils
         }
 
         public string LogText()
-        {
+        {             
             return LogMessage;
         }
     }

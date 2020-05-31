@@ -58,7 +58,13 @@ namespace WochenMenue
 
         public string LogText()
         {
-            return "";
+            TextRange textrange = new TextRange
+            (
+            mRichTextBox.Document.ContentStart,
+            mRichTextBox.Document.ContentEnd
+            );
+
+            return textrange.Text;
         }
     }
 }
