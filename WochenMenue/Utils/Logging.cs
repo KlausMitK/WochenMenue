@@ -55,5 +55,10 @@ namespace Utils
                 mOutputContainer.Write(OutputText);
             }
         }
+
+        public void WriteLogfile(string fileName)
+        {
+
+        }
     }
 }

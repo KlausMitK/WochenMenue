@@ -22,7 +22,7 @@ namespace Utils
 
         public string LogText()
         {
-            return "";
+            return LogMessage;
         }
     }
 }
