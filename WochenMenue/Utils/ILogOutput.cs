@@ -4,6 +4,7 @@ namespace Utils
     public interface ILogOutput
     {
         void Write(string message);
+        string LogText();
     }
 
     public class LogOutputString : ILogOutput 
@@ -17,6 +18,11 @@ namespace Utils
         public void Write(string message)
         {
             LogMessage = LogMessage + message;
+        }
+
+        public string LogText()
+        {
+            return "";
         }
     }
 }

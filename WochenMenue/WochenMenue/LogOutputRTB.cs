@@ -55,5 +55,10 @@ namespace WochenMenue
 
             mRichTextBox.ScrollToEnd();
         }
+
+        public string LogText()
+        {
+            return "";
+        }
     }
 }
