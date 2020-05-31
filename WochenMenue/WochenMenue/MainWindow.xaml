@@ -88,6 +88,8 @@
                         <MenuItem Header="Einkaufsliste" Click="Menue_File_Einkaufsliste_Click"/>
                         <Separator/>
                         <MenuItem Header="Eigenschaften" Click="Menue_File_Eigenschaften_Click"/>
+                        <Separator/>
+                        <MenuItem Header="Logging Speichern" Click="Menue_File_LoggingSpeichern_Click"/>
                     </MenuItem>
                 </Menu>
             </DockPanel>

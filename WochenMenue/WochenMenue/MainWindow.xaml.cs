@@ -377,5 +377,15 @@ namespace WochenMenue
         {
 
         }
+
+        private void Menue_File_LoggingSpeichern_Click(object sender, RoutedEventArgs e)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            if (saveFileDialog.ShowDialog() == true)
+            {
+                string fileName = saveFileDialog.FileName;
+                Logging.Instance().WriteLogfile(fileName);
+            }
+        }
     }
 }
