@@ -15,6 +15,10 @@ namespace MathBib
             set { x = value; }
         }
 
-        // TODO: y-Koordinate implementieren
+        public double yValue
+        {
+            get { return y; }
+            set { y = value; }
+        }
     }
 }

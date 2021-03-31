@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using System.IO;
 using Utils;
 
 
@@ -49,5 +50,21 @@ namespace UnitTests
             propValues.LogLevel = LogLevelInfo;
             Assert.AreEqual(propValues.LogLevel, LogLevelInfo);
         }
+    
+        [Test]
+        public void WriteLogFileTest()
+        {
+            Logging.Instance().Info("InfoTest");
+            Logging.Instance().Error("ErrorTest");
+             
+            string fileName = PropValues.Instance().TestDirectory + "\\SaveTest.xml";
+
+            Logging.Instance().WriteLogfile(fileName);
+
+            StreamReader streamReader = new StreamReader(fileName);
+            string stringFromFile = streamReader.ReadToEnd();
+
+        }
+    
     }
 }
