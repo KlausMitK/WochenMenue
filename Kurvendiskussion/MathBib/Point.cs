@@ -14,5 +14,7 @@ namespace MathBib
             get { return x; }
             set { x = value; }
         }
+
+        // TODO: y-Koordinate implementieren
     }
 }
