@@ -78,20 +78,5 @@ namespace KurvenDiskussion
         public Func<double, string> YFormatter { get; set; }
 
         
-
-        private void tbValue_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            try
-            {
-                double d = Convert.ToDouble(tbValue.Text);
-                SeriesCollection[0].Values.RemoveAt(0);
-                SeriesCollection[0].Values.Insert(0,d);
-            }
-            catch(FormatException)
-            {
-
-            }
-            
-        }
     }
 }

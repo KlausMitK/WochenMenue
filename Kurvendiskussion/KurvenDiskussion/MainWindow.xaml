@@ -6,14 +6,17 @@
              xmlns:local="clr-namespace:KurvenDiskussion"
              xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
              mc:Ignorable="d" 
-             d:DesignHeight="500" d:DesignWidth="500">
+             d:DesignHeight="500" d:DesignWidth="700">
     <Grid>
+        <!--
         <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
         </Grid.RowDefinitions>
+
         <lvc:CartesianChart Series="{Binding SeriesCollection}" LegendLocation="Right" >
             <lvc:CartesianChart.AxisY>
                 <lvc:Axis Title="Sales" LabelFormatter="{Binding YFormatter}"></lvc:Axis>
@@ -22,6 +25,121 @@
                 <lvc:Axis Title="Month" Labels="{Binding Labels}"></lvc:Axis>
             </lvc:CartesianChart.AxisX>
         </lvc:CartesianChart>
-        <TextBox Name="tbValue" HorizontalAlignment="Left" Margin="250,30,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="tbValue_TextChanged"/>
+
+        <TextBox Grid.Column="1" Name="tbValue" HorizontalAlignment="Left"  TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="tbValue_TextChanged"/>
+        Probe -->
+
+        <!-- Äußerstes Grid-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+        
+        
+        <!-- Grid für Texteingabe & Graphen-->
+        <Grid Grid.Column="0" Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition />
+                <ColumnDefinition Width="20"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="75"/>
+                <RowDefinition Height="20"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            
+            <!-- Graphen zeichnen-->
+            <lvc:CartesianChart Series="{Binding SeriesCollection}" Grid.Column="1" Grid.Row="4">
+                <lvc:CartesianChart.AxisY>
+                    <lvc:Axis Title="y-Axis" LabelFormatter="{Binding YFormatter}"/>
+                </lvc:CartesianChart.AxisY>
+
+                <lvc:CartesianChart.AxisX>
+                    <lvc:Axis Title="x-Axis" Labels="{Binding Labels}"/>
+                </lvc:CartesianChart.AxisX>
+            </lvc:CartesianChart>
+
+            <!-- Textboxen für die Eingabe der Terme-->
+            <Grid Grid.Column="1" Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                
+                <!--Textboxen Koeffizienten-->
+                <!--TODO: Nen ändern-->
+                <TextBox Grid.Column="0" Grid.Row="1" Name="tbCoef_0" Background="LightGray"/>
+                <TextBox Grid.Column="4" Grid.Row="1" Name="tbCoef_1" Background="LightGray"/>
+                <TextBox Grid.Column="8" Grid.Row="1" Name="tbCoef_2" Background="LightGray"/>
+                <TextBox Grid.Column="12" Grid.Row="1" Name="tbCoef_3" Background="LightGray"/>
+                <TextBox Grid.Column="16" Grid.Row="1" Name="tbCoef_4" Background="LightGray"/>
+                <TextBox Grid.Column="20" Grid.Row="1" Name="tbCoef_5" Background="LightGray"/>
+                
+                <!--Textboxen Exponenten-->
+                <TextBox Grid.Column="2" Grid.Row="0" Name="tbExpo_0" Background="LightBlue"/>
+                <TextBox Grid.Column="6" Grid.Row="0" Name="tbExpo_1" Background="LightBlue"/>
+                <TextBox Grid.Column="10" Grid.Row="0" Name="tbExpo_2" Background="LightBlue"/>
+                <TextBox Grid.Column="14" Grid.Row="0" Name="tbExpo_3" Background="LightBlue"/>
+                <TextBox Grid.Column="18" Grid.Row="0" Name="tbExpo_4" Background="LightBlue"/>
+                <TextBox Grid.Column="22" Grid.Row="0" Name="tbExpo_5" Background="LightBlue"/>
+                
+                <!-- Textblöcke x-->
+                <TextBlock Grid.Column="1" Grid.Row="1" Text="x" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <TextBlock Grid.Column="5" Grid.Row="1" Text="x" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <TextBlock Grid.Column="9" Grid.Row="1" Text="x" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <TextBlock Grid.Column="13" Grid.Row="1" Text="x" FontSize="20"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <TextBlock Grid.Column="17" Grid.Row="1" Text="x" FontSize="20"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <TextBlock Grid.Column="21" Grid.Row="1" Text="x" FontSize="20"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                
+                <!-- Textblöcke +-->
+                <TextBlock Grid.Column="3" Grid.Row="1" Text="+" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <TextBlock Grid.Column="7" Grid.Row="1" Text="+" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <TextBlock Grid.Column="11" Grid.Row="1" Text="+" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <TextBlock Grid.Column="15" Grid.Row="1" Text="+" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <TextBlock Grid.Column="19" Grid.Row="1" Text="+" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                
+            </Grid>
+        </Grid>
+
+
+
     </Grid>
 </Window>
