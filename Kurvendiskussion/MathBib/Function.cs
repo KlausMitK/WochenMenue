@@ -35,16 +35,21 @@ namespace MathBib
         {
             Function derivative = new Function();
 
-            //TODO: für jeden TErm den Ableitungsterm bilden und in die neue Funktion einhängen.
+            foreach(Term a in mTerms )
+            {
+                derivative.Terms.Add(a.Derivative());
+            }
 
             return derivative;
         }
 
         public double Calculate(double xValue)
         {
-            //Iteration über Terme , Aufruf von Calculate und Addition aller Werte dann zurückgeben.
             double result = 0;
-
+            foreach(Term a in mTerms)
+            {
+                result = result + a.Calculate(xValue);
+            }
             return result;
         }
     }

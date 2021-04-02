@@ -7,10 +7,20 @@ namespace MathBib
     public class PolynomTerm : Term
     {
         double mCoefficient;
-        int mExponent;
+        double mExponent;
 
-        //TODO: Proeries für Coef und Expo
 
+        public double coefValue
+        {
+            get { return mCoefficient; }
+            set { mCoefficient = value; }
+        }
+
+        public double expoValue
+        {
+            get { return mExponent; }
+            set { mExponent  = value; }
+        }
         
         public double Calculate(double xValue)
         {
@@ -22,7 +32,8 @@ namespace MathBib
         {
             PolynomTerm derivative = new PolynomTerm();
 
-            //TODO: Coef und Expo im Rückgabe term setzen.
+            derivative.coefValue = mCoefficient * mExponent;
+            derivative.expoValue = mExponent - 1;
 
             return derivative;
         }
