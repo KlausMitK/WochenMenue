@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MathBib
 {
-    class Extremum : Point
+    public class Extremum : Point
     {
         public enum ExtremType
         {
