@@ -8,5 +8,13 @@ namespace MathBib
     {
         public double Calculate(double xValue);
         public Term Derivative();
+
+        public double coefValue
+        { get; set;}
+
+        public double expoValue
+        {
+            get;set;
+        }
     }
 }

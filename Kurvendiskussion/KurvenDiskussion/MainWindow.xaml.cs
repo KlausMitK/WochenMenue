@@ -23,42 +23,33 @@ namespace KurvenDiskussion
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Function mFunction = new Function();
+        private ChartValues<double> mPvalues;
         public MainWindow()
         {
             InitializeComponent();
 
-            PolynomTerm term1 = new PolynomTerm();
-            term1.coefValue = 2d;
-            term1.expoValue = 2;
-
-            PolynomTerm term2 = new PolynomTerm();
-            term2.coefValue = -3d;
-            term2.expoValue = 1;
             
-            PolynomTerm term3 = new PolynomTerm();
-            term3.coefValue = 4d;
-            term3.expoValue = 0;
+            for (int i = 0; i<6; i++)
+            {
+                PolynomTerm term = new PolynomTerm();
+                term.coefValue = 1;
+                term.expoValue = 1;
+                mFunction.Terms.Add(term);
+            }
 
-            Function fX = new Function();
-            fX.Terms.Add(term1);
-                
-                
-            fX.Terms.Add(term2);
-            fX.Terms.Add(term3);
-
-            //double y = fX.Calculate(9d);
-
-            ChartValues<double> Pvalues = new ChartValues<double>();
+            
+            mPvalues = new ChartValues<double>();
             Labels = new List<string>();
 
             for (int i = -10; i<=10; i++)
             {
-                Pvalues.Add(fX.Calculate(i));
+                mPvalues.Add(mFunction.Calculate(i));
                 Labels.Add(Convert.ToString(i));
             }
 
             LineSeries lineSeries = new LineSeries();
-            lineSeries.Values = Pvalues;
+            lineSeries.Values = mPvalues;
             lineSeries.Title = "f(x)";
             lineSeries.PointGeometry = null;
 
@@ -73,10 +64,44 @@ namespace KurvenDiskussion
             DataContext = this;
         }
 
+        public void UpdateAll()
+        {
+            if (mFunction.Terms.Count() == 0)
+            {
+                return;
+            }
+
+            try
+            {
+                mFunction.Terms[0].coefValue = Convert.ToDouble(tbCoef_0.Text);
+                mFunction.Terms[0].expoValue = Convert.ToDouble(tbExpo_0.Text);
+                mFunction.Terms[1].coefValue = Convert.ToDouble(tbCoef_1.Text);
+                mFunction.Terms[1].expoValue = Convert.ToDouble(tbExpo_1.Text);
+                mFunction.Terms[2].coefValue = Convert.ToDouble(tbCoef_2.Text);
+                mFunction.Terms[2].expoValue = Convert.ToDouble(tbExpo_2.Text);
+                mFunction.Terms[3].coefValue = Convert.ToDouble(tbCoef_3.Text);
+                mFunction.Terms[3].expoValue = Convert.ToDouble(tbExpo_3.Text);
+
+                for (int i = 0; i <= 20; i++)
+                {
+                    SeriesCollection[0].Values.RemoveAt(i);
+                    SeriesCollection[0].Values.Insert(i, mFunction.Calculate(i - 10));
+                }
+
+            }
+            catch(FormatException)
+            {
+
+            }
+        }
+
         public SeriesCollection SeriesCollection { get; set; }
         public List<string> Labels { get; set; }
         public Func<double, string> YFormatter { get; set; }
 
-        
+        private void tbCoef_0_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            UpdateAll();
+        }
     }
 }
