@@ -38,8 +38,8 @@
             <RowDefinition/>
             <RowDefinition Height="100"/>
         </Grid.RowDefinitions>
-        
-        
+
+
         <!-- Grid für Texteingabe & Graphen-->
         <Grid Grid.Column="0" Grid.Row="0">
             <Grid.ColumnDefinitions>
@@ -54,7 +54,7 @@
                 <RowDefinition Height="20"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            
+
             <!-- Graphen zeichnen-->
             <lvc:CartesianChart Series="{Binding SeriesCollection}" Grid.Column="1" Grid.Row="4">
                 <lvc:CartesianChart.AxisY>
@@ -103,23 +103,23 @@
                     <RowDefinition/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                
+
                 <!--Textboxen Koeffizienten-->
                 <TextBox Grid.Column="0" Grid.Row="1" Name="tbCoef_0" Background="LightGray" Text="0"  TextChanged="tbCoef_0_TextChanged"/>
-                <TextBox Grid.Column="4" Grid.Row="1" Name="tbCoef_1" Background="LightGray" Text="0"/>
-                <TextBox Grid.Column="8" Grid.Row="1" Name="tbCoef_2" Background="LightGray" Text="0"/>
-                <TextBox Grid.Column="12" Grid.Row="1" Name="tbCoef_3" Background="LightGray" Text="0"/>
-                <TextBox Grid.Column="16" Grid.Row="1" Name="tbCoef_4" Background="LightGray" Text="0"/>
-                <TextBox Grid.Column="20" Grid.Row="1" Name="tbCoef_5" Background="LightGray" Text="0"/>
-                
+                <TextBox Grid.Column="4" Grid.Row="1" Name="tbCoef_1" Background="LightGray" Text="0" TextChanged="tbCoef_1_TextChanged"/>
+                <TextBox Grid.Column="8" Grid.Row="1" Name="tbCoef_2" Background="LightGray" Text="0" TextChanged="tbCoef_2_TextChanged"/>
+                <TextBox Grid.Column="12" Grid.Row="1" Name="tbCoef_3" Background="LightGray" Text="0" TextChanged="tbCoef_3_TextChanged"/>
+                <TextBox Grid.Column="16" Grid.Row="1" Name="tbCoef_4" Background="LightGray" Text="0" TextChanged="tbCoef_4_TextChanged"/>
+                <TextBox Grid.Column="20" Grid.Row="1" Name="tbCoef_5" Background="LightGray" Text="0" TextChanged="tbCoef_5_TextChanged"/>
+
                 <!--Textboxen Exponenten-->
-                <TextBox Grid.Column="2" Grid.Row="0" Name="tbExpo_0" Background="LightBlue" Text="0"/>
-                <TextBox Grid.Column="6" Grid.Row="0" Name="tbExpo_1" Background="LightBlue" Text="0"/>
-                <TextBox Grid.Column="10" Grid.Row="0" Name="tbExpo_2" Background="LightBlue" Text="0"/>
-                <TextBox Grid.Column="14" Grid.Row="0" Name="tbExpo_3" Background="LightBlue" Text="0"/>
-                <TextBox Grid.Column="18" Grid.Row="0" Name="tbExpo_4" Background="LightBlue" Text="0"/>
-                <TextBox Grid.Column="22" Grid.Row="0" Name="tbExpo_5" Background="LightBlue" Text="0"/>
-                
+                <TextBox Grid.Column="2" Grid.Row="0" Name="tbExpo_0" Background="LightBlue" Text="0" TextChanged="tbExpo_0_TextChanged"/>
+                <TextBox Grid.Column="5" Grid.Row="0" Name="tbExpo_1" Background="LightBlue" Text="0" Grid.ColumnSpan="3" Height="38" Margin="29,0,29,0" Grid.RowSpan="2" VerticalAlignment="Top" TextChanged="tbExpo_1_TextChanged"/>
+                <TextBox Grid.Column="10" Grid.Row="0" Name="tbExpo_2" Background="LightBlue" Text="0" TextChanged="tbExpo_2_TextChanged"/>
+                <TextBox Grid.Column="14" Grid.Row="0" Name="tbExpo_3" Background="LightBlue" Text="0" TextChanged="tbExpo_3_TextChanged"/>
+                <TextBox Grid.Column="18" Grid.Row="0" Name="tbExpo_4" Background="LightBlue" Text="0" TextChanged="tbExpo_4_TextChanged"/>
+                <TextBox Grid.Column="22" Grid.Row="0" Name="tbExpo_5" Background="LightBlue" Text="0" TextChanged="tbExpo_5_TextChanged"/>
+
                 <!-- Textblöcke x-->
                 <TextBlock Grid.Column="1" Grid.Row="1" Text="x" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                 <TextBlock Grid.Column="5" Grid.Row="1" Text="x" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
@@ -127,14 +127,14 @@
                 <TextBlock Grid.Column="13" Grid.Row="1" Text="x" FontSize="20"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
                 <TextBlock Grid.Column="17" Grid.Row="1" Text="x" FontSize="20"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
                 <TextBlock Grid.Column="21" Grid.Row="1" Text="x" FontSize="20"  VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                
+
                 <!-- Textblöcke +-->
                 <TextBlock Grid.Column="3" Grid.Row="1" Text="+" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                 <TextBlock Grid.Column="7" Grid.Row="1" Text="+" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                 <TextBlock Grid.Column="11" Grid.Row="1" Text="+" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                 <TextBlock Grid.Column="15" Grid.Row="1" Text="+" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
                 <TextBlock Grid.Column="19" Grid.Row="1" Text="+" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                
+
             </Grid>
         </Grid>
 

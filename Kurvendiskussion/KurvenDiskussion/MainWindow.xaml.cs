@@ -81,7 +81,11 @@ namespace KurvenDiskussion
                 mFunction.Terms[2].expoValue = Convert.ToDouble(tbExpo_2.Text);
                 mFunction.Terms[3].coefValue = Convert.ToDouble(tbCoef_3.Text);
                 mFunction.Terms[3].expoValue = Convert.ToDouble(tbExpo_3.Text);
-
+                mFunction.Terms[4].coefValue = Convert.ToDouble(tbCoef_4.Text);
+                mFunction.Terms[4].expoValue = Convert.ToDouble(tbExpo_4.Text);
+                mFunction.Terms[5].coefValue = Convert.ToDouble(tbCoef_5.Text);
+                mFunction.Terms[5].expoValue = Convert.ToDouble(tbExpo_5.Text);
+               
                 for (int i = 0; i <= 20; i++)
                 {
                     SeriesCollection[0].Values.RemoveAt(i);
@@ -102,6 +106,72 @@ namespace KurvenDiskussion
         private void tbCoef_0_TextChanged(object sender, TextChangedEventArgs e)
         {
             UpdateAll();
+        }
+
+        private void tbCoef_1_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            UpdateAll();
+
+        }
+
+        private void tbCoef_2_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            UpdateAll();
+
+        }
+
+        private void tbCoef_3_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            UpdateAll();
+
+        }
+
+        private void tbCoef_4_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            UpdateAll();
+
+        }
+
+        private void tbCoef_5_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            UpdateAll();
+
+        }
+
+        private void tbExpo_0_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            UpdateAll();
+
+        }
+
+        private void tbExpo_1_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            UpdateAll();
+
+        }
+
+        private void tbExpo_2_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            UpdateAll();
+
+        }
+
+        private void tbExpo_3_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            UpdateAll();
+
+        }
+
+        private void tbExpo_4_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            UpdateAll();
+
+        }
+
+        private void tbExpo_5_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            UpdateAll();
+
         }
     }
 }
