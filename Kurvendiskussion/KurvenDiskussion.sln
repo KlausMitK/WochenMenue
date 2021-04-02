@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KurvenDiskussion", "KurvenDiskussion\KurvenDiskussion.csproj", "{66E7885C-7E20-44B1-864F-ADF57E826E7D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CD19254B-5710-4DD8-AB19-8193859E4AD1} = {CD19254B-5710-4DD8-AB19-8193859E4AD1}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MathBib", "MathBib\MathBib.csproj", "{CD19254B-5710-4DD8-AB19-8193859E4AD1}"
 EndProject

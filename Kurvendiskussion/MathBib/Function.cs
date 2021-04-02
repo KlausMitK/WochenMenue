@@ -14,6 +14,11 @@ namespace MathBib
             set { mTerms = value; }
         }
 
+        public Function()
+        {
+            mTerms = new List<Term>();
+        }
+
         public List<Point> NullPoints()
         {
             List<Point> retList = new List<Point>();

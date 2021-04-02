@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using LiveCharts;
 using LiveCharts.Wpf;
+using MathBib;
 
 namespace KurvenDiskussion
 {
@@ -26,51 +27,54 @@ namespace KurvenDiskussion
         {
             InitializeComponent();
 
-            SeriesCollection = new SeriesCollection
-            {
-                /*new LineSeries
-                {
-                    Title = "Series 1",
-                    Values = new ChartValues<double> { 4, 6, 5, 2 ,4 }
-                },*/
-                new LineSeries
-                {
-                    Title = "Series 2",
-                    Values = new ChartValues<double> { 6, 7, 3, 4 ,6 },
-                    PointGeometry = null
-                }/*,
-                new LineSeries
-                {
-                    Title = "Series 3",
-                    Values = new ChartValues<double> { 4,2,7,2,7 },
-                    PointGeometry = DefaultGeometries.Square,
-                    PointGeometrySize = 15
-                }*/
-            };
+            PolynomTerm term1 = new PolynomTerm();
+            term1.coefValue = 2d;
+            term1.expoValue = 2;
 
-            Labels = new[] { "1", "2", "3", "4", "5" };
+            PolynomTerm term2 = new PolynomTerm();
+            term2.coefValue = -3d;
+            term2.expoValue = 1;
+            
+            PolynomTerm term3 = new PolynomTerm();
+            term3.coefValue = 4d;
+            term3.expoValue = 0;
+
+            Function fX = new Function();
+            fX.Terms.Add(term1);
+                
+                
+            fX.Terms.Add(term2);
+            fX.Terms.Add(term3);
+
+            //double y = fX.Calculate(9d);
+
+            ChartValues<double> Pvalues = new ChartValues<double>();
+            Labels = new List<string>();
+
+            for (int i = -10; i<=10; i++)
+            {
+                Pvalues.Add(fX.Calculate(i));
+                Labels.Add(Convert.ToString(i));
+            }
+
+            LineSeries lineSeries = new LineSeries();
+            lineSeries.Values = Pvalues;
+            lineSeries.Title = "f(x)";
+            lineSeries.PointGeometry = null;
+
+            SeriesCollection serCol = new SeriesCollection();
+            serCol.Add(lineSeries);
+
+            SeriesCollection = serCol;
+
+            //Labels = new[] { "1", "2", "3", "4", "5" };
             YFormatter = value => value.ToString("C");
 
-            //modifying the series collection will animate and update the chart
-            /*SeriesCollection.Add(new LineSeries
-            {
-                Title = "Series 4",
-                Values = new ChartValues<double> { 5, 3, 2, 4 },
-                LineSmoothness = 0, //0: straight lines, 1: really smooth lines
-                PointGeometry = Geometry.Parse("m 25 70.36218 20 -28 -20 22 -8 -6 z"),
-                PointGeometrySize = 50,
-                //PointForeground = Brushes.Gray
-            });*/
-
-            //modifying any series values will also animate and update the chart
-            //SeriesCollection[3].Values.Add(5d);
-
             DataContext = this;
-  
         }
 
         public SeriesCollection SeriesCollection { get; set; }
-        public string[] Labels { get; set; }
+        public List<string> Labels { get; set; }
         public Func<double, string> YFormatter { get; set; }
 
         
