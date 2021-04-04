@@ -93,7 +93,7 @@
 
                 <!--Textboxen Exponenten-->
                 <TextBox Grid.Column="2" Grid.Row="0" Name="tbExpo_0" Background="LightBlue" Text="0" TextChanged="tbExpo_0_TextChanged"/>
-                <TextBox Grid.Column="5" Grid.Row="0" Name="tbExpo_1" Background="LightBlue" Text="0" Grid.ColumnSpan="3" Height="38" Margin="29,0,29,0" Grid.RowSpan="2" VerticalAlignment="Top" TextChanged="tbExpo_1_TextChanged"/>
+                <TextBox Grid.Column="6" Grid.Row="0" Name="tbExpo_1" Background="LightBlue" Text="0"  TextChanged="tbExpo_1_TextChanged"/>
                 <TextBox Grid.Column="10" Grid.Row="0" Name="tbExpo_2" Background="LightBlue" Text="0" TextChanged="tbExpo_2_TextChanged"/>
                 <TextBox Grid.Column="14" Grid.Row="0" Name="tbExpo_3" Background="LightBlue" Text="0" TextChanged="tbExpo_3_TextChanged"/>
                 <TextBox Grid.Column="18" Grid.Row="0" Name="tbExpo_4" Background="LightBlue" Text="0" TextChanged="tbExpo_4_TextChanged"/>
