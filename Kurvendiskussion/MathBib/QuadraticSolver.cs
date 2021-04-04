@@ -26,18 +26,26 @@ namespace MathBib
             // If no solution exists, the list remains empty.
             // The caller of the method has to check the size of the list.
             List<double> listOfSolutions = new List<double>();
+            double dis = Math.Pow(mCoefB, 2) - 4 * mCoefA * mCoefC;
 
-            // TODO: First check if the discriminant is >= 0
-
-            // 1. <0: ==> No solution
-                // TODO : Return empty list
-            // 2. =0: ==> One solution
-                // TODO: Calculate solution and add it to the listOfSolutions, return listOfSolutions.
-            // 3. >0: ==> Two solutions
-                //TODO: Calculate both solutions and add them to listOfSolutions, return listOfSolutions.
-
-            return listOfSolutions;
+            if (dis<0)
+            {
+                return listOfSolutions;
+            }
+            else if (dis == 0)
+            {
+                double x1 = -mCoefB / (2 * mCoefA);
+                listOfSolutions.Add(x1);
+                return listOfSolutions;
+            }
+            else
+            {
+                double x1 = (-mCoefB + Math.Sqrt(dis)) / (2 * mCoefA);
+                double x2 = (-mCoefB - Math.Sqrt(dis)) / (2 * mCoefA);
+                listOfSolutions.Add(x1);
+                listOfSolutions.Add(x2);
+                return listOfSolutions;
+            }
         }
-
     }
 }
