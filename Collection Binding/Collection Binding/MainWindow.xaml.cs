@@ -25,10 +25,9 @@ namespace Collection_Binding
 
         public class Point : INotifyPropertyChanged
         {
-            private int mPropChangedCount = 0;
-
             double mX, mY, mZ;
 
+            private int mPropChangedCount = 0;
             public event PropertyChangedEventHandler PropertyChanged;
             private void NotifyPropertyChanged(String propertyName = "")
             {
