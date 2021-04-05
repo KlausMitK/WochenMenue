@@ -43,5 +43,7 @@ namespace MathBibTests
             Assert.AreEqual(x1, -0, 25);
             Assert.AreEqual(x2, -1);
         }
+
+        //TODO: Tests implementieren für die Fälle a=0 und b=0;
     }
 }
