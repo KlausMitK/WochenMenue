@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 
 namespace Collection_Binding
 {
@@ -22,16 +23,43 @@ namespace Collection_Binding
     public partial class MainWindow : Window
     {
 
-        public class Point
+        public class Point : INotifyPropertyChanged
         {
-            public double X { get; set; }
-            public double Y { get; set; }
-            public double Z { get; set; }
+            private int mPropChangedCount = 0;
+
+            double mX, mY, mZ;
+
+            public event PropertyChangedEventHandler PropertyChanged;
+            private void NotifyPropertyChanged(String propertyName = "")
+            {
+                if (PropertyChanged != null)
+                {
+                    PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+                }
+                mPropChangedCount++;
+            }
+
+
+            public double X 
+            {
+                get { return mX; }
+                set { mX = value; NotifyPropertyChanged("X"); }
+            }
+            public double Y
+            {
+                get { return mY; }
+                set { mY = value; NotifyPropertyChanged("Y"); }
+            }
+            public double Z
+            {
+                get { return mZ; }
+                set { mZ = value; NotifyPropertyChanged("Z"); }
+            }
         }
 
-        private ObservableCollection<Point> mListe;
+        private List<Point> mListe;
 
-        public ObservableCollection<Point> Liste
+        public List<Point> Liste
         {
             get { return mListe; }
             set { mListe = value; }
@@ -41,7 +69,7 @@ namespace Collection_Binding
         {
             InitializeComponent();
 
-            mListe = new ObservableCollection<Point>();
+            mListe = new List<Point>();
 
             for (int i = 0; i<10; i++)
             {
@@ -59,14 +87,9 @@ namespace Collection_Binding
         {
             for (int i = 0; i<10; i++)
             {
-                Point p = new Point();
-
-                p.X = Liste[i].X + 1;
-                p.Y = Liste[i].Y - 1;
-                p.Z = Liste[i].Z + 2;
-
-                Liste.RemoveAt(i);
-                Liste.Insert(i, p);
+                Liste[i].X = Liste[i].X + 1;
+                Liste[i].Y = Liste[i].Y - 1;
+                Liste[i].Z = Liste[i].Z + 2;
             }
 
         }

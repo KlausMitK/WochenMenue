@@ -37,7 +37,12 @@
             <Button Grid.Column="2" Grid.Row="2" Name="UpdButton" Content="Update" Click="UpdButton_Click"></Button>
         </Grid>
 
-        <DataGrid  Name="DtG_Liste" AutoGenerateColumns="True" SelectionMode="Single" SelectionUnit="FullRow" Grid.Column="2" Grid.Row="1">
+        <DataGrid  Name="DtG_Liste"  AutoGenerateColumns="False" SelectionMode="Single" SelectionUnit="FullRow" Grid.Column="2" Grid.Row="1">
+            <DataGrid.Columns>
+            <DataGridTextColumn Header="X" Binding="{Binding X}"/>
+            <DataGridTextColumn Header="Y" Binding="{Binding Y}"/>
+            <DataGridTextColumn Header="Z" Binding="{Binding Z}"/>
+            </DataGrid.Columns>
         </DataGrid>
 
     </Grid>
