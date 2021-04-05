@@ -10,7 +10,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KurvenDiskussion", "KurvenD
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MathBib", "MathBib\MathBib.csproj", "{CD19254B-5710-4DD8-AB19-8193859E4AD1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathBibTests", "MathBibTests\MathBibTests.csproj", "{D1E85FE4-8975-430C-BFF3-7247E02B8F7D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MathBibTests", "MathBibTests\MathBibTests.csproj", "{D1E85FE4-8975-430C-BFF3-7247E02B8F7D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -28,11 +28,17 @@ namespace MathBib
             List<double> listOfSolutions = new List<double>();
             double dis = Math.Pow(mCoefB, 2) - 4 * mCoefA * mCoefC;
 
-            // TODO: Erst prügen, ob es überhaupt eine PArabel ist: muss != 0 sein
-            // Wenn a = 0 ist, dann ist es eine Gerade, hat also nur eine Lösung. 
-            // Lösung berechnen und in die Liste einfügen und List zrückgeben
-            // Wenn a und b = 0 sind: Dann ist es eine Konstante. Es gibt also keine Nullstelle:
-            // In dem Fall muss die leere Liste zurückgegeben werden.
+            if (mCoefA == 0)
+            {
+                if (mCoefB != 0)
+                {
+                    double x1 = -mCoefC / mCoefB;
+                    listOfSolutions.Add(x1);
+                    return listOfSolutions;
+                }
+                else
+                    return listOfSolutions;
+            }
 
             if (dis<0)
             {
@@ -52,6 +58,7 @@ namespace MathBib
                 listOfSolutions.Add(x2);
                 return listOfSolutions;
             }
+           
         }
     }
 }

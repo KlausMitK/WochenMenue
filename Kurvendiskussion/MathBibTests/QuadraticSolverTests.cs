@@ -44,6 +44,22 @@ namespace MathBibTests
             Assert.AreEqual(x2, -1);
         }
 
-        //TODO: Tests implementieren für die Fälle a=0 und b=0;
+        [Test]
+        public void TestaIsZero()
+        {
+            QuadraticSolver solver = new QuadraticSolver(0, 2, 4);
+            List<double> result = solver.Solve();
+            Assert.AreEqual(result.Count, 1);
+            double x1 = result[0];
+            Assert.AreEqual(x1, -2);
+        }
+
+        [Test]
+        public void TestaAndbAreZero()
+        {
+            QuadraticSolver solver = new QuadraticSolver(0, 0, 2);
+            List<double> result = solver.Solve();
+            Assert.AreEqual(result.Count, 0);
+        }
     }
 }
