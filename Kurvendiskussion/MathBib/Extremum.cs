@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
+
 namespace MathBib
 {
     public class Extremum : Point
     {
+
         public enum ExtremType
         {
             Min,
@@ -17,7 +19,7 @@ namespace MathBib
         public ExtremType MinMaxType
         {
             get {return extremType; }
-            set {extremType = value;}
+            set {extremType = value; NotifyPropertyChanged("MinMaxType"); }
         }
 
     }
