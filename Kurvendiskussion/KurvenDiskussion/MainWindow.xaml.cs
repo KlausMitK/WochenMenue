@@ -173,5 +173,67 @@ namespace KurvenDiskussion
             UpdateAll();
 
         }
+
+        //Abgeleitete Koeffizienten
+        private void tbCoefDer_0_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void tbCoefDer_1_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void tbCoefDer_2_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void tbCoefDer_3_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void tbCoefDer_4_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void tbCoefDer_5_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        //Abgeleitet Exponenten
+        private void tbExpoDer_0_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void tbExpoDer_1_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void tbExpoDer_2_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void tbExpoDer_3_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void tbExpoDer_4_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void tbExpoDer_5_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
