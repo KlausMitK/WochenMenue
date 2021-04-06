@@ -47,9 +47,18 @@
                 <RowDefinition Height="50"/>
                 <RowDefinition Height="20"/>
                 <RowDefinition Height="50"/>
+                <RowDefinition Height="20"/>
                 <RowDefinition/>
                 <RowDefinition/>
+                <RowDefinition Height="20"/>
             </Grid.RowDefinitions>
+            
+            <!-- Listen für Ausgaben-->
+            <DataGrid Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="4" Grid.RowSpan="2" Name="Dtg_0">
+                <DataGrid.Columns>
+                    <DataGridTextColumn />
+                </DataGrid.Columns>
+            </DataGrid>
 
             <!-- Textboxen für die Eingabe der Terme-->
             <Grid Grid.Column="0" Grid.ColumnSpan="3" Grid.Row ="0">
@@ -166,19 +175,19 @@
 
                 <!--Textboxen abgeleitete Koeffizienten-->
                 <TextBox Grid.Column="1" Grid.Row="1" Name="tbCoefDer_0" Background="LightGray" Text="{Binding Path=TheDerivative.Terms[0].coefValue}" TextChanged="tbCoefDer_0_TextChanged" IsReadOnly="True"/>
-                <TextBox Grid.Column="5" Grid.Row="1" Name="tbCoefDer_1" Background="LightGray" Text="0" TextChanged="tbCoefDer_1_TextChanged" IsReadOnly="True"/>
-                <TextBox Grid.Column="9" Grid.Row="1" Name="tbCoefDer_2" Background="LightGray" Text="0" TextChanged="tbCoefDer_2_TextChanged" IsReadOnly="True"/>
-                <TextBox Grid.Column="13" Grid.Row="1" Name="tbCoefDer_3" Background="LightGray" Text="0" TextChanged="tbCoefDer_3_TextChanged" IsReadOnly="True"/>
-                <TextBox Grid.Column="17" Grid.Row="1" Name="tbCoefDer_4" Background="LightGray" Text="0" TextChanged="tbCoefDer_4_TextChanged" IsReadOnly="True"/>
-                <TextBox Grid.Column="21" Grid.Row="1" Name="tbCoefDer_5" Background="LightGray" Text="0" TextChanged="tbCoefDer_5_TextChanged" IsReadOnly="True"/>
+                <TextBox Grid.Column="5" Grid.Row="1" Name="tbCoefDer_1" Background="LightGray" Text="{Binding Path=TheDerivative.Terms[1].coefValue}" TextChanged="tbCoefDer_1_TextChanged" IsReadOnly="True"/>
+                <TextBox Grid.Column="9" Grid.Row="1" Name="tbCoefDer_2" Background="LightGray" Text="{Binding Path=TheDerivative.Terms[2].coefValue}" TextChanged="tbCoefDer_2_TextChanged" IsReadOnly="True"/>
+                <TextBox Grid.Column="13" Grid.Row="1" Name="tbCoefDer_3" Background="LightGray" Text="{Binding Path=TheDerivative.Terms[3].coefValue}" TextChanged="tbCoefDer_3_TextChanged" IsReadOnly="True"/>
+                <TextBox Grid.Column="17" Grid.Row="1" Name="tbCoefDer_4" Background="LightGray" Text="{Binding Path=TheDerivative.Terms[4].coefValue}" TextChanged="tbCoefDer_4_TextChanged" IsReadOnly="True"/>
+                <TextBox Grid.Column="21" Grid.Row="1" Name="tbCoefDer_5" Background="LightGray" Text="{Binding Path=TheDerivative.Terms[5].coefValue}" TextChanged="tbCoefDer_5_TextChanged" IsReadOnly="True"/>
 
                 <!--Textboxen abgeleitete Exponenten-->
-                <TextBox Grid.Column="3" Grid.Row="0" Name="tbExpoDer_0" Background="LightGray" Text="0" TextChanged="tbExpoDer_0_TextChanged" IsReadOnly="True"/>
-                <TextBox Grid.Column="7" Grid.Row="0" Name="tbExpoDer_1" Background="LightGray" Text="0"  TextChanged="tbExpoDer_1_TextChanged" IsReadOnly="True"/>
-                <TextBox Grid.Column="11" Grid.Row="0" Name="tbExpoDer_2" Background="LightGray" Text="0" TextChanged="tbExpoDer_2_TextChanged" IsReadOnly="True"/>
-                <TextBox Grid.Column="15" Grid.Row="0" Name="tbExpoDer_3" Background="LightGray" Text="0" TextChanged="tbExpoDer_3_TextChanged" IsReadOnly="True"/>
-                <TextBox Grid.Column="19" Grid.Row="0" Name="tbExpoDer_4" Background="LightGray" Text="0" TextChanged="tbExpoDer_4_TextChanged" IsReadOnly="True"/>
-                <TextBox Grid.Column="23" Grid.Row="0" Name="tbExpoDer_5" Background="LightGray" Text="0" TextChanged="tbExpoDer_5_TextChanged" IsReadOnly="True"/>
+                <TextBox Grid.Column="3" Grid.Row="0" Name="tbExpoDer_0" Background="LightGray" Text="{Binding Path=TheDerivative.Terms[0].expoValue}" TextChanged="tbExpoDer_0_TextChanged" IsReadOnly="True"/>
+                <TextBox Grid.Column="7" Grid.Row="0" Name="tbExpoDer_1" Background="LightGray" Text="{Binding Path=TheDerivative.Terms[1].expoValue}" TextChanged="tbExpoDer_1_TextChanged" IsReadOnly="True"/>
+                <TextBox Grid.Column="11" Grid.Row="0" Name="tbExpoDer_2" Background="LightGray" Text="{Binding Path=TheDerivative.Terms[2].expoValue}" TextChanged="tbExpoDer_2_TextChanged" IsReadOnly="True"/>
+                <TextBox Grid.Column="15" Grid.Row="0" Name="tbExpoDer_3" Background="LightGray" Text="{Binding Path=TheDerivative.Terms[3].expoValue}" TextChanged="tbExpoDer_3_TextChanged" IsReadOnly="True"/>
+                <TextBox Grid.Column="19" Grid.Row="0" Name="tbExpoDer_4" Background="LightGray" Text="{Binding Path=TheDerivative.Terms[4].expoValue}" TextChanged="tbExpoDer_4_TextChanged" IsReadOnly="True"/>
+                <TextBox Grid.Column="23" Grid.Row="0" Name="tbExpoDer_5" Background="LightGray" Text="{Binding Path=TheDerivative.Terms[5].expoValue}" TextChanged="tbExpoDer_5_TextChanged" IsReadOnly="True"/>
 
                 <!-- Textblöcke x-->
                 <TextBlock Grid.Column="2" Grid.Row="1" Text="x" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
