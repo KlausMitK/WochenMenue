@@ -27,14 +27,15 @@ namespace KurvenDiskussion
         private MathFunc mDerivative;
         private ChartValues<double> mPvalues;
 
-        string mDerCoef1;
+        private List<DPoint> mPoints;
 
-        public string DerCoef1
+        public List<DPoint> Points
         {
-            get { return mDerCoef1; }
-            set { mDerCoef1 = value; }
+            get { return mPoints; }
+            set { mPoints = value; }
         }
 
+        
         public MathFunc TheFunction
         {
             get { return mFunction; }
@@ -60,9 +61,30 @@ namespace KurvenDiskussion
                 TheDerivative = TheFunction.Derivative();
             }
 
-            //TheDerivative.Terms[0].coefValue = 5;
+            DPoint p1 = new DPoint();
+            p1.xValue = 1;
+            p1.yValue = 1;
+            p1.PType = DPoint.PointType.NullPoint;
+            Points.Add(p1);
 
-            
+            DPoint p2 = new DPoint();
+            p2.xValue = 2;
+            p2.yValue = 2;
+            p2.PType = DPoint.PointType.Minimum;
+            Points.Add(p2);
+
+            DPoint p3 = new DPoint();
+            p3.xValue = 3;
+            p3.yValue = 3;
+            p3.PType = DPoint.PointType.Maximum;
+            Points.Add(p3);
+
+            DPoint p4 = new DPoint();
+            p4.xValue = 4;
+            p4.yValue = 4;
+            p4.PType = DPoint.PointType.Inflection;
+            Points.Add(p4);
+
             mPvalues = new ChartValues<double>();
             Labels = new List<string>();
 

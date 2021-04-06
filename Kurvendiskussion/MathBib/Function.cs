@@ -19,20 +19,20 @@ namespace MathBib
             mTerms = new List<Term>();
         }
 
-        public List<Point> NullPoints()
+        public List<DPoint> NullPoints()
         {
-            List<Point> retList = new List<Point>();
+            List<DPoint> retList = new List<DPoint>();
             return retList;
         }
-        public List<Extremum> Extrema()
+        public List<DPoint> Extrema()
         {
-            List<Extremum> retList = new List<Extremum>();
+            List<DPoint> retList = new List<DPoint>();
             return retList;
         }
     
-        public List<Point> Inflection()
+        public List<DPoint> Inflection()
         {
-            List<Point> retList = new List<Point>();
+            List<DPoint> retList = new List<DPoint>();
             return retList;
         }
 

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace MathBib
 {
-    public class Extremum : Point
+    public class Extremum : DPoint
     {
 
         public enum ExtremType
