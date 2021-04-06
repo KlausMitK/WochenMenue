@@ -28,8 +28,7 @@ namespace KurvenDiskussion
         public MainWindow()
         {
             InitializeComponent();
-
-            
+                        
             for (int i = 0; i<6; i++)
             {
                 PolynomTerm term = new PolynomTerm();
