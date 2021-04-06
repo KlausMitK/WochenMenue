@@ -23,19 +23,44 @@ namespace KurvenDiskussion
     /// </summary>
     public partial class MainWindow : Window
     {
-        private Function mFunction = new Function();
+        private MathFunc mFunction = new Function();
+        private MathFunc mDerivative;
         private ChartValues<double> mPvalues;
+
+        string mDerCoef1;
+
+        public string DerCoef1
+        {
+            get { return mDerCoef1; }
+            set { mDerCoef1 = value; }
+        }
+
+        public MathFunc TheFunction
+        {
+            get { return mFunction; }
+            set { mFunction = value; }
+        }
+
+        public MathFunc TheDerivative
+        {
+            get { return mDerivative; }
+            set { mDerivative = value; }
+        }
+
         public MainWindow()
         {
             InitializeComponent();
-                        
+                                    
             for (int i = 0; i<6; i++)
             {
                 PolynomTerm term = new PolynomTerm();
                 term.coefValue = 1;
                 term.expoValue = 1;
                 mFunction.Terms.Add(term);
+                TheDerivative = TheFunction.Derivative();
             }
+
+            //TheDerivative.Terms[0].coefValue = 5;
 
             
             mPvalues = new ChartValues<double>();
@@ -72,18 +97,20 @@ namespace KurvenDiskussion
 
             try
             {
-                mFunction.Terms[0].coefValue = Convert.ToDouble(tbCoef_0.Text);
-                mFunction.Terms[0].expoValue = Convert.ToDouble(tbExpo_0.Text);
-                mFunction.Terms[1].coefValue = Convert.ToDouble(tbCoef_1.Text);
-                mFunction.Terms[1].expoValue = Convert.ToDouble(tbExpo_1.Text);
-                mFunction.Terms[2].coefValue = Convert.ToDouble(tbCoef_2.Text);
-                mFunction.Terms[2].expoValue = Convert.ToDouble(tbExpo_2.Text);
-                mFunction.Terms[3].coefValue = Convert.ToDouble(tbCoef_3.Text);
-                mFunction.Terms[3].expoValue = Convert.ToDouble(tbExpo_3.Text);
-                mFunction.Terms[4].coefValue = Convert.ToDouble(tbCoef_4.Text);
-                mFunction.Terms[4].expoValue = Convert.ToDouble(tbExpo_4.Text);
-                mFunction.Terms[5].coefValue = Convert.ToDouble(tbCoef_5.Text);
-                mFunction.Terms[5].expoValue = Convert.ToDouble(tbExpo_5.Text);
+                TheFunction.Terms[0].coefValue = Convert.ToDouble(tbCoef_0.Text);
+                TheFunction.Terms[0].expoValue = Convert.ToDouble(tbExpo_0.Text);
+                TheFunction.Terms[1].coefValue = Convert.ToDouble(tbCoef_1.Text);
+                TheFunction.Terms[1].expoValue = Convert.ToDouble(tbExpo_1.Text);
+                TheFunction.Terms[2].coefValue = Convert.ToDouble(tbCoef_2.Text);
+                TheFunction.Terms[2].expoValue = Convert.ToDouble(tbExpo_2.Text);
+                TheFunction.Terms[3].coefValue = Convert.ToDouble(tbCoef_3.Text);
+                TheFunction.Terms[3].expoValue = Convert.ToDouble(tbExpo_3.Text);
+                TheFunction.Terms[4].coefValue = Convert.ToDouble(tbCoef_4.Text);
+                TheFunction.Terms[4].expoValue = Convert.ToDouble(tbExpo_4.Text);
+                TheFunction.Terms[5].coefValue = Convert.ToDouble(tbCoef_5.Text);
+                TheFunction.Terms[5].expoValue = Convert.ToDouble(tbExpo_5.Text);
+
+                TheDerivative = TheFunction.Derivative();
                
                 for (int i = 0; i <= 20; i++)
                 {

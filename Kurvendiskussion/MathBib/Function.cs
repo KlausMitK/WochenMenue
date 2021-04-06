@@ -13,7 +13,7 @@ namespace MathBib
             get { return mTerms; }
             set { mTerms = value; }
         }
-
+        
         public Function()
         {
             mTerms = new List<Term>();

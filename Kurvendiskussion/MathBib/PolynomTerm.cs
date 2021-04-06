@@ -10,6 +10,8 @@ namespace MathBib
         double mCoefficient;
         double mExponent;
 
+        PolynomTerm mDerivative = null;
+
         private int mPropChangedCount = 0;
         public event PropertyChangedEventHandler PropertyChanged;
         private void NotifyPropertyChanged(String propertyName = "")
@@ -41,12 +43,15 @@ namespace MathBib
 
         public Term Derivative()
         {
-            PolynomTerm derivative = new PolynomTerm();
+            if (mDerivative == null)
+            {
+                mDerivative = new PolynomTerm();
+            }
+            
+            mDerivative.coefValue = mCoefficient * mExponent;
+            mDerivative.expoValue = mExponent - 1;
 
-            derivative.coefValue = mCoefficient * mExponent;
-            derivative.expoValue = mExponent - 1;
-
-            return derivative;
+            return mDerivative;
         }
 
     }

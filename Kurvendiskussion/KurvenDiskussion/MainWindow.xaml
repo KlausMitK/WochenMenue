@@ -165,7 +165,7 @@
                 </Grid.RowDefinitions>
 
                 <!--Textboxen abgeleitete Koeffizienten-->
-                <TextBox Grid.Column="1" Grid.Row="1" Name="tbCoefDer_0"  Background="LightGray" Text="0"  TextChanged="tbCoefDer_0_TextChanged" IsReadOnly="True" Grid.ColumnSpan="2" HorizontalAlignment="Right" Margin="0,0,5,0" Width="6"/>
+                <TextBox Grid.Column="1" Grid.Row="1" Name="tbCoefDer_0" Background="LightGray" Text="{Binding Path=TheDerivative.Terms[0].coefValue}" TextChanged="tbCoefDer_0_TextChanged" IsReadOnly="True"/>
                 <TextBox Grid.Column="5" Grid.Row="1" Name="tbCoefDer_1" Background="LightGray" Text="0" TextChanged="tbCoefDer_1_TextChanged" IsReadOnly="True"/>
                 <TextBox Grid.Column="9" Grid.Row="1" Name="tbCoefDer_2" Background="LightGray" Text="0" TextChanged="tbCoefDer_2_TextChanged" IsReadOnly="True"/>
                 <TextBox Grid.Column="13" Grid.Row="1" Name="tbCoefDer_3" Background="LightGray" Text="0" TextChanged="tbCoefDer_3_TextChanged" IsReadOnly="True"/>

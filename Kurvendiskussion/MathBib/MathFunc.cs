@@ -10,6 +10,8 @@ namespace MathBib
         public List<Point> Inflection();
         public double Calculate(double xValue);
 
+        public List<Term> Terms { get; set; }
+
         public MathFunc Derivative();
         
     }
