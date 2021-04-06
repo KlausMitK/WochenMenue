@@ -61,6 +61,7 @@ namespace KurvenDiskussion
                 TheDerivative = TheFunction.Derivative();
             }
 
+            mPoints = new List<DPoint>(); 
             DPoint p1 = new DPoint();
             p1.xValue = 1;
             p1.yValue = 1;
@@ -108,6 +109,7 @@ namespace KurvenDiskussion
             YFormatter = value => value.ToString("C");
 
             DataContext = this;
+            Dtg_Points.ItemsSource = Points;
         }
 
         public void UpdateAll()

@@ -54,9 +54,11 @@
             </Grid.RowDefinitions>
             
             <!-- Listen für Ausgaben-->
-            <DataGrid Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="4" Grid.RowSpan="2" Name="Dtg_0">
+            <DataGrid Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="4" Grid.RowSpan="2" Name="Dtg_Points" AutoGenerateColumns="False" SelectionMode="Single" SelectionUnit="FullRow">
                 <DataGrid.Columns>
-                    <DataGridTextColumn />
+                    <DataGridTextColumn Header="X" Binding="{Binding xValue}"/>
+                    <DataGridTextColumn Header="Y" Binding="{Binding yValue}"/>
+                    <DataGridTextColumn Header="Type" Binding="{Binding PType}"/>
                 </DataGrid.Columns>
             </DataGrid>
 
