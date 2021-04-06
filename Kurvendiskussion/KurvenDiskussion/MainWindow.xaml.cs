@@ -142,6 +142,13 @@ namespace KurvenDiskussion
                     SeriesCollection[0].Values.Insert(i, mFunction.Calculate(i - 10));
                 }
 
+                // Test
+                foreach (DPoint p in Points)
+                {
+                    p.xValue *= 2.5;
+                    p.yValue *= 1.5;
+                }
+
             }
             catch(FormatException)
             {
