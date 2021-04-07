@@ -59,9 +59,9 @@ namespace MathBib
         }
         public ObservableCollection<DPoint> Extrema()
         {
-            ObservableCollection<DPoint> nullPointsOfDerivative = Derivative().NullPoints();
+            ObservableCollection<DPoint> extrema = Derivative().NullPoints();
 
-            foreach (DPoint p in nullPointsOfDerivative)
+            foreach (DPoint p in extrema)
             {
                 p.yValue = Calculate(p.xValue);
                 if (Derivative().Derivative().Calculate(p.xValue) > 0)
@@ -80,7 +80,7 @@ namespace MathBib
                 
             }
 
-            return nullPointsOfDerivative;
+            return extrema;
         }
     
         public ObservableCollection<DPoint> Inflection()
