@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Collections.ObjectModel;
 
 namespace MathBib
 {
     public class Function : MathFunc
     {
-        private List<Term> mTerms;
+        private ObservableCollection<Term> mTerms;
 
-        public List<Term> Terms
+        public ObservableCollection<Term> Terms
         {
             get { return mTerms; }
             set { mTerms = value; }
@@ -16,23 +17,75 @@ namespace MathBib
         
         public Function()
         {
-            mTerms = new List<Term>();
+            mTerms = new ObservableCollection<Term>();
         }
 
-        public List<DPoint> NullPoints()
+        public ObservableCollection<DPoint> NullPoints()
         {
-            List<DPoint> retList = new List<DPoint>();
+            double a = 0;
+            double b = 0;
+            double c = 0;
+            foreach (PolynomTerm t in Terms)
+            {
+                if (t.expoValue == 2)
+                {
+                    a += t.coefValue;
+                }
+                else if (t.expoValue == 1)
+                {
+                    b += t.coefValue;
+                }
+                else if (t.expoValue == 0)
+                {
+                    c += t.coefValue;
+                }
+            }
+
+            QuadraticSolver solver = new QuadraticSolver(a, b, c);
+
+            ObservableCollection<double> solList = solver.Solve();
+            ObservableCollection<DPoint> retList = new ObservableCollection<DPoint>();
+
+            foreach (double sol in solList)
+            {
+                DPoint p = new DPoint();
+                p.xValue = sol;
+                p.yValue = 0;
+                p.PType = DPoint.PointType.NullPoint;
+                retList.Add(p);
+            }
+
             return retList;
         }
-        public List<DPoint> Extrema()
+        public ObservableCollection<DPoint> Extrema()
         {
-            List<DPoint> retList = new List<DPoint>();
-            return retList;
+            ObservableCollection<DPoint> nullPointsOfDerivative = Derivative().NullPoints();
+
+            foreach (DPoint p in nullPointsOfDerivative)
+            {
+                p.yValue = Calculate(p.xValue);
+                if (Derivative().Derivative().Calculate(p.xValue) > 0)
+                    p.PType = DPoint.PointType.Minimum;
+                else if (Derivative().Derivative().Calculate(p.xValue) < 0)
+                    p.PType = DPoint.PointType.Maximum;
+                else if (Derivative().Derivative().Calculate(p.xValue) == 0)
+                {
+                    if (Derivative().Derivative().Derivative().Calculate(p.xValue) != 0)
+                        p.PType = DPoint.PointType.Inflection;
+                    else // 1., 2., 3. Ableitung sind 0
+                    {
+                        // TODO: This point is not a Extremum, not Inflection, ==> hast to be removed from List
+                    }
+                }
+                
+            }
+
+            return nullPointsOfDerivative;
         }
     
-        public List<DPoint> Inflection()
+        public ObservableCollection<DPoint> Inflection()
         {
-            List<DPoint> retList = new List<DPoint>();
+            ObservableCollection<DPoint> retList = new ObservableCollection<DPoint>();
             return retList;
         }
 

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Collections.ObjectModel;
+
 
 namespace MathBib
 {
@@ -20,12 +22,12 @@ namespace MathBib
             mCoefC = c;
         }
 
-        public List<double> Solve()
+        public ObservableCollection<double> Solve()
         {
             // This list contains the solutions.
             // If no solution exists, the list remains empty.
             // The caller of the method has to check the size of the list.
-            List<double> listOfSolutions = new List<double>();
+            ObservableCollection<double> listOfSolutions = new ObservableCollection<double>();
             double dis = Math.Pow(mCoefB, 2) - 4 * mCoefA * mCoefC;
 
             if (mCoefA == 0)

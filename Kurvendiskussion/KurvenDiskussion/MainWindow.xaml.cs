@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using LiveCharts;
 using LiveCharts.Wpf;
 using MathBib;
+using System.Collections.ObjectModel;
 
 namespace KurvenDiskussion
 {
@@ -27,9 +28,9 @@ namespace KurvenDiskussion
         private MathFunc mDerivative;
         private ChartValues<double> mPvalues;
 
-        private List<DPoint> mPoints;
+        private ObservableCollection<DPoint> mPoints;
 
-        public List<DPoint> Points
+        public ObservableCollection<DPoint> Points
         {
             get { return mPoints; }
             set { mPoints = value; }
@@ -55,14 +56,14 @@ namespace KurvenDiskussion
             for (int i = 0; i<6; i++)
             {
                 PolynomTerm term = new PolynomTerm();
-                term.coefValue = 1;
-                term.expoValue = 1;
+                term.coefValue = 0;
+                term.expoValue = 0;
                 mFunction.Terms.Add(term);
                 TheDerivative = TheFunction.Derivative();
             }
 
-            mPoints = new List<DPoint>(); 
-            DPoint p1 = new DPoint();
+            mPoints = new ObservableCollection<DPoint>(); 
+            /*DPoint p1 = new DPoint();
             p1.xValue = 1;
             p1.yValue = 1;
             p1.PType = DPoint.PointType.NullPoint;
@@ -84,7 +85,7 @@ namespace KurvenDiskussion
             p4.xValue = 4;
             p4.yValue = 4;
             p4.PType = DPoint.PointType.Inflection;
-            Points.Add(p4);
+            Points.Add(p4);*/
 
             mPvalues = new ChartValues<double>();
             Labels = new List<string>();
@@ -143,11 +144,21 @@ namespace KurvenDiskussion
                 }
 
                 // Test
-                foreach (DPoint p in Points)
+                if (Points.Count > 0)
+                Points.Clear();
+
+                ObservableCollection<DPoint> list = TheFunction.NullPoints();
+                foreach (DPoint p in list)
                 {
-                    p.xValue *= 2.5;
-                    p.yValue *= 1.5;
+                    Points.Add(p);
                 }
+
+                foreach (DPoint p in TheFunction.Extrema())
+                {
+                    Points.Add(p);
+                }
+
+                
 
             }
             catch(FormatException)

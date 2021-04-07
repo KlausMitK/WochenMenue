@@ -47,9 +47,17 @@ namespace MathBib
             {
                 mDerivative = new PolynomTerm();
             }
-            
-            mDerivative.coefValue = mCoefficient * mExponent;
-            mDerivative.expoValue = mExponent - 1;
+
+            if (mExponent != 0)
+            {
+                mDerivative.coefValue = mCoefficient * mExponent;
+                mDerivative.expoValue = mExponent - 1;
+            }
+            else
+            {
+                mDerivative.coefValue = 0;
+                mDerivative.expoValue = 0;
+            }
 
             return mDerivative;
         }

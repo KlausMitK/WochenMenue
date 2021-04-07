@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using MathBib;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 
 namespace MathBibTests
@@ -18,7 +19,7 @@ namespace MathBibTests
         public void TestNoSolution()
         {
             QuadraticSolver solver = new QuadraticSolver(2, 1, 1);
-            List<double> result = solver.Solve();
+            ObservableCollection<double> result = solver.Solve();
             Assert.AreEqual(result.Count, 0);   
         }
 
@@ -26,7 +27,7 @@ namespace MathBibTests
         public void TestOneSolution()
         {
             QuadraticSolver solver = new QuadraticSolver(1, 2, 1);
-            List<double> result = solver.Solve();
+            ObservableCollection<double> result = solver.Solve();
             Assert.AreEqual(result.Count, 1);
             double x1 = result[0];
             Assert.AreEqual(x1, -1);
@@ -36,7 +37,7 @@ namespace MathBibTests
         public void TestTwoSolution()
         {
             QuadraticSolver solver = new QuadraticSolver(4, 5, 1);
-            List<double> result = solver.Solve();
+            ObservableCollection<double> result = solver.Solve();
             Assert.AreEqual(result.Count, 2);
             double x1 = result[0];
             double x2 = result[1];
@@ -48,7 +49,7 @@ namespace MathBibTests
         public void TestaIsZero()
         {
             QuadraticSolver solver = new QuadraticSolver(0, 2, 4);
-            List<double> result = solver.Solve();
+            ObservableCollection<double> result = solver.Solve();
             Assert.AreEqual(result.Count, 1);
             double x1 = result[0];
             Assert.AreEqual(x1, -2);
@@ -58,7 +59,7 @@ namespace MathBibTests
         public void TestaAndbAreZero()
         {
             QuadraticSolver solver = new QuadraticSolver(0, 0, 2);
-            List<double> result = solver.Solve();
+            ObservableCollection<double> result = solver.Solve();
             Assert.AreEqual(result.Count, 0);
         }
     }
