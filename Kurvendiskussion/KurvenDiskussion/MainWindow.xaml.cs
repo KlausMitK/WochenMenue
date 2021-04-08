@@ -22,6 +22,8 @@ namespace KurvenDiskussion
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
+    /// 
+    // TODO: Im MainWindow brauchen wir auch noch ein Ausgabe für die zweite Ableitung
     public partial class MainWindow : Window
     {
         private IMathFunc mFunction = new Function();

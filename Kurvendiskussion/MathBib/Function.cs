@@ -22,6 +22,8 @@ namespace MathBib
 
         public ObservableCollection<DPoint> NullPoints()
         {
+            //TODO: Hier müssen wir noch eine Prüfung einbauen, ob der quadratische Solver überhaupt verwendet werden kann.
+
             double a = 0;
             double b = 0;
             double c = 0;
