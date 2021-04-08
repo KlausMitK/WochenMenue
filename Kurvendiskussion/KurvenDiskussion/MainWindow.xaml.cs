@@ -24,8 +24,8 @@ namespace KurvenDiskussion
     /// </summary>
     public partial class MainWindow : Window
     {
-        private MathFunc mFunction = new Function();
-        private MathFunc mDerivative;
+        private IMathFunc mFunction = new Function();
+        private IMathFunc mDerivative;
         private ChartValues<double> mPvalues;
 
         private ObservableCollection<DPoint> mPoints;
@@ -37,13 +37,13 @@ namespace KurvenDiskussion
         }
 
         
-        public MathFunc TheFunction
+        public IMathFunc TheFunction
         {
             get { return mFunction; }
             set { mFunction = value; }
         }
 
-        public MathFunc TheDerivative
+        public IMathFunc TheDerivative
         {
             get { return mDerivative; }
             set { mDerivative = value; }

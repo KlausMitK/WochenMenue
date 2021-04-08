@@ -6,7 +6,7 @@ using System.Collections.ObjectModel;
 
 namespace MathBib
 {
-    public class QuadraticSolver : Solver
+    public class QuadraticSolver : ISolver
     {
         /*
         f(x) = mCoefA*x^2 + mCoefB*x + mCoefC 

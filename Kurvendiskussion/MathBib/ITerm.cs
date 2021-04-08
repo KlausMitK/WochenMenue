@@ -5,10 +5,10 @@ using System.ComponentModel;
 
 namespace MathBib
 {
-    public interface Term : INotifyPropertyChanged
+    public interface ITerm : INotifyPropertyChanged
     {
         public double Calculate(double xValue);
-        public Term Derivative();
+        public ITerm Derivative();
 
         public double coefValue
         { get; set;}

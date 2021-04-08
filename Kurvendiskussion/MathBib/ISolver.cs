@@ -5,7 +5,7 @@ using System.Collections.ObjectModel;
 
 namespace MathBib
 {
-    interface Solver
+    interface ISolver
     {
         public ObservableCollection<double> Solve();
     }

@@ -5,11 +5,11 @@ using System.Collections.ObjectModel;
 
 namespace MathBib
 {
-    public class Function : MathFunc
+    public class Function : IMathFunc
     {
-        private ObservableCollection<Term> mTerms;
+        private ObservableCollection<ITerm> mTerms;
 
-        public ObservableCollection<Term> Terms
+        public ObservableCollection<ITerm> Terms
         {
             get { return mTerms; }
             set { mTerms = value; }
@@ -17,7 +17,7 @@ namespace MathBib
         
         public Function()
         {
-            mTerms = new ObservableCollection<Term>();
+            mTerms = new ObservableCollection<ITerm>();
         }
 
         public ObservableCollection<DPoint> NullPoints()
@@ -89,11 +89,11 @@ namespace MathBib
             return retList;
         }
 
-        public MathFunc Derivative()
+        public IMathFunc Derivative()
         {
             Function derivative = new Function();
 
-            foreach(Term a in mTerms )
+            foreach(ITerm a in mTerms )
             {
                 derivative.Terms.Add(a.Derivative());
             }
@@ -104,7 +104,7 @@ namespace MathBib
         public double Calculate(double xValue)
         {
             double result = 0;
-            foreach(Term a in mTerms)
+            foreach(ITerm a in mTerms)
             {
                 result = result + a.Calculate(xValue);
             }

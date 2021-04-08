@@ -5,7 +5,7 @@ using System.ComponentModel;
 
 namespace MathBib
 {
-    public class PolynomTerm : Term, INotifyPropertyChanged
+    public class PolynomTerm : ITerm, INotifyPropertyChanged
     {
         double mCoefficient;
         double mExponent;
@@ -41,7 +41,7 @@ namespace MathBib
             return y;
         }
 
-        public Term Derivative()
+        public ITerm Derivative()
         {
             if (mDerivative == null)
             {
