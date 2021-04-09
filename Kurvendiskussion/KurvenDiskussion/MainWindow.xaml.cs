@@ -23,12 +23,13 @@ namespace KurvenDiskussion
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     /// 
-    // TODO: Im MainWindow brauchen wir auch noch ein Ausgabe für die zweite Ableitung
     public partial class MainWindow : Window
     {
         private IMathFunc mFunction = new Function();
         private IMathFunc mDerivative;
         private ChartValues<double> mPvalues;
+
+        private IMathFunc mSecondDerivative;
 
         private ObservableCollection<DPoint> mPoints;
 
@@ -51,6 +52,12 @@ namespace KurvenDiskussion
             set { mDerivative = value; }
         }
 
+        public IMathFunc TheSecondDerivative
+        {
+            get { return mSecondDerivative; }
+            set { mSecondDerivative = value; }
+        }
+
         public MainWindow()
         {
             InitializeComponent();
@@ -61,33 +68,13 @@ namespace KurvenDiskussion
                 term.coefValue = 0;
                 term.expoValue = 0;
                 mFunction.Terms.Add(term);
-                TheDerivative = TheFunction.Derivative();
+                
             }
 
+            TheDerivative = TheFunction.Derivative();
+            TheSecondDerivative = TheDerivative.Derivative();
+
             mPoints = new ObservableCollection<DPoint>(); 
-            /*DPoint p1 = new DPoint();
-            p1.xValue = 1;
-            p1.yValue = 1;
-            p1.PType = DPoint.PointType.NullPoint;
-            Points.Add(p1);
-
-            DPoint p2 = new DPoint();
-            p2.xValue = 2;
-            p2.yValue = 2;
-            p2.PType = DPoint.PointType.Minimum;
-            Points.Add(p2);
-
-            DPoint p3 = new DPoint();
-            p3.xValue = 3;
-            p3.yValue = 3;
-            p3.PType = DPoint.PointType.Maximum;
-            Points.Add(p3);
-
-            DPoint p4 = new DPoint();
-            p4.xValue = 4;
-            p4.yValue = 4;
-            p4.PType = DPoint.PointType.Inflection;
-            Points.Add(p4);*/
 
             mPvalues = new ChartValues<double>();
             Labels = new List<string>();
@@ -138,6 +125,7 @@ namespace KurvenDiskussion
                 TheFunction.Terms[5].expoValue = Convert.ToDouble(tbExpo_5.Text);
 
                 TheDerivative = TheFunction.Derivative();
+                TheSecondDerivative = TheDerivative.Derivative();
                
                 for (int i = 0; i <= 20; i++)
                 {
