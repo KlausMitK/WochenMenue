@@ -35,7 +35,7 @@ namespace BusinessLogic
         {
             foreach (Gericht gericht in Gerichte)
             {
-                //TODO: Wenn ein Gericht zweimla drin ist, dann verliert er das zweite Gericht
+                //TODO: Wenn ein Gericht zweimal drin ist, dann verliert er das zweite Gericht
                 if (gericht.Name == gerichtName)
                 {
                     return gericht;
