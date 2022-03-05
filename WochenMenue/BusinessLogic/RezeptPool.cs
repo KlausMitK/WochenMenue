@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
+using System.IO;
+using System.Xml.Serialization;
 
 
 namespace BusinessLogic
@@ -43,6 +45,28 @@ namespace BusinessLogic
             }
             
             return null;
+        }
+
+        public static RezeptPool Load(string poolPath)
+        {
+            RezeptPool rezPool = new RezeptPool();
+            XmlSerializer serializer = new XmlSerializer(typeof(RezeptPool));
+            FileStream fileStream = new FileStream(poolPath, FileMode.Open);
+            rezPool = (RezeptPool)serializer.Deserialize(fileStream);
+            
+            fileStream.Close();
+
+            return rezPool;
+        }
+
+        public static bool Save(string poolPath, RezeptPool rezPool)
+        {
+            bool bRet = true;
+            XmlSerializer serializer = new XmlSerializer(typeof(RezeptPool));
+            FileStream filestream = new FileStream(poolPath, FileMode.Create);
+            serializer.Serialize(filestream, rezPool);
+            filestream.Close();
+            return bRet;
         }
     }
 }

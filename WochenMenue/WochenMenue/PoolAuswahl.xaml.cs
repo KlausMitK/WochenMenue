@@ -29,11 +29,7 @@ namespace WochenMenue
             //Lade Pool (Deserialisieren)
             MainWindow.gLog.Info("RezeptPool: " + PropValues.Instance().PoolPath + " wird geladen...");
 
-            RezeptPool rezPool = new RezeptPool();
-            XmlSerializer serializer = new XmlSerializer(typeof(RezeptPool));
-            FileStream fileStream = new FileStream(PropValues.Instance().PoolPath, FileMode.Open);
-            rezPool = (RezeptPool)serializer.Deserialize(fileStream);
-            fileStream.Close();
+            RezeptPool rezPool = RezeptPool.Load(PropValues.Instance().PoolPath);
 
             MainWindow.gLog.Info("RezeptPool: " + PropValues.Instance().PoolPath + " ist geladen");
 

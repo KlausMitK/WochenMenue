@@ -13,16 +13,13 @@ namespace UnitTests
         {
             SetUpIniAndLogging.SetUp();
 
-            RezeptPool rezPool = new RezeptPool();
-            XmlSerializer serializer = new XmlSerializer(typeof(RezeptPool));
-            FileStream fileStream = new FileStream(PropValues.Instance().PoolPath, FileMode.Open);
-            rezPool = (RezeptPool)serializer.Deserialize(fileStream);
-            fileStream.Close();
+            RezeptPool rezPool = RezeptPool.Load(PropValues.Instance().PoolPath);
+            
             //RezeptPool leeren
             rezPool.Gerichte.Clear();
-            fileStream = new FileStream(PropValues.Instance().PoolPath, FileMode.Create);
-            serializer.Serialize(fileStream, rezPool);
-            fileStream.Close();
+
+            RezeptPool.Save(PropValues.Instance().PoolPath, rezPool);
+            
         }
 
 
