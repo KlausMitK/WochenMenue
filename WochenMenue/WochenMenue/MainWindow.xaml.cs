@@ -219,8 +219,32 @@ namespace WochenMenue
 
         private void GerichtInPool(Tag tag)
         {
+            RezeptPool rezPool = RezeptPool.Load(PropValues.Instance().PoolPath);
             RezeptPoolHelper rezPoolHelper = new Utils.RezeptPoolHelper();
+            Gericht gericht = rezPool.FindeGericht(tag.Gericht);
+            if (gericht == null)
+            {
+               // In dem Fall muss nichts gemacht werden, weil unten ja "GerichtInPool" aufgerufen wird                
+            }
+            else
+            {
+                if (MessageBox.Show("Das Gericht ist bereits vorhanden. Soll es überschrieben werden?",
+                    "Gericht bereits vorhanden",
+                    MessageBoxButton.YesNo,
+                    MessageBoxImage.Question) == MessageBoxResult.Yes)
+                {
+                    // Hier muss das Gericht gelöscht werden, damit das neue Gericht eingefügt werden kann (Aufruf unten)
+                    rezPool.Gerichte.RemoveAt(rezPool.Gerichte.IndexOf(gericht));
+                    RezeptPool.Save(PropValues.Instance().PoolPath, rezPool);
+                }
+                else
+                {
+                    // Hier muss auch nichts gemacht werden, weil "GerichtInPool" sicherstellt, dass kein Gericht zweimal da ist.
+                }
+            }
+
             rezPoolHelper.GerichtInPool(tag);
+
         }
 
         // Stackpanel --> Hizufügen

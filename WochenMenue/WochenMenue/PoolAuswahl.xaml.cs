@@ -28,9 +28,7 @@ namespace WochenMenue
 
             //Lade Pool (Deserialisieren)
             MainWindow.gLog.Info("RezeptPool: " + PropValues.Instance().PoolPath + " wird geladen...");
-
             RezeptPool rezPool = RezeptPool.Load(PropValues.Instance().PoolPath);
-
             MainWindow.gLog.Info("RezeptPool: " + PropValues.Instance().PoolPath + " ist geladen");
 
             //Binding
