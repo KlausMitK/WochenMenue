@@ -82,6 +82,9 @@
     <Compile Include="Einkaufsliste.xaml.cs">
       <DependentUpon>Einkaufsliste.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PoolEditor.xaml.cs">
+      <DependentUpon>PoolEditor.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Rez.xaml.cs">
       <DependentUpon>Rez.xaml</DependentUpon>
     </Compile>
@@ -106,6 +109,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="PoolAuswahl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PoolEditor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -90,6 +90,8 @@
                         <MenuItem Header="Eigenschaften" Click="Menue_File_Eigenschaften_Click"/>
                         <Separator/>
                         <MenuItem Header="Logging Speichern" Click="Menue_File_LoggingSpeichern_Click"/>
+                        <Separator/>
+                        <MenuItem Header="Pool Editor" Click="Menu_PoolEditor_Click"/>
                     </MenuItem>
                 </Menu>
             </DockPanel>

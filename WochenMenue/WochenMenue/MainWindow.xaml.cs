@@ -411,5 +411,10 @@ namespace WochenMenue
                 Logging.Instance().WriteLogfile(fileName);
             }
         }
+
+        private void Menu_PoolEditor_Click(object sender, RoutedEventArgs e)
+        {
+            new PoolEditor().ShowDialog();
+        }
     }
 }
