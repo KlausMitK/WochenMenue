@@ -52,8 +52,8 @@
         <Label Grid.Row="{StaticResource UpButRow}" Grid.Column="{StaticResource MenListCol}" Content="Pool Editor" HorizontalAlignment="Left" FontSize="18"/>
         
         <Button Grid.Row="{StaticResource LowButRow}" Grid.Column="{StaticResource MenListCol}" Name="NeuGer_btn" Content="Neues Gericht" FontSize="18" Click="NeuGer_btn_Click"/>
-        <Button Grid.Row="{StaticResource LowButRow}" Grid.Column="{StaticResource SaveCol}" Name ="Save_btn" Content="Speichern" FontSize="18"/>
-        <Button Grid.Row="{StaticResource LowButRow}" Grid.Column="{StaticResource QuitCol}" Name="Quit_btn" Content="Schließen" FontSize="18"/>
+        <Button Grid.Row="{StaticResource LowButRow}" Grid.Column="{StaticResource SaveCol}" Name ="Save_btn" Content="Speichern" FontSize="18" Click="Save_btn_Click"/>
+        <Button Grid.Row="{StaticResource LowButRow}" Grid.Column="{StaticResource QuitCol}" Name="Quit_btn" Content="Schließen" FontSize="18" Click="Quit_btn_Click"/>
 
         <DataGrid Grid.Row="{StaticResource EdiRow}" Grid.Column="{StaticResource MenListCol}" Name="GerichtList" AutoGenerateColumns="False" SelectionMode="Single" SelectionUnit="FullRow" SelectionChanged="GerichtList_SelectionChanged">
 

@@ -69,6 +69,15 @@ namespace WochenMenue
             
             ZutatenList.ItemsSource = ger.Zutaten;
         }
-        
+
+        private void Save_btn_Click(object sender, RoutedEventArgs e)
+        {
+            RezeptPool.Save(PropValues.Instance().PoolPath, rezPool);
+        }
+
+        private void Quit_btn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
