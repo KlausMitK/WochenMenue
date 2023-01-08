@@ -1,0 +1,49 @@
+﻿<Window x:Class="WochenMenue.Rez"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WochenMenue"
+        mc:Ignorable="d"
+        Title="Rezept" Height="450" Width="350">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition  Height="40"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="25"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="btn_0" Grid.Row="1" Grid.Column="1" Content="Zurück" FontSize="14" Background="LightGreen" Click="btn_0_Click"/>    
+        </Grid>
+        
+
+
+        <DataGrid Grid.Row="0" AutoGenerateColumns="False"  Name="lsV" SelectionChanged="lsV_SelectionChanged">
+            <DataGrid.Columns >
+
+                <DataGridTextColumn Header="Zutat" Width="Auto" Binding="{Binding Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Menge" Width="Auto" Binding="{Binding Menge}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Einheit" Width="Auto" Binding="{Binding Einheit}"></DataGridTextColumn>
+
+            </DataGrid.Columns>
+
+        </DataGrid>
+
+
+
+    </Grid>
+</Window>
