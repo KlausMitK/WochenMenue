@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<Woche xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Montag>
+    <Gericht>12</Gericht>
+    <Zutaten>
+      <Zutat>
+        <Name />
+        <Menge>0</Menge>
+        <Einheit />
+      </Zutat>
+    </Zutaten>
+  </Montag>
+  <Dienstag>
+    <Gericht>23</Gericht>
+    <Zutaten />
+  </Dienstag>
+  <Mittwoch>
+    <Gericht>34</Gericht>
+    <Zutaten />
+  </Mittwoch>
+  <Donnerstag>
+    <Gericht>45</Gericht>
+    <Zutaten />
+  </Donnerstag>
+  <Freitag>
+    <Gericht>56</Gericht>
+    <Zutaten />
+  </Freitag>
+  <Samstag>
+    <Gericht>67</Gericht>
+    <Zutaten />
+  </Samstag>
+  <Sonntag>
+    <Gericht>78</Gericht>
+    <Zutaten />
+  </Sonntag>
+  <mEKL />
+</Woche>
