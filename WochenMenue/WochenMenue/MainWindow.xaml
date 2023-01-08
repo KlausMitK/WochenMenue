@@ -337,7 +337,7 @@
 
         <TextBox x:Name="txt_GerMo" Grid.Row="{StaticResource GerRow}" Grid.Column="0"  TextWrapping="Wrap" AcceptsReturn="True" FontSize="13" SpellCheck.IsEnabled="True" Language="de-DE" Text="{Binding Path=Gericht, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
 
-        <DataGrid Grid.Row="{StaticResource RezRow}" Grid.Column="0" AutoGenerateColumns="False"  Name="lsV_Mo" SelectionMode="Extended" SelectionUnit="Cell">
+        <DataGrid Grid.Row="{StaticResource RezRow}" Grid.Column="0" AutoGenerateColumns="False"  Name="lsV_Mo" SelectionMode="Extended" SelectionUnit="Cell" SelectionChanged="lsV_Mo_SelectionChanged">
 
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Zutat" Width="Auto" Binding="{Binding Name}"></DataGridTextColumn>

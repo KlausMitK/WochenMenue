@@ -37,7 +37,9 @@ namespace WochenMenue
 
         private void GerichtList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-           try
+            
+            
+            try
             { 
                 Gericht gericht = (Gericht)GerichtList.SelectedItem;
                 if (gericht != null)
@@ -78,6 +80,55 @@ namespace WochenMenue
         private void Quit_btn_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void txt_Suche_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string suchString = txt_Suche.Text;
+
+                      
+
+            SelectFoundGerichtCells(GerichtList, suchString);
+        }
+
+        private void SelectFoundGerichtCells(DataGrid datagrid, string suchString)
+        {
+
+            //Liste der selektieren Zellen vor der Suche Löschen (falls vorher schon gesucht wurde, muss die Selektion rückgängig gemacht werden).
+            datagrid.SelectedItems.Clear();
+
+            // Suche des Suchstrings in den Namen der Zutaten und Selektion der entsprechenden Zeile wenn es passt.
+            foreach (var item in datagrid.Items)
+            {
+                if (!(item is Gericht))
+                {
+                    return;
+                }
+
+                Gericht gericht = (Gericht)item;
+
+                var row = datagrid.ItemContainerGenerator.ContainerFromItem(item) as DataGridRow;
+
+                if (suchString == "")
+                {
+                    //Zeile inblenden
+                    row.Visibility = Visibility.Visible;
+                }
+                else
+                {
+                    if (gericht.Name.Contains(suchString))
+                    {
+                        datagrid.SelectedItems.Add(item);
+                        //Blende die Zelle ein (falls sie noch augeblendet ist)
+                        row.Visibility = Visibility.Visible;
+                    }
+                    else
+                    {
+                        // Blende alle anderen  Zeilen aus
+                        row.Visibility = Visibility.Collapsed;
+                    }
+                }
+            }
         }
     }
 }

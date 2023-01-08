@@ -49,13 +49,15 @@
             <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
 
+        <TextBox x:Name="txt_Suche" Grid.Row="{StaticResource UpButRow}" Grid.Column="{StaticResource SaveCol}"  Grid.ColumnSpan="3" TextWrapping="Wrap"  AcceptsReturn="True"  Background="#FFDCDBDB" TextChanged="txt_Suche_TextChanged"/>
+
         <Label Grid.Row="{StaticResource UpButRow}" Grid.Column="{StaticResource MenListCol}" Content="Pool Editor" HorizontalAlignment="Left" FontSize="18"/>
         
         <Button Grid.Row="{StaticResource LowButRow}" Grid.Column="{StaticResource MenListCol}" Name="NeuGer_btn" Content="Neues Gericht" FontSize="18" Click="NeuGer_btn_Click"/>
         <Button Grid.Row="{StaticResource LowButRow}" Grid.Column="{StaticResource SaveCol}" Name ="Save_btn" Content="Speichern" FontSize="18" Click="Save_btn_Click"/>
         <Button Grid.Row="{StaticResource LowButRow}" Grid.Column="{StaticResource QuitCol}" Name="Quit_btn" Content="Schließen" FontSize="18" Click="Quit_btn_Click"/>
 
-        <DataGrid Grid.Row="{StaticResource EdiRow}" Grid.Column="{StaticResource MenListCol}" Name="GerichtList" AutoGenerateColumns="False" SelectionMode="Single" SelectionUnit="FullRow" SelectionChanged="GerichtList_SelectionChanged">
+        <DataGrid Grid.Row="{StaticResource EdiRow}" Grid.Column="{StaticResource MenListCol}" Name="GerichtList" AutoGenerateColumns="False" SelectionMode="Extended" SelectionUnit="FullRow" SelectionChanged="GerichtList_SelectionChanged">
 
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Gericht" Binding="{Binding Path = Name}"/>

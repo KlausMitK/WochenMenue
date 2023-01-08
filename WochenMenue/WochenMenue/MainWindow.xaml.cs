@@ -416,5 +416,10 @@ namespace WochenMenue
         {
             new PoolEditor().ShowDialog();
         }
+
+        private void lsV_Mo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
